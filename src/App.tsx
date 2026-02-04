@@ -2,6 +2,7 @@ import Text from "./components/text";
 import Icon from "./components/icon";
 import ArrowRight from "./assets/icons/arrow-right.svg?react";
 import Tag from "./components/tag";
+import Link from "./components/link";
 
 export default function App() {
   return (
@@ -64,6 +65,11 @@ export default function App() {
         <Tag dot="typescript">TypeScript</Tag>
         <Tag dot="figma">Figma</Tag>
         <Tag dot="git">Git</Tag>
+      </div>
+
+      <div>
+        <Link href="/" isSelected>Página Inicial</Link>
+        <Link href="#">Sobre</Link>
       </div>
     </div>
   );

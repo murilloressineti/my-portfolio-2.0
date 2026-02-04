@@ -26,7 +26,7 @@ export const textVariants = cva("font-sans antialiased", {
       h5: "text-[16px] leading-[1.3] font-semibold",
 
       // UI Elements (Botões, Links e Headlines de seção)
-      "action-link": "text-[20px] leading-normal font-normal",
+      "action-link": "text-[20px] leading-normal font-semibold",
       "action-button": "text-[16px] leading-normal font-semibold",
       "headline-medium":
         "text-[16px] leading-[1.4] tracking-[0.2em] font-semibold uppercase",
