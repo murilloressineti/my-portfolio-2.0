@@ -4,7 +4,7 @@ import { cn } from "../lib/utils";
 import Text from "./text";
 
 export const tagVariants = cva(
-  "inline-flex items-center gap-4 px-3 py-1.5 rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default",
+  "inline-flex items-center gap-4 py-1.5 px-3 rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default",
   {
     variants: {
       variant: {
