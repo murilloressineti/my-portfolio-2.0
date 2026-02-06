@@ -1,11 +1,11 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const iconVariants = cva("", {
+export const iconVariants = cva("transition-transform duration-300 ease-in-out", {
   variants: {
     animate: {
       false: "",
-      true: "",
+      true: "group-hover:rotate-45",
     },
   },
   defaultVariants: {

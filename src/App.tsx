@@ -86,36 +86,58 @@ export default function App() {
           <Icon svg={LinkedinLogo} />
         </Button>
 
-        <div className="flex gap-1.5">
-          <Button variant="secondary" shape="rounded">
-            Vamos conversar
-          </Button>
-          <Button variant="secondary" shape="rounded">
-            <Icon svg={ArrowUpRight} />
+        <div>
+          <Button
+            variant="composite"
+            shape="none"
+            as="a"
+            href="#contato"
+            className="group gap-1.5"
+          >
+            <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:text-text-primary transition-all duration-300">
+              <Text variant="action-button">Vamos conversar</Text>
+            </div>
+
+            <div className="rounded-full p-3 bg-neutral-white border border-neutral-gray-300  group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:fill-text-primary transition-all duration-300">
+              <Icon svg={ArrowUpRight} animate={true} />
+            </div>
           </Button>
         </div>
       </div>
 
       <div>
-        {/* Componente Text dentro do button? */}
         <Button variant="primary" shape="rectangular">
-          <Text variant="action-button">Veja Meus Projetos</Text>
+          Veja Meus Projetos
         </Button>
-        {/* Definir padrão de texto dentro do Componente Button no CVA? */}
         <Button variant="tertiary" shape="rectangular">
           Entre em contato
         </Button>
-        <Button variant="quartenary" shape="rectangular">
-          Conheça minha trajetória <Icon svg={ArrowUpRight} />
+        <Button variant="quaternary" shape="rectangular">
+          Conheça minha trajetória <Icon svg={ArrowUpRight} animate={true} />
         </Button>
       </div>
 
       <div className="flex">
-        <Button variant="quinary" shape="square" size="lg">
+        <Button
+          as="a"
+          href="https://github.com/murilloressineti"
+          target="_blank"
+          variant="quinary"
+          shape="square"
+          className="gap-0 flex items-center overflow-hidden transition-all duration-500 ease-in-out rounded-md hover:pr-6"
+        >
           <Icon svg={GitHubLogo} />
+
+          <Text
+            variant="action-button"
+            className="max-w-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-[100px] group-hover:opacity-100 group-hover:ml-2"
+          >
+            GITHUB
+          </Text>
         </Button>
+
         <Button variant="tertiary" shape="rectangular">
-          Acessar <Icon svg={ArrowUpRight} />
+          Acessar <Icon svg={ArrowUpRight} animate={true} />
         </Button>
       </div>
     </div>
