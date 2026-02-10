@@ -52,3 +52,13 @@
   /* Font Family */
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
+
+@layer base {
+  body {
+    @apply antialiased;
+    
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

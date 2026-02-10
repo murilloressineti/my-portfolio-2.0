@@ -7,6 +7,7 @@ import GitHubLogo from "./assets/icons/github-logo.svg?react";
 import Tag from "./components/tag";
 import Link from "./components/link";
 import Button from "./components/button";
+import Input from "./components/input";
 
 export default function App() {
   return (
@@ -130,7 +131,7 @@ export default function App() {
 
           <Text
             variant="action-button"
-            className="max-w-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-[100px] group-hover:opacity-100 group-hover:ml-2"
+            className="max-w-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-25 group-hover:opacity-100 group-hover:ml-2"
           >
             GITHUB
           </Text>
@@ -139,6 +140,20 @@ export default function App() {
         <Button variant="tertiary" shape="rectangular">
           Acessar <Icon svg={ArrowUpRight} animate={true} />
         </Button>
+      </div>
+
+      <div className="flex flex-col gap-8 max-w-md">
+        <Input 
+        label="Mensagem" 
+        placeholder="Conte-me sobre seu projeto ou ideia..." 
+      />
+
+      <Input 
+        as="textarea" 
+        label="Mensagem" 
+        placeholder="Conte-me sobre seu projeto ou ideia..."
+        className="min-h-50"
+      />
       </div>
     </div>
   );
