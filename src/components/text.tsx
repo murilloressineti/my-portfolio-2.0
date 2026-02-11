@@ -2,7 +2,7 @@ import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/utils";
 
-export const textVariants = cva("font-sans antialiased", {
+export const textVariants = cva("font-sans", {
   variants: {
     variant: {
       // Display / Hero Titles (Usados no topo da Home e Perfil)

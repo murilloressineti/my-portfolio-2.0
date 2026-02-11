@@ -8,6 +8,9 @@ import Tag from "./components/tag";
 import Link from "./components/link";
 import Button from "./components/button";
 import Input from "./components/input";
+import ProjectThumbnail from "./components/project-thumbnail";
+import thumbImg from "./assets/thumbnail/thumb.png";
+import MackbookThumbImg from "./assets/thumbnail/macbook.png";
 
 export default function App() {
   return (
@@ -143,18 +146,42 @@ export default function App() {
       </div>
 
       <div className="flex flex-col gap-8 max-w-md">
-        <Input 
-        label="Mensagem" 
-        placeholder="Conte-me sobre seu projeto ou ideia..." 
-      />
+        <Input
+          label="Mensagem"
+          placeholder="Conte-me sobre seu projeto ou ideia..."
+        />
 
-      <Input 
-        as="textarea" 
-        label="Mensagem" 
-        placeholder="Conte-me sobre seu projeto ou ideia..."
-        className="min-h-50"
-      />
+        <Input
+          as="textarea"
+          label="Mensagem"
+          placeholder="Conte-me sobre seu projeto ou ideia..."
+          className="min-h-50"
+        />
       </div>
+
+      <div className="flex flex-col gap-5">
+        <ProjectThumbnail
+          src={thumbImg}
+          alt="Preview do meu projeto React"
+          variant="default"
+          animate={true}
+        ></ProjectThumbnail>
+
+        <ProjectThumbnail
+          src={thumbImg}
+          alt="Preview do meu projeto React"
+          variant="default"
+          animate={true}
+        ></ProjectThumbnail>
+
+        <ProjectThumbnail
+          src={MackbookThumbImg}
+          alt="Preview do meu projeto React"
+          variant="full"
+        ></ProjectThumbnail>
+      </div>
+
+      <div></div>
     </div>
   );
 }
