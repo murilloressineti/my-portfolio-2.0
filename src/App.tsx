@@ -8,9 +8,10 @@ import Tag from "./components/tag";
 import Link from "./components/link";
 import Button from "./components/button";
 import Input from "./components/input";
-import ProjectThumbnail from "./components/project-thumbnail";
-import thumbImg from "./assets/thumbnail/thumb.png";
+import ProjectThumbnail from "./components/projectThumbnail";
+import ThumbImg from "./assets/thumbnail/thumb.png";
 import MackbookThumbImg from "./assets/thumbnail/macbook.png";
+import ProjectCard from "./components/projectCard";
 
 export default function App() {
   return (
@@ -74,6 +75,8 @@ export default function App() {
         <Tag dot="figma">Figma</Tag>
         <Tag dot="git">Git</Tag>
       </div>
+
+      <div></div>
 
       <div>
         <Link href="/" isSelected>
@@ -161,14 +164,14 @@ export default function App() {
 
       <div className="flex flex-col gap-5">
         <ProjectThumbnail
-          src={thumbImg}
+          src={ThumbImg}
           alt="Preview do meu projeto React"
           variant="default"
           animate={true}
         ></ProjectThumbnail>
 
         <ProjectThumbnail
-          src={thumbImg}
+          src={ThumbImg}
           alt="Preview do meu projeto React"
           variant="default"
           animate={true}
@@ -181,7 +184,16 @@ export default function App() {
         ></ProjectThumbnail>
       </div>
 
-      <div></div>
+      <div>
+        <ProjectCard
+          title="Portfólio Interativo de Desenvolvedor"
+          description="Este projeto é um portfólio online interativo desenvolvido com foco em responsividade, acessibilidade e performance. A proposta é apresentar os projetos pessoais e profissionais de forma clara e objetiva, com navegação fluida e componentes reutilizáveis."
+          imageSrc={ThumbImg}
+          githubUrl="https://github.com/murilloressineti"
+          deployUrl="https://www.google.com/"
+          techs={["react", "react", "react"]}
+        />
+      </div>
     </div>
   );
 }

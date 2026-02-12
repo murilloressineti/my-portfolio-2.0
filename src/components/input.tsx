@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/utils";
 import Text from "./text";
 
-export const InputVariants = cva(
+export const inputVariants = cva(
   "w-full bg-bg-default border border-border-default rounded-lg p-4 text-text-primary placeholder:text-neutral-gray-400 hover:border-border-hover focus:border-border-focus resize-none",
   {
     variants: {
@@ -21,7 +21,7 @@ export const InputVariants = cva(
 interface InputProps
   extends
     Omit<React.AllHTMLAttributes<HTMLElement>, "as">,
-    VariantProps<typeof InputVariants> {
+    VariantProps<typeof inputVariants> {
   as?: "input" | "textarea";
   label?: string;
 }
@@ -46,7 +46,7 @@ export default function Input({
       )}
 
       <Component
-        className={cn(InputVariants({ variant, className }))}
+        className={cn(inputVariants({ variant, className }))}
         {...props}
       >
         {Component === "textarea" ? children : null}

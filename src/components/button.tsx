@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/utils";
 import Text from "./text";
 
-export const ButtonVariants = cva(
+export const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer uppercase group",
   {
     variants: {
@@ -44,7 +44,7 @@ export const ButtonVariants = cva(
 interface ButtonProps
   extends
     Omit<React.AllHTMLAttributes<HTMLElement>, "shape" | "size" | "as">,
-    VariantProps<typeof ButtonVariants> {
+    VariantProps<typeof buttonVariants> {
   as?: React.ElementType;
 }
 
@@ -59,7 +59,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <Component
-      className={cn(ButtonVariants({ variant, shape, size, className }))}
+      className={cn(buttonVariants({ variant, shape, size, className }))}
       {...props}
     >
       {React.Children.map(children, (child) => {

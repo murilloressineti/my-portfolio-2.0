@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/utils";
 import Text from "./text";
 
-export const LinkVariants = cva(
+export const linkVariants = cva(
   "transition-colors duration-300 cursor-pointer inline-block",
   {
     variants: {
@@ -21,7 +21,7 @@ export const LinkVariants = cva(
 interface LinkProps
   extends
     React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof LinkVariants> {
+    VariantProps<typeof linkVariants> {
   as?: React.ElementType;
   isSelected?: boolean;
 }
@@ -37,7 +37,7 @@ export default function Link({
   return (
     <Component
       className={cn(
-        LinkVariants({ variant: isSelected ? "active" : variant, className }),
+        linkVariants({ variant: isSelected ? "active" : variant, className }),
       )}
       {...props}
     >

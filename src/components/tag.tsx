@@ -4,7 +4,7 @@ import { cn } from "../lib/utils";
 import Text from "./text";
 
 export const tagVariants = cva(
-  "inline-flex items-center gap-4 py-1.5 px-3 rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default",
+  "inline-flex items-center gap-3 md:gap-4 py-1 px-2 md:py-1.5 md:px-3 rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default",
   {
     variants: {
       variant: {
@@ -44,7 +44,7 @@ export default function Tag({
   return (
     <div className={cn(tagVariants({ variant, className }))} {...props}>
       <span
-        className="h-3 w-3 rounded-full shrink-0"
+        className="h-2 w-2 md:h-3 md:w-3 rounded-full shrink-0"
         style={{
           backgroundColor: selectedHex,
           // O valor 33 em hexadecimal é igual a 51 em decimal, que representa exatamente 20% de 255.
@@ -52,7 +52,12 @@ export default function Tag({
         }}
       />
 
-      <Text variant="body-extra-large">{children}</Text>
+      <Text
+        variant="body-large"
+        className="md:text-[28px] md:leading-[1.3] md:tracking-[-0.005em]"
+      >
+        {children}
+      </Text>
     </div>
   );
 }
