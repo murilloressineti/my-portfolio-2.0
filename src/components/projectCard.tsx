@@ -9,19 +9,17 @@ import ArrowUpRight from "../assets/icons/arrow-up-right.svg?react";
 import GitHubLogo from "../assets/icons/github-logo.svg?react";
 import Tag from "./tag";
 
-export const projectCardVariants = cva(
-  "flex flex-col md:flex-row gap-7 md:gap-12 items-start",
-  {
-    variants: {
-      variant: {
-        default: "",
-      },
+export const projectCardVariants = cva("flex min-w-0 w-full", {
+  variants: {
+    variant: {
+      default: "flex-col md:flex-row items-start gap-7 md:gap-12",
+      grid: "flex-col items-start gap-7",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
 
 interface ProjectCardProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -35,7 +33,7 @@ interface ProjectCardProps
 }
 
 export default function ProjectCard({
-  variant,
+  variant = "default",
   title,
   description,
   imageSrc,
@@ -52,11 +50,21 @@ export default function ProjectCard({
         alt={`Preview do projeto ${title}`}
         variant="default"
         animate={true}
-        className="w-full shrink-0"
+        className={cn(
+          "w-full shrink-0",
+          variant === "grid" ? "md:w-full md:h-auto" : "w-full shrink-0"
+        )}
       />
 
       <div className="flex flex-col min-w-0 w-full">
-        <div className="flex flex-col gap-5 md:flex-row md:justify-between md:items-center w-full">
+        <div
+          className={cn(
+            "flex w-full gap-5",
+            variant === "grid"
+              ? "flex-col items-start"
+              : "flex-col md:flex-row md:justify-between md:items-start"
+          )}
+        >
           <Text variant="h3" as="h3" className="flex-1">
             {title}
           </Text>
@@ -97,15 +105,24 @@ export default function ProjectCard({
 
         <Text
           variant="body-large"
-          className="text-text-secondary opacity-70 mt-7 md:mt-12 line-clamp-3 md:line-clamp-none"
+          className={cn(
+            "text-text-secondary opacity-70 mt-7 md:mt-12",
+            variant === "grid"
+              ? "line-clamp-3 md:mt-7"
+              : "line-clamp-3 md:line-clamp-none"
+          )}
         >
           {description}
         </Text>
 
         <div className="flex flex-nowrap md:flex-wrap gap-3 mt-5 overflow-x-auto no-scrollbar max-w-full">
           {techs.map((tech) => (
-            <Tag key={tech} dot={tech} className="shrink-0">
-              {/* Deixa a primeira letra maiúscula para o nome da tag */}
+            <Tag
+              key={tech}
+              dot={tech}
+              size={variant === "grid" ? "sm" : "default"}
+              className="shrink-0"
+            >
               {tech.charAt(0).toUpperCase() + tech.slice(1)}
             </Tag>
           ))}

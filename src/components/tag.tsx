@@ -4,18 +4,22 @@ import { cn } from "../lib/utils";
 import Text from "./text";
 
 export const tagVariants = cva(
-  "inline-flex items-center gap-3 md:gap-4 py-1 px-2 md:py-1.5 md:px-3 rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default",
+  "inline-flex items-center rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default",
   {
     variants: {
       variant: {
         default: "",
         outline: "bg-transparent",
       },
+      size: {
+        default: "gap-4 py-1.5 px-3",
+        sm: "gap-3 py-1 px-2",
+      },
     },
     defaultVariants: {
       variant: "default",
     },
-  },
+  }
 );
 
 const dotHexColors = {
@@ -27,24 +31,30 @@ const dotHexColors = {
 };
 
 interface TagProps
-  extends React.ComponentProps<"div">, VariantProps<typeof tagVariants> {
+  extends React.ComponentProps<"div">,
+    VariantProps<typeof tagVariants> {
   dot?: keyof typeof dotHexColors;
   children: React.ReactNode;
 }
 
 export default function Tag({
   variant,
+  size = "default",
   dot = "react",
   className,
   children,
   ...props
 }: TagProps) {
   const selectedHex = dotHexColors[dot];
+  const textClasses =
+    size === "sm"
+      ? "text-[20px] leading-[1.6] tracking-normal font-normal"
+      : "text-[20px] leading-[1.6] md:text-[28px] md:leading-[1.3] md:tracking-[-0.005em] font-normal";
 
   return (
-    <div className={cn(tagVariants({ variant, className }))} {...props}>
+    <div className={cn(tagVariants({ variant, size, className }))} {...props}>
       <span
-        className="h-2 w-2 md:h-3 md:w-3 rounded-full shrink-0"
+        className={cn("rounded-full shrink-0 h-3 w-3")}
         style={{
           backgroundColor: selectedHex,
           // O valor 33 em hexadecimal é igual a 51 em decimal, que representa exatamente 20% de 255.
@@ -52,12 +62,7 @@ export default function Tag({
         }}
       />
 
-      <Text
-        variant="body-large"
-        className="md:text-[28px] md:leading-[1.3] md:tracking-[-0.005em]"
-      >
-        {children}
-      </Text>
+      <Text className={textClasses}>{children}</Text>
     </div>
   );
 }

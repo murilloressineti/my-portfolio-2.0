@@ -69,14 +69,12 @@ export default function App() {
       </div>
 
       <div>
-        <Tag dot="react">React</Tag>
-        <Tag dot="tailwind">Tailwind CSS</Tag>
-        <Tag dot="typescript">TypeScript</Tag>
-        <Tag dot="figma">Figma</Tag>
-        <Tag dot="git">Git</Tag>
+        <Tag dot="react" size="default">React</Tag>
+        <Tag dot="tailwind" size="default">Tailwind CSS</Tag>
+        <Tag dot="typescript" size="default">TypeScript</Tag>
+        <Tag dot="figma" size="default">Figma</Tag>
+        <Tag dot="git" size="default">Git</Tag>
       </div>
-
-      <div></div>
 
       <div>
         <Link href="/" isSelected>
@@ -184,7 +182,7 @@ export default function App() {
         ></ProjectThumbnail>
       </div>
 
-      <div className="w-full overflow-hidden p-4 md:p-30">
+      <div className="w-full overflow-hidden p-4 md:px-30">
         <ProjectCard
           title="Landing Page - Clube de Assinatura de Livros"
           description="Este projeto é um portfólio online interativo desenvolvido com foco em responsividade, acessibilidade e performance. A proposta é apresentar os projetos pessoais e profissionais de forma clara e objetiva, com navegação fluida e componentes reutilizáveis."
@@ -194,6 +192,48 @@ export default function App() {
           techs={["react", "react", "react", "react", "react", "react"]}
         />
       </div>
+
+      <section className="max-w-7xl mx-auto">
+        <div className="flex flex-col gap-2 mb-20">
+          <Text variant="headline-medium">Portfólio</Text>
+          <Text variant="h2" className="uppercase">
+            Veja os outros projetos
+          </Text>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Card 1 */}
+          <ProjectCard
+            variant="grid"
+            title="Landing Page - Clube de Assinatura"
+            description="Landing page responsiva e visualmente atraente para um clube de assinatura de livros. O objetivo foi criar uma experiência informativa e envolvente, destacando o produto e capturando a atenção do visitante."
+            imageSrc={ThumbImg}
+            githubUrl="#"
+            deployUrl="#"
+            techs={["react", "tailwind", "figma","figma", "figma", "figma"]}
+          />
+          {/* Card 2 */}
+          <ProjectCard
+            variant="grid"
+            title="Landing Page - Clube de Assinatura"
+            description="Landing page responsiva e visualmente atraente para um clube de assinatura de livros. O objetivo foi criar uma experiência informativa e envolvente, destacando o produto e capturando a atenção do visitante."
+            imageSrc={ThumbImg}
+            githubUrl="#"
+            deployUrl="#"
+            techs={["react", "tailwind", "figma"]}
+          />
+          {/* Card 3 */}
+          <ProjectCard
+            variant="grid"
+            title="Landing Page - Clube de Assinatura"
+            description="Landing page responsiva e visualmente atraente para um clube de assinatura de livros. O objetivo foi criar uma experiência informativa e envolvente, destacando o produto e capturando a atenção do visitante."
+            imageSrc={ThumbImg}
+            githubUrl="#"
+            deployUrl="#"
+            techs={["react", "tailwind", "figma"]}
+          />
+        </div>
+      </section>
     </div>
   );
 }
