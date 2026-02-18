@@ -184,14 +184,14 @@ export default function App() {
         ></ProjectThumbnail>
       </div>
 
-      <div>
+      <div className="w-full overflow-hidden p-4 md:p-30">
         <ProjectCard
-          title="Portfólio Interativo de Desenvolvedor"
+          title="Landing Page - Clube de Assinatura de Livros"
           description="Este projeto é um portfólio online interativo desenvolvido com foco em responsividade, acessibilidade e performance. A proposta é apresentar os projetos pessoais e profissionais de forma clara e objetiva, com navegação fluida e componentes reutilizáveis."
           imageSrc={ThumbImg}
           githubUrl="https://github.com/murilloressineti"
           deployUrl="https://www.google.com/"
-          techs={["react", "react", "react"]}
+          techs={["react", "react", "react", "react", "react", "react"]}
         />
       </div>
     </div>

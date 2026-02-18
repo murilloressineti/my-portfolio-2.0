@@ -20,12 +20,11 @@ export const projectCardVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  },
+  }
 );
 
 interface ProjectCardProps
-  extends
-    React.HTMLAttributes<HTMLDivElement>,
+  extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof projectCardVariants> {
   title: string;
   description: string;
@@ -53,16 +52,16 @@ export default function ProjectCard({
         alt={`Preview do projeto ${title}`}
         variant="default"
         animate={true}
-        className="w-full md:w-auto shrink-0"
+        className="w-full shrink-0"
       />
 
-      <div className="flex flex-col">
-        <div className="flex justify-between items-center w-full">
-          <Text variant="h3" as="h3">
+      <div className="flex flex-col min-w-0 w-full">
+        <div className="flex flex-col gap-5 md:flex-row md:justify-between md:items-center w-full">
+          <Text variant="h3" as="h3" className="flex-1">
             {title}
           </Text>
 
-          <div className="flex gap-3">
+          <div className="flex gap-3 shrink-0">
             {githubUrl && (
               <Button
                 as="a"
@@ -98,14 +97,14 @@ export default function ProjectCard({
 
         <Text
           variant="body-large"
-          className="text-text-secondary opacity-70 mt-12"
+          className="text-text-secondary opacity-70 mt-7 md:mt-12 line-clamp-3 md:line-clamp-none"
         >
           {description}
         </Text>
 
-        <div className="flex flex-wrap gap-3 mt-5">
+        <div className="flex flex-nowrap md:flex-wrap gap-3 mt-5 overflow-x-auto no-scrollbar max-w-full">
           {techs.map((tech) => (
-            <Tag key={tech} dot={tech}>
+            <Tag key={tech} dot={tech} className="shrink-0">
               {/* Deixa a primeira letra maiúscula para o nome da tag */}
               {tech.charAt(0).toUpperCase() + tech.slice(1)}
             </Tag>
