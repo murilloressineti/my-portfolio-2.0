@@ -62,6 +62,8 @@ export default function Button({
       className={cn(buttonVariants({ variant, shape, size, className }))}
       {...props}
     >
+      {/* Usamos React.Children.map para percorrer os filhos (children) com segurança. 
+      Diferente do .map comum, ele funciona mesmo se houver apenas um filho (objeto) ou vários (array).*/}
       {React.Children.map(children, (child) => {
         // Se o filho for uma string (texto puro), envolvemos no componente Text
         if (typeof child === "string") {
