@@ -12,6 +12,41 @@ import ProjectThumbnail from "./components/projectThumbnail";
 import ThumbImg from "./assets/thumbnail/thumb.png";
 import MackbookThumbImg from "./assets/thumbnail/macbook.png";
 import ProjectCard from "./components/projectCard";
+import TimelineItem from "./components/timelineItem";
+
+const myJourney = [
+  {
+    title: "Primmeiros passos na programação",
+    description: "Introdução à lógica e fundamentos.",
+    date: "Setembro 2022",
+    tag: "Início da Jornada",
+    side: "left",
+  },
+  {
+    title: "Descobrindo o front-end",
+    description:
+      "Foco em interfaces visuais, culminando no Projeto RocketMovies.",
+    date: "Março 2023",
+    tag: "Desenvolvimento Web",
+    side: "right",
+  },
+  {
+    title: "Formação full-stack",
+    description:
+      "Aprofundamento técnico, elevando o conhecimento para o desenvolvimento web completo.",
+    date: "Agosto 2024",
+    tag: "Expansão Técnica",
+    side: "left",
+  },
+  {
+    title: "Atuação e ensino superior",
+    description:
+      "Início como Assistente de Sistemas no IJC e do curso de Análise e Desenvolvimento de Sistemas.",
+    date: "Janeiro 2025",
+    tag: "Início Profissional e Acadêmico",
+    side: "right",
+  },
+];
 
 export default function App() {
   return (
@@ -252,6 +287,31 @@ export default function App() {
             githubUrl="#"
             deployUrl="#"
             techs={["react", "tailwind", "figma"]}
+          />
+        </div>
+      </section>
+
+      {/* TimeLine */}
+      <section className="min-h-screen bg-white py-20 px-4 bg-bg-surface">
+        <div className="max-w-6xl mx-auto flex flex-col border border-b-bg-dark">
+          {/* Teste 1: Lado Esquerdo (Início) */}
+          <TimelineItem
+            side="left"
+            title="Primeiros passos na programação"
+            description="Introdução à lógica e fundamentos."
+            date="Setembro 2022"
+            badgeText="Início da Jornada"
+            badgeIcon={<ArrowUpRight className="w-6 h-6" />}
+          />
+
+          {/* Teste 2: Lado Direito (Avanço) */}
+          <TimelineItem
+            side="right"
+            title="Descobrindo o front-end"
+            description="Foco em interfaces visuais, culminando no Projeto RocketMovies."
+            date="Março 2023"
+            badgeText="Desenvolvimento Web"
+            badgeIcon={<ArrowUpRight className="w-6 h-6" />}
           />
         </div>
       </section>
