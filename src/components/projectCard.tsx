@@ -22,7 +22,8 @@ export const projectCardVariants = cva("flex min-w-0 w-full", {
 });
 
 interface ProjectCardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof projectCardVariants> {
   title: string;
   description: string;
@@ -43,6 +44,8 @@ export default function ProjectCard({
   className,
   ...props
 }: ProjectCardProps) {
+  const desktopTechs = techs.slice(0, 3);
+  const remainingCount = techs.length - 3;
   return (
     <div className={cn(projectCardVariants({ variant, className }))} {...props}>
       <ProjectThumbnail
@@ -52,7 +55,7 @@ export default function ProjectCard({
         animate={true}
         className={cn(
           "w-full shrink-0",
-          variant === "grid" ? "md:w-full md:h-auto" : "w-full shrink-0"
+          variant === "grid" ? "md:w-full md:h-auto" : "w-full shrink-0",
         )}
       />
 
@@ -62,7 +65,7 @@ export default function ProjectCard({
             "flex w-full gap-5",
             variant === "grid"
               ? "flex-col items-start"
-              : "flex-col md:flex-row md:justify-between md:items-start"
+              : "flex-col md:flex-row md:justify-between md:items-start",
           )}
         >
           <Text variant="h3" as="h3" className="flex-1">
@@ -109,23 +112,45 @@ export default function ProjectCard({
             "text-text-secondary opacity-70 mt-7 md:mt-12",
             variant === "grid"
               ? "line-clamp-3 md:mt-7"
-              : "line-clamp-3 md:line-clamp-none"
+              : "line-clamp-3 md:line-clamp-none",
           )}
         >
           {description}
         </Text>
 
-        <div className="flex flex-nowrap md:flex-wrap gap-3 mt-5 overflow-x-auto no-scrollbar max-w-full">
-          {techs.map((tech) => (
-            <Tag
-              key={tech}
-              dot={tech}
-              size={variant === "grid" ? "sm" : "default"}
-              className="shrink-0"
-            >
-              {tech.charAt(0).toUpperCase() + tech.slice(1)}
-            </Tag>
-          ))}
+        <div className="relative mt-5 w-full">
+          {/* Versão MOBILE: Scroll Horizontal com Fade */}
+          <div
+            className={cn(
+              "flex gap-3 overflow-x-auto no-scrollbar w-full",
+              // No Desktop, escondemos esse container de scroll se for o modo grid
+              variant === "grid" ? "md:hidden" : "md:flex md:flex-wrap",
+            )}
+          >
+            {techs.map((tech) => (
+              <Tag key={tech} dot={tech} size="default" className="shrink-0">
+                {tech.charAt(0).toUpperCase() + tech.slice(1)}
+              </Tag>
+            ))}
+            {/* Gradiente de Fade (Mobile Only) */}
+            <div className="absolute top-0 right-0 h-full w-12 bg-linear-to-l from-bg-surface to-transparent pointer-events-none md:hidden" />
+          </div>
+
+          {/* Versão DESKTOP (Grid): Padrão +X */}
+          {variant === "grid" && (
+            <div className="hidden md:flex items-center gap-3">
+              {desktopTechs.map((tech) => (
+                <Tag key={tech} dot={tech} size="sm">
+                  {tech.charAt(0).toUpperCase() + tech.slice(1)}
+                </Tag>
+              ))}
+              {remainingCount > 0 && (
+                <Text variant="body-small" className="text-text-secondary ml-1">
+                  +{remainingCount}
+                </Text>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

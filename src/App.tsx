@@ -16,6 +16,7 @@ import ProjectCard from "./components/projectCard";
 export default function App() {
   return (
     <div className="grid gap-3">
+      {/* Text */}
       <div className="flex flex-col gap-2">
         <Text variant="hero-desktop" className="text-feedback-error">
           Olá, mundo!
@@ -64,18 +65,31 @@ export default function App() {
         </Text>
       </div>
 
+      {/* Icon */}
       <div className="flex gap-1">
         <Icon svg={ArrowRight} className="fill-brand-primary" animate />
       </div>
 
+      {/* Tag */}
       <div>
-        <Tag dot="react" size="default">React</Tag>
-        <Tag dot="tailwind" size="default">Tailwind CSS</Tag>
-        <Tag dot="typescript" size="default">TypeScript</Tag>
-        <Tag dot="figma" size="default">Figma</Tag>
-        <Tag dot="git" size="default">Git</Tag>
+        <Tag dot="react" size="default">
+          React
+        </Tag>
+        <Tag dot="tailwind" size="default">
+          Tailwind CSS
+        </Tag>
+        <Tag dot="typescript" size="default">
+          TypeScript
+        </Tag>
+        <Tag dot="figma" size="default">
+          Figma
+        </Tag>
+        <Tag dot="git" size="default">
+          Git
+        </Tag>
       </div>
 
+      {/* Link */}
       <div>
         <Link href="/" isSelected>
           Página Inicial
@@ -83,6 +97,7 @@ export default function App() {
         <Link href="#">Sobre</Link>
       </div>
 
+      {/* Button Header */}
       <div className="flex gap-3">
         <Button variant="secondary" shape="rounded">
           <Icon svg={GitHubLogo} />
@@ -110,6 +125,7 @@ export default function App() {
         </div>
       </div>
 
+      {/* Button */}
       <div>
         <Button variant="primary" shape="rectangular">
           Veja Meus Projetos
@@ -122,6 +138,7 @@ export default function App() {
         </Button>
       </div>
 
+      {/* Button GitHub */}
       <div className="flex">
         <Button
           as="a"
@@ -146,6 +163,7 @@ export default function App() {
         </Button>
       </div>
 
+      {/* Input */}
       <div className="flex flex-col gap-8 max-w-md">
         <Input
           label="Mensagem"
@@ -160,6 +178,7 @@ export default function App() {
         />
       </div>
 
+      {/* Thumbnail */}
       <div className="flex flex-col gap-5">
         <ProjectThumbnail
           src={ThumbImg}
@@ -182,6 +201,7 @@ export default function App() {
         ></ProjectThumbnail>
       </div>
 
+      {/* ProjectCard */}
       <div className="w-full overflow-hidden p-4 md:px-30">
         <ProjectCard
           title="Landing Page - Clube de Assinatura de Livros"
@@ -193,6 +213,7 @@ export default function App() {
         />
       </div>
 
+      {/* ProjectCard Grid */}
       <section className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-2 mb-20">
           <Text variant="headline-medium">Portfólio</Text>
@@ -210,7 +231,7 @@ export default function App() {
             imageSrc={ThumbImg}
             githubUrl="#"
             deployUrl="#"
-            techs={["react", "tailwind", "figma","figma", "figma", "figma"]}
+            techs={["react", "tailwind", "figma", "figma", "figma", "figma"]}
           />
           {/* Card 2 */}
           <ProjectCard
