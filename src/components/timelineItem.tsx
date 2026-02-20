@@ -113,7 +113,7 @@ function TimelineContent({
   return (
     <div
       className={cn(
-        "flex flex-col w-full bg-bg-default rounded-lg p-6",
+        "flex flex-col w-full bg-bg-default rounded-lg p-6 transition-all duration-300 ease-in-out border border-transparent hover:border-neutral-200 hover:shadow-md hover:-translate-y-1",
         align === "right" ? "items-end text-right" : "items-start text-left",
       )}
     >
@@ -148,8 +148,14 @@ function TimelineBadge({
   icon: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-4 p-3 bg-neutral-gray-300 rounded-lg w-full md:w-fit h-full md:h-fit">
-      <div className="shrink-0">{icon}</div>
+    <div
+      className={cn(
+        "group flex flex-col md:flex-row items-center justify-center gap-4 p-3 bg-neutral-gray-300 rounded-lg w-full md:w-fit h-full md:h-fit transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1",
+      )}
+    >
+      <div className="shrink-0 transition-transform duration-300 group-hover:scale-110">
+        {icon}
+      </div>
       <Text
         variant="body-base"
         className="text-neutral-black font-bold text-center"
