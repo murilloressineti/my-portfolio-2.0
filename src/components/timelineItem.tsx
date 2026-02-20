@@ -44,7 +44,7 @@ export default function TimelineItem({
     <div
       className={cn(
         timelineItemVariants({ side, className }),
-        "md:items-center items-stretch mb-6 md:mb-13",
+        "md:items-center items-stretch mb-6 md:mb-13 last:mb-0",
       )}
       {...props}
     >
@@ -109,6 +109,7 @@ function TimelineContent({
   date: string;
   align: "left" | "right";
 }) {
+  const parts = title.split("*");
   return (
     <div
       className={cn(
@@ -117,7 +118,14 @@ function TimelineContent({
       )}
     >
       <Text variant="h4" className="uppercase mb-2 font-normal">
-        {title}
+        {parts.map((part, index) => (
+          <span
+            key={index}
+            className={title.includes(`*${part}*`) ? "font-semibold" : ""}
+          >
+            {part}
+          </span>
+        ))}
       </Text>
       <Text variant="body-base" className="text-text-secondary mb-8">
         {description}
