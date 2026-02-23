@@ -4,7 +4,7 @@ import { cn } from "../lib/utils";
 import Text from "./text";
 
 export const tagVariants = cva(
-  "inline-flex items-center rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default",
+  "inline-flex items-center rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default hover:shadow-sm",
   {
     variants: {
       variant: {
@@ -19,7 +19,7 @@ export const tagVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  }
+  },
 );
 
 const dotHexColors = {
@@ -31,8 +31,7 @@ const dotHexColors = {
 };
 
 interface TagProps
-  extends React.ComponentProps<"div">,
-    VariantProps<typeof tagVariants> {
+  extends React.ComponentProps<"div">, VariantProps<typeof tagVariants> {
   dot?: keyof typeof dotHexColors;
   children: React.ReactNode;
 }
@@ -52,9 +51,15 @@ export default function Tag({
       : "text-[20px] leading-[1.6] md:text-[28px] md:leading-[1.3] md:tracking-[-0.005em] font-normal";
 
   return (
-    <div className={cn(tagVariants({ variant, size, className }))} {...props}>
+    <div
+      className={cn(tagVariants({ variant, size, className }), "group")}
+      {...props}
+    >
       <span
-        className={cn("rounded-full shrink-0 h-3 w-3")}
+        className={cn(
+          "rounded-full shrink-0 h-3 w-3 transition-all duration-500",
+          size === "sm" ? "group-hover:scale-115" : "group-hover:scale-125",
+        )}
         style={{
           backgroundColor: selectedHex,
           // O valor 33 em hexadecimal é igual a 51 em decimal, que representa exatamente 20% de 255.
