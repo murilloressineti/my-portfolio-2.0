@@ -15,6 +15,10 @@ import ProjectCard from "./components/projectCard";
 import Timeline from "./components/timeline";
 import TimelineItem from "./components/timelineItem";
 import { timelineSteps } from "./constants/timeline-steps";
+import BentoGrid from "./components/bentoGrid";
+import BentoItem from "./components/bentoItem";
+
+import Photo from "./assets/images/gallery/original.jpg";
 
 export default function App() {
   return (
@@ -267,6 +271,47 @@ export default function App() {
           ))}
         </Timeline>
       </section>
+
+      {/* Gallery */}
+      <div className="max-w-7xl mx-auto border p-30 border-b-bg-dark">
+        <BentoGrid>
+          <BentoItem
+            image={Photo}
+            title="Formado na EM&T e integrante de uma banda, encontrei na música minha forma de expressão."
+            textPosition="bottom"
+          />
+
+          <BentoItem
+            image={Photo}
+            title="Meu ponto de equilíbrio. Onde recarrego a energia e lembro do que realmente importa."
+            textPosition="top"
+          />
+
+          <BentoItem
+            image={Photo}
+            title="Jogos me divertem e desafiam. É onde relaxo, mergulho em boas histórias e deixo a imaginação correr solta."
+            textPosition="bottom"
+          />
+
+          <BentoItem
+            image={Photo}
+            title="Treinar me traz foco e disciplina, essenciais para manter a saúde física e mental em dia."
+            textPosition="bottom"
+          />
+
+          <BentoItem
+            image={Photo}
+            title="Autodesenvolvimento, espiritualidade, negócios e ficção. Ler me ajuda a evoluir como pessoa e profissional."
+            textPosition="top"
+          />
+
+          <BentoItem
+            image={Photo}
+            title="Me conecto com o esporte desde cedo. Suas histórias de superação sempre me inspiram."
+            textPosition="bottom"
+          />
+        </BentoGrid>
+      </div>
     </div>
   );
 }
