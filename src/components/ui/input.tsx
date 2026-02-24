@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../lib/utils";
-import Text from "./text";
+import { cn } from "../../lib/utils";
+import Text from "../ui/text";
 
 export const inputVariants = cva(
   "w-full bg-bg-default border border-border-default rounded-lg p-4 text-text-primary placeholder:text-neutral-gray-400 hover:border-border-hover focus:border-border-focus resize-none",

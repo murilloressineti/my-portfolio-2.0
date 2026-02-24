@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../lib/utils";
-import Text from "./text";
+import { cn } from "../../lib/utils";
+import Text from "../ui/text";
 
 export const timelineItemVariants = cva(
   "grid grid-cols-[1fr_auto_1fr] items-center gap-4 md:gap-12 w-full",

@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../lib/utils";
-import Text from "./text";
+import { cn } from "../../lib/utils";
+import Text from "../ui/text";
 
 export const linkVariants = cva(
   "transition-colors duration-300 cursor-pointer inline-block",

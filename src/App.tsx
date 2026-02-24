@@ -1,23 +1,17 @@
-import Text from "./components/text";
-import Icon from "./components/icon";
+import { Button, Icon, Input, Link, Tag, Text } from "./components/ui";
 import ArrowRight from "./assets/icons/arrow-right.svg?react";
 import ArrowUpRight from "./assets/icons/arrow-up-right.svg?react";
 import LinkedinLogo from "./assets/icons/linkedin-logo.svg?react";
 import GitHubLogo from "./assets/icons/github-logo.svg?react";
-import Tag from "./components/tag";
-import Link from "./components/link";
-import Button from "./components/button";
-import Input from "./components/input";
-import ProjectThumbnail from "./components/projectThumbnail";
+
+import { ProjectThumbnail, ProjectCard } from "./components/projects";
 import ThumbImg from "./assets/thumbnail/thumb.png";
 import MackbookThumbImg from "./assets/thumbnail/macbook.png";
-import ProjectCard from "./components/projectCard";
-import Timeline from "./components/timeline";
-import TimelineItem from "./components/timelineItem";
+
+import { Timeline, TimelineItem } from "./components/timeline";
 import { timelineSteps } from "./constants/timeline-steps";
-import BentoGrid from "./components/bentoGrid";
-import BentoCarousel from "./components/bentoCarousel";
-import BentoItem from "./components/bentoItem";
+
+import { BentoGrid, BentoItem, BentoCarousel } from "./components/gallery";
 import { galleryItems } from "./constants/gallery-items";
 
 export default function App() {

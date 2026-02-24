@@ -1,6 +1,6 @@
 import React from "react";
-import { cn } from "../lib/utils";
-import Text from "./text";
+import { cn } from "../../lib/utils";
+import Text from "../ui/text";
 
 interface BentoItemProps extends React.ComponentProps<"div"> {
   image: string;

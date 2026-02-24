@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../lib/utils";
-import Text from "./text";
+import { cn } from "../../lib/utils";
+import Text from "../ui/text";
 
 export const tagVariants = cva(
   "inline-flex items-center rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default hover:shadow-sm",
