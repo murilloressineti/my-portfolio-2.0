@@ -16,10 +16,9 @@ import Timeline from "./components/timeline";
 import TimelineItem from "./components/timelineItem";
 import { timelineSteps } from "./constants/timeline-steps";
 import BentoGrid from "./components/bentoGrid";
+import BentoCarousel from "./components/bentoCarousel";
 import BentoItem from "./components/bentoItem";
-
-import PhotoA from "./assets/images/gallery/original.jpg";
-import PhotoB from "./assets/images/gallery/original-1.jpg";
+import { galleryItems } from "./constants/gallery-items";
 
 export default function App() {
   return (
@@ -274,44 +273,22 @@ export default function App() {
       </section>
 
       {/* Gallery */}
-      <div className="max-w-7xl mx-auto border p-30 border-b-bg-dark">
-        <BentoGrid>
-          <BentoItem
-            image={PhotoA}
-            title="Formado na EM&T e integrante de uma banda, encontrei na música minha forma de expressão."
-            textPosition="bottom"
-          />
+      <div className="max-w-7xl md:mx-auto my-20  md:p-30 overflow-hidden">
+        <div className="hidden md:block">
+          <BentoGrid>
+            {galleryItems.map((item, index) => (
+              <BentoItem key={index} {...item} />
+            ))}
+          </BentoGrid>
+        </div>
 
-          <BentoItem
-            image={PhotoB}
-            title="Meu ponto de equilíbrio. Onde recarrego a energia e lembro do que realmente importa."
-            textPosition="top"
-          />
-
-          <BentoItem
-            image={PhotoA}
-            title="Jogos me divertem e desafiam. É onde relaxo, mergulho em boas histórias e deixo a imaginação correr solta."
-            textPosition="bottom"
-          />
-
-          <BentoItem
-            image={PhotoB}
-            title="Treinar me traz foco e disciplina, essenciais para manter a saúde física e mental em dia."
-            textPosition="top"
-          />
-
-          <BentoItem
-            image={PhotoA}
-            title="Autodesenvolvimento, espiritualidade, negócios e ficção. Ler me ajuda a evoluir como pessoa e profissional."
-            textPosition="bottom"
-          />
-
-          <BentoItem
-            image={PhotoB}
-            title="Me conecto com o esporte desde cedo. Suas histórias de superação sempre me inspiram."
-            textPosition="top"
-          />
-        </BentoGrid>
+        <div className="block md:hidden">
+          <BentoCarousel>
+            {galleryItems.map((item, index) => (
+              <BentoItem key={index} {...item} textPosition="bottom" />
+            ))}
+          </BentoCarousel>
+        </div>
       </div>
     </div>
   );
