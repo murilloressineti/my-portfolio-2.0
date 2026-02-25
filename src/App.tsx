@@ -270,17 +270,21 @@ export default function App() {
       <div className="max-w-7xl md:mx-auto my-20  md:p-30 overflow-hidden">
         <div className="hidden md:block">
           <BentoGrid>
-            {galleryItems.map((item, index) => (
-              <BentoItem key={index} {...item} />
-            ))}
+            {[...galleryItems]
+              .sort((a, b) => (a.desktopOrder || 0) - (b.desktopOrder || 0))
+              .map((item, index) => (
+                <BentoItem key={index} {...item} />
+              ))}
           </BentoGrid>
         </div>
 
         <div className="block md:hidden">
           <BentoCarousel>
-            {galleryItems.map((item, index) => (
-              <BentoItem key={index} {...item} textPosition="bottom" />
-            ))}
+            {galleryItems
+              .sort((a, b) => (a.mobileOrder || 0) - (b.mobileOrder || 0))
+              .map((item, index) => (
+                <BentoItem key={index} {...item} textPosition="bottom" />
+              ))}
           </BentoCarousel>
         </div>
       </div>
