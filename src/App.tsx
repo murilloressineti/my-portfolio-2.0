@@ -14,9 +14,11 @@ import { timelineSteps } from "./constants/timeline-steps";
 import { BentoGrid, BentoItem, BentoCarousel } from "./components/gallery";
 import { galleryItems } from "./constants/gallery-items";
 
+import { CTASection, Footer } from "./components/layout";
+
 export default function App() {
   return (
-    <div className="grid gap-3">
+    <div className="grid">
       {/* Text */}
       <div className="flex flex-col gap-2">
         <Text variant="hero-desktop" className="text-feedback-error">
@@ -288,6 +290,9 @@ export default function App() {
           </BentoCarousel>
         </div>
       </div>
+
+      <CTASection />
+      <Footer />
     </div>
   );
 }
