@@ -1,7 +1,6 @@
-import { Button, Icon, Input, Link, Tag, Text } from "./components/ui";
-import ArrowRight from "./assets/icons/arrow-right.svg?react";
+import { Button, Icon, Input, Tag, Text } from "./components/ui";
 import ArrowUpRight from "./assets/icons/arrow-up-right.svg?react";
-import LinkedinLogo from "./assets/icons/linkedin-logo.svg?react";
+
 import GitHubLogo from "./assets/icons/github-logo.svg?react";
 
 import { ProjectThumbnail, ProjectCard } from "./components/projects";
@@ -14,11 +13,14 @@ import { timelineSteps } from "./constants/timeline-steps";
 import { BentoGrid, BentoItem, BentoCarousel } from "./components/gallery";
 import { galleryItems } from "./constants/gallery-items";
 
+import { Header } from "./components/layout";
 import { CTASection, Footer } from "./components/layout";
 
 export default function App() {
   return (
     <div className="grid">
+      <Header />
+
       {/* Tag */}
       <div>
         <Tag dot="react" size="default">
@@ -36,42 +38,6 @@ export default function App() {
         <Tag dot="git" size="default">
           Git
         </Tag>
-      </div>
-
-      {/* Link */}
-      <div>
-        <Link href="/" isSelected>
-          Página Inicial
-        </Link>
-        <Link href="#">Sobre</Link>
-      </div>
-
-      {/* Button Header */}
-      <div className="flex gap-3">
-        <Button variant="secondary" shape="rounded">
-          <Icon svg={GitHubLogo} />
-        </Button>
-        <Button variant="secondary" shape="rounded">
-          <Icon svg={LinkedinLogo} />
-        </Button>
-
-        <div>
-          <Button
-            variant="composite"
-            shape="none"
-            as="a"
-            href="#contato"
-            className="group gap-1.5"
-          >
-            <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:text-text-primary transition-all duration-300">
-              <Text variant="action-button">Vamos conversar</Text>
-            </div>
-
-            <div className="rounded-full p-3 bg-neutral-white border border-neutral-gray-300  group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:fill-text-primary transition-all duration-300">
-              <Icon svg={ArrowUpRight} animate={true} />
-            </div>
-          </Button>
-        </div>
       </div>
 
       {/* Button */}
