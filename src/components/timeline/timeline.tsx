@@ -19,7 +19,7 @@ export default function Timeline({
       {...props}
     >
       {/* Linha Central Vertical */}
-      <div className="absolute left-1/2 -top-10 -bottom-10 w-0.5 bg-border-default -translate-x-1/2 z-0 hidden md:block" />
+      <div className="absolute left-1/2 -top-10 -bottom-10 w-0.5 bg-border-default -translate-x-1/2 z-0  md:block" />
 
       {/* Container dos Itens */}
       <div className="relative z-10 flex flex-col">{children}</div>
