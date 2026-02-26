@@ -5,8 +5,8 @@ import LinkedinLogo from "./assets/icons/linkedin-logo.svg?react";
 import GitHubLogo from "./assets/icons/github-logo.svg?react";
 
 import { ProjectThumbnail, ProjectCard } from "./components/projects";
-import ThumbImg from "./assets/thumbnail/thumb.png";
-import MackbookThumbImg from "./assets/thumbnail/macbook.png";
+import ThumbImg from "./assets/images/thumbnail/thumb.png";
+import MackbookThumbImg from "./assets/images/thumbnail/macbook.png";
 
 import { Timeline, TimelineItem } from "./components/timeline";
 import { timelineSteps } from "./constants/timeline-steps";

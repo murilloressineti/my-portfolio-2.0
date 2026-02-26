@@ -1,5 +1,5 @@
 import { Text } from "../ui";
-import LogoGray from "../../assets/images/logo-symbol-gray.svg";
+import LogoGray from "../../assets/logo/logo-symbol-gray.svg";
 
 export default function Footer() {
   return (

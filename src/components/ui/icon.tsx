@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const iconVariants = cva("transition-transform duration-300 ease-in-out", {
+export const iconVariants = cva("transition-all duration-300 ease-in-out", {
   variants: {
     animate: {
       false: "",

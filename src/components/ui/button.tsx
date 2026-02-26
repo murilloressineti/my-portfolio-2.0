@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 import Text from "../ui/text";
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer uppercase group",
+  "inline-flex items-center justify-between gap-2 transition-all duration-300 cursor-pointer uppercase group",
   {
     variants: {
       variant: {

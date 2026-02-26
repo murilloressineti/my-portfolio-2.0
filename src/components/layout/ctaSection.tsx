@@ -3,11 +3,20 @@ import ArrowUpRight from "../../assets/icons/arrow-up-right.svg?react";
 import Download from "../../assets/icons/download.svg?react";
 import LinkedinLogo from "../../assets/icons/linkedin-logo.svg?react";
 import GitHubLogo from "../../assets/icons/github-logo.svg?react";
+import GridBG from "../../assets/images/background/grid-bg.png";
 
 export default function CTASection() {
   return (
     <section className="bg-black py-30 px-6 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto items-center justify-center flex flex-col text-center">
+      <div
+        className="absolute inset-0 opacity-100 pointer-events-none z-0"
+        style={{
+          backgroundImage: `url(${GridBG})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      />
+      <div className="max-w-7xl mx-auto items-center justify-center flex flex-col text-center relative z-10">
         <div className="max-w-175">
           <div className="flex flex-col">
             <Text variant="h1" className="text-neutral-white uppercase mb-3">
@@ -25,25 +34,26 @@ export default function CTASection() {
           {/* Buttons */}
           <div className="flex flex-col items-center justify-center md:flex-row gap-5 mb-16">
             <Button
-              variant="quaternary"
-              className="w-68 md:w-auto hover:bg-transparent hover:text-neutral-white hover:border hover:border-neutral-gray-300"
+              variant="composite"
+              className="w-68 md:w-auto bg-black border border-neutral-gray-200 text-text-inverted hover:bg-neutral-gray-200 hover:text-black"
             >
-              Entre em contato{" "}
+              Entre em contato
               <Icon
                 svg={ArrowUpRight}
                 animate={true}
-                className="group-hover:fill-neutral-white"
+                className="fill-neutral-white group-hover:fill-black"
               />
             </Button>
+
             <Button
-              variant="secondary"
-              className="w-68 md:w-auto bg-transparent text-neutral-white hover:text-text-secondary"
+              variant="composite"
+              className="w-68 md:w-auto bg-black border border-neutral-gray-200  text-text-inverted hover:bg-neutral-gray-200 hover:text-black"
             >
               Baixar currículo
               <Icon
                 svg={Download}
                 animate={false}
-                className="fill-neutral-white group-hover:fill-text-secondary transition-all duration-300 group-hover:translate-y-1"
+                className="fill-neutral-white group-hover:fill-black transition-all duration-300 group-hover:translate-y-1"
               />
             </Button>
           </div>
