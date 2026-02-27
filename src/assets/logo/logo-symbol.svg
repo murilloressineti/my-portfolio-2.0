@@ -1,35 +1,6 @@
 <svg width="29" height="32" viewBox="0 0 29 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_80_5952" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="32">
-<path d="M0 0.0224609H13.46V31.979H0V0.0224609Z" fill="white"/>
-</mask>
-<g mask="url(#mask0_80_5952)">
-<mask id="mask1_80_5952" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="32">
-<path d="M3.35282 10.5932L5.02939 9.6257V27.1229L8.38221 29.0586V7.68914L10.0585 6.72163V30.0267L13.4113 31.9626V0.0224609L0.496863 7.4791C0.189678 7.65614 0 7.98399 0 8.33867V23.6455C0 24.0005 0.189678 24.3283 0.496863 24.506L3.35282 26.1551V10.5932Z" fill="white"/>
-</mask>
-<g mask="url(#mask1_80_5952)">
-<path d="M0 0.0224609H13.4113V31.979H0V0.0224609Z" fill="#3171C6"/>
-</g>
-</g>
-<mask id="mask2_80_5952" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="15" y="0" width="14" height="32">
-<path d="M15.0654 0H28.5217V32H15.0654V0Z" fill="white"/>
-</mask>
-<g mask="url(#mask2_80_5952)">
-<mask id="mask3_80_5952" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="15" y="0" width="14" height="32">
-<path d="M28.4992 8.33867C28.4992 7.98399 28.3098 7.65614 28.0023 7.47849L15.0879 0.0224609V31.9626L18.4407 30.0267V16.1713L25.1464 20.0429V26.1551L28.0023 24.506C28.3098 24.3283 28.4992 24.0008 28.4992 23.6455V18.1479L25.1464 16.1127L18.4407 12.2411V6.11281L25.1464 9.98439V16.1121L28.4992 16.1358V8.33867Z" fill="white"/>
-</mask>
-<g mask="url(#mask3_80_5952)">
-<path d="M14.792 -0.273438H28.7954V32.2737H14.792V-0.273438Z" fill="#3171C6"/>
-</g>
-</g>
-<mask id="mask4_80_5952" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="20" y="19" width="4" height="11">
-<path d="M20.0977 19.2549H23.5985V29.0993H20.0977V19.2549Z" fill="white"/>
-</mask>
-<g mask="url(#mask4_80_5952)">
-<mask id="mask5_80_5952" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="20" y="19" width="4" height="11">
-<path d="M20.1167 19.2627V29.0587L23.5722 27.0638V21.112L20.1167 19.2627Z" fill="white"/>
-</mask>
-<g mask="url(#mask5_80_5952)">
-<path d="M14.7915 -0.273438H28.795V32.2737H14.7915V-0.273438Z" fill="#3171C6"/>
-</g>
-</g>
+<title>Logo MR - Murillo Ressineti</title>
+<path d="M3.35282 10.5932L5.02939 9.6257V27.1229L8.38221 29.0586V7.68914L10.0585 6.72163V30.0267L13.4113 31.9626V0.0224609L0.496863 7.4791C0.189678 7.65614 0 7.98399 0 8.33867V23.6455C0 24.0005 0.189678 24.3283 0.496863 24.506L3.35282 26.1551V10.5932Z" />
+<path d="M28.4992 8.33867C28.4992 7.98399 28.3098 7.65614 28.0023 7.47849L15.0879 0.0224609V31.9626L18.4407 30.0267V16.1713L25.1464 20.0429V26.1551L28.0023 24.506C28.3098 24.3283 28.4992 24.0008 28.4992 23.6455V18.1479L25.1464 16.1127L18.4407 12.2411V6.11281L25.1464 9.98439V16.1121L28.4992 16.1358V8.33867Z" />
+<path d="M20.1167 19.2629V29.0589L23.5722 27.0641V21.1122L20.1167 19.2629Z" />
 </svg>

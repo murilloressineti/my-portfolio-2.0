@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
-import Text from "../ui/text";
+import Text from "./text";
 
 export const linkVariants = cva(
   "transition-colors duration-300 cursor-pointer inline-block",
@@ -37,13 +37,22 @@ export default function Link({
   return (
     <Component
       className={cn(
+        "relative flex flex-col items-center justify-center",
         linkVariants({ variant: isSelected ? "active" : variant, className }),
       )}
       {...props}
     >
+      {/* O texto visível */}
       <Text variant={isSelected ? "action-link" : "body-large"}>
         {children}
       </Text>
+
+      <span
+        className="invisible block h-0 overflow-hidden font-semibold text-[20px] select-none"
+        aria-hidden="true"
+      >
+        {children}
+      </span>
     </Component>
   );
 }

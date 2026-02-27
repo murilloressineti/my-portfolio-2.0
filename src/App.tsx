@@ -6,9 +6,9 @@ import { Header, Footer } from "./components/layout";
 // Pages
 import {
   Home,
+  AboutMe,
   Projects,
   ProjectDetails,
-  AboutMe,
   Contact,
   NotFound,
 } from "./pages";
@@ -20,9 +20,9 @@ export default function App() {
       <main className="min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<AboutMe />} />
           <Route path="/projetos" element={<Projects />} />
           <Route path="/projetos/:id" element={<ProjectDetails />} />
-          <Route path="/sobre" element={<AboutMe />} />
           <Route path="/contato" element={<Contact />} />
 
           <Route path="*" element={<NotFound />} />

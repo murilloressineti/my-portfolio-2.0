@@ -1,93 +1,121 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Button, Link, Text, Icon } from "../ui";
+import { Link } from "react-router-dom";
+import { Button, NavLink, Text, Icon } from "../ui";
 import ArrowUpRight from "../../assets/icons/arrow-up-right.svg?react";
 import LinkedinLogo from "../../assets/icons/linkedin-logo.svg?react";
 import GitHubLogo from "../../assets/icons/github-logo.svg?react";
 import List from "../../assets/icons/list.svg?react";
 import Close from "../../assets/icons/close.svg?react";
 
-import LogoFull from "../../assets/logo/logo.svg";
-import LogoSymbol from "../../assets/logo/logo-symbol.svg";
+import LogoFull from "../../assets/logo/logo.svg?react";
+import LogoSymbol from "../../assets/logo/logo-symbol.svg?react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState("#home");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
-    { label: "Página Inicial", href: "#home" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Habilidades", href: "#habilidades" },
-    { label: "Projetos", href: "#projetos" },
+    { label: "Página Inicial", href: "/" },
+    { label: "Sobre", href: "/sobre" },
+    { label: "Projetos", href: "/projetos" },
   ];
 
   return (
-    <div className="relative z-50 bg-#FAFAFA border-b border-b-neutral-gray-100 md:border-0 md:bg-transparent">
+    <div className="relative z-50 bg-bg-default border-b border-b-neutral-gray-100 md:border-0 md:bg-transparent">
       <header className="w-full py-8 px-6 md:px-30">
         <div className="max-w-360 mx-auto flex items-center justify-between">
           {/* LOGO */}
-          <a href="#home" className="shrink-0">
-            <img
-              src={LogoFull}
-              alt="Murillo Ressineti"
-              className="hidden md:block w-auto"
-            />
-            <img
-              src={LogoSymbol}
-              alt="Murillo Ressineti"
-              className="block md:hidden w-auto"
-            />
-          </a>
+          <Link to="/" className="shrink-0">
+            <LogoFull className="hidden md:block w-auto" />
+            <LogoSymbol className="block md:hidden w-auto fill-brand-primary" />
+          </Link>
+
           {/* NAVEGAÇÃO DESKTOP */}
-          <nav className="hidden md:flex items-center gap-8 bg-neutral-gray-100 backdrop-blur-md rounded-full px-6 py-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                isSelected={activeHref === link.href}
-                onClick={() => setActiveHref(link.href)}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden md:flex items-center gap-12 bg-neutral-gray-100 backdrop-blur-md rounded-full px-12 py-3">
+            {navLinks.map((link) => {
+              const isSelected = location.pathname === link.href;
+
+              return (
+                <NavLink
+                  key={link.href}
+                  href={link.href}
+                  isSelected={isSelected}
+                  aria-current={isSelected ? "page" : undefined}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate(link.href);
+                  }}
+                  className="tracking-wide"
+                >
+                  {link.label}
+                </NavLink>
+              );
+            })}
           </nav>
+
           {/* BOTÕES DE AÇÃO */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="secondary" shape="rounded">
+            <Button
+              variant="secondary"
+              shape="rounded"
+              as="a"
+              href="https://github.com/murilloressineti"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar meu GitHub"
+            >
               <Icon svg={GitHubLogo} />
             </Button>
-            <Button variant="secondary" shape="rounded">
+            <Button
+              variant="secondary"
+              shape="rounded"
+              as="a"
+              href="https://www.linkedin.com/in/murilloressineti/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar meu LinkedIn"
+            >
               <Icon svg={LinkedinLogo} />
             </Button>
-            <Button
-              variant="composite"
-              shape="none"
-              as="a"
-              href="#contato"
-              className="group gap-1.5"
-            >
-              <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:text-text-primary transition-all duration-300">
-                <Text variant="action-button">Vamos conversar</Text>
-              </div>
-              <div className="rounded-full p-3 bg-neutral-white border border-neutral-gray-300  group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:fill-text-primary transition-all duration-300">
-                <Icon svg={ArrowUpRight} animate={true} />
-              </div>
-            </Button>
+            <Link to="/contato">
+              <Button
+                variant="composite"
+                shape="none"
+                className="group gap-1.5"
+              >
+                <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:text-text-primary transition-all duration-300">
+                  <Text variant="action-button">Vamos conversar</Text>
+                </div>
+                <div className="rounded-full p-3 bg-neutral-white border border-neutral-gray-300  group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:fill-text-primary transition-all duration-300">
+                  <Icon svg={ArrowUpRight} animate={true} />
+                </div>
+              </Button>
+            </Link>
           </div>
+
           {/* MOBILE ACTIONS */}
           <div className="flex md:hidden items-center gap-4">
-            <Button
-              variant="composite"
-              shape="none"
-              as="a"
-              href="#contato"
-              className="group gap-1.5"
-            >
-              <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:text-text-primary transition-all duration-300">
-                <Text variant="action-button">Vamos conversar</Text>
-              </div>
-            </Button>
+            <Link to="/contato">
+              <Button
+                variant="composite"
+                shape="none"
+                className="group gap-1.5"
+              >
+                <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:text-text-primary transition-all duration-300">
+                  <Text variant="action-button">Vamos conversar</Text>
+                </div>
+                <div className="rounded-full p-3 bg-neutral-white border border-neutral-gray-300  group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:fill-text-primary transition-all duration-300">
+                  <Icon svg={ArrowUpRight} animate={true} />
+                </div>
+              </Button>
+            </Link>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
               className="text-neutral-gray-600 hover:text-black transition-colors cursor-pointer"
             >
               <div
@@ -109,25 +137,47 @@ export default function Header() {
         }`}
       >
         <nav className="flex flex-col items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              isSelected={activeHref === link.href}
-              onClick={() => {
-                setActiveHref(link.href);
-                setIsMenuOpen(false);
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isSelected = location.pathname === link.href;
+
+            return (
+              <NavLink
+                key={link.href}
+                href={link.href}
+                isSelected={isSelected}
+                aria-current={isSelected ? "page" : undefined}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(link.href);
+                  setIsMenuOpen(false);
+                }}
+              >
+                {link.label}
+              </NavLink>
+            );
+          })}
 
           <div className="flex gap-3">
-            <Button variant="secondary" shape="rounded">
+            <Button
+              variant="secondary"
+              shape="rounded"
+              as="a"
+              href="https://github.com/murilloressineti"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar meu GitHub"
+            >
               <Icon svg={GitHubLogo} />
             </Button>
-            <Button variant="secondary" shape="rounded">
+            <Button
+              variant="secondary"
+              shape="rounded"
+              as="a"
+              href="https://www.linkedin.com/in/murilloressineti/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar meu LinkedIn"
+            >
               <Icon svg={LinkedinLogo} />
             </Button>
           </div>
