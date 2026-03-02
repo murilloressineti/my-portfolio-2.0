@@ -5,11 +5,12 @@ import { cn } from "../../lib/utils";
 export const textVariants = cva("font-sans", {
   variants: {
     variant: {
-      // Display / Hero Titles (Usados no topo da Home e Perfil)
-      "hero-desktop":
-        "text-[64px] leading-[1.2] tracking-[-0.005em] font-normal",
-      "hero-mobile":
-        "text-[42px] leading-[1.1] tracking-[-0.005em] font-normal",
+      // Display
+      hero: "text-[42px] md:text-[64px] leading-[1.2] md:leading-[1.2] tracking-[-0.005em] font-normal",
+      "body-hero":
+        "text-[16px] md:text-[28px] leading-normal md:leading-[1.3] tracking-normal md:tracking-[-0.005em] font-normal",
+      "section-body":
+        "text-[20px] md:text-[28px] leading-[1.6] md:leading-[1.3] tracking-normal md:tracking-[-0.005em] font-normal",
 
       // Body Text
       "body-extra-large":

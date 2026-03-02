@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Button, Text, Icon } from "../ui";
 import ArrowUpRight from "../../assets/icons/arrow-up-right.svg?react";
 import Download from "../../assets/icons/download.svg?react";
@@ -6,10 +7,11 @@ import GitHubLogo from "../../assets/icons/github-logo.svg?react";
 import GridBG from "../../assets/images/background/grid-bg.png";
 
 export default function CTASection() {
+  const navigate = useNavigate();
   return (
     <section className="bg-black py-30 px-6 relative overflow-hidden">
       <div
-        className="absolute inset-0 opacity-100 pointer-events-none z-0"
+        className="absolute inset-0 opacity-50 pointer-events-none z-0"
         style={{
           backgroundImage: `url(${GridBG})`,
           backgroundRepeat: "no-repeat",
@@ -36,6 +38,7 @@ export default function CTASection() {
             <Button
               variant="composite"
               className="w-68 md:w-auto bg-black border border-neutral-gray-200 text-text-inverted hover:bg-neutral-gray-200 hover:text-black"
+              onClick={() => navigate("/contato")}
             >
               Entre em contato
               <Icon
@@ -61,10 +64,11 @@ export default function CTASection() {
           {/* Redes Sociais */}
           <div className="flex items-center justify-center gap-6">
             <a
-              href="#"
-              target="_blank"
               className="group relative p-2 transition-all duration-500 ease-out hover:-translate-y-2"
-              aria-label="LinkedIn"
+              href="https://www.linkedin.com/in/murilloressineti/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar meu LinkedIn"
             >
               <Icon
                 svg={LinkedinLogo}
@@ -74,10 +78,11 @@ export default function CTASection() {
             </a>
 
             <a
-              href="#"
-              target="_blank"
               className="group relative p-2 transition-all duration-500 ease-out hover:-translate-y-2"
-              aria-label="GitHub"
+              href="https://github.com/murilloressineti"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar meu GitHub"
             >
               <Icon
                 svg={GitHubLogo}

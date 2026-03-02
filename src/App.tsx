@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Layout
 import { Header, Footer } from "./components/layout";
 
+// Utils
+import ScrollToTop from "./components/utils/ScrollTotop";
+
 // Pages
 import {
   Home,
@@ -16,6 +19,7 @@ import {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <main className="min-h-screen">
         <Routes>

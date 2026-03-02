@@ -17,17 +17,9 @@ export default function Section({
   return (
     <section
       id={id}
-      className={cn(
-        "py-20 md:py-30 px-6 md:px-12 lg:px-20 xl:px-30",
-        className,
-      )}
+      className={cn("py-30 px-6 md:px-12 lg:px-20 xl:px-30", className)}
     >
-      <div
-        className={cn(
-          "mx-auto w-full",
-          !isFullWidth && "max-w-360",
-        )}
-      >
+      <div className={cn("mx-auto w-full", !isFullWidth && "max-w-360")}>
         {children}
       </div>
     </section>

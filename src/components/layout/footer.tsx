@@ -11,8 +11,11 @@ export default function Footer() {
         </Text>
 
         <div className="shrink-0">
-          <Link to="/">
-            <LogoSymbol className="fill-neutral-gray-400"/>
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <LogoSymbol className="fill-neutral-gray-400" />
           </Link>
         </div>
       </div>

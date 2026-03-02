@@ -1,36 +1,190 @@
-import { Section } from "../components/layout";
-import { Text } from "../components/ui";
+import { useNavigate } from "react-router-dom";
+import { Section, CTASection } from "../components/layout";
+import { ProjectCard } from "../components/projects";
+import { Button, Icon, Tag, Text } from "../components/ui";
+import ArrowUpRight from "../assets/icons/arrow-up-right.svg?react";
+import ThumbImg from "../assets/images/thumbnail/thumb.png";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <main>
       <Section
         id="hero"
-        className="flex flex-col items-center justify-center text-center"
+        className="flex flex-col items-center justify-center text-center pb-60 md:pt-40 md:pb-55"
       >
-        <div className="flex flex-col items-center justify-center gap-2 max-w-212.5 mx-auto">
-          <Text variant="hero-desktop" className="text-text-primary">
+        <div className="flex flex-col items-center justify-center max-w-258 mx-auto">
+          <Text variant="hero" className="text-text-primary mb-4 md:mb-2">
             DESENVOLVEDOR <strong>FRONT-END</strong>
           </Text>
 
           <Text
-            variant="body-extra-large"
-            className="text-text-primary opacity-70 min-w-258"
+            variant="body-hero"
+            className="text-text-primary opacity-70 mb-6 md:mb-16"
           >
             Transformo ideias em experiências digitais intuitivas, acessíveis e
             impactantes. Meu foco está em performance, propósito e design
             funcional.
           </Text>
+
+          <div className="flex flex-col md:flex-row gap-3">
+            <Button
+              variant="primary"
+              shape="rectangular"
+              onClick={() => navigate("/projetos")}
+            >
+              Veja Meus Projetos
+            </Button>
+
+            <Button
+              variant="tertiary"
+              shape="rectangular"
+              onClick={() => navigate("/contato")}
+            >
+              Entre em contato
+            </Button>
+          </div>
         </div>
       </Section>
 
-      <Section id="aboutMe" className="bg-bg-surface">
-        <h1>Evoluir como pessoa é o meu maior projeto.</h1>
+      <Section id="aboutMe" className="bg-bg-surface flex flex-col">
+        <div className="border-l-5 border-brand-primary pl-8 mb-16 md:mb-22">
+          <Text variant="h2" className="italic text-text-primary">
+            Evoluir como pessoa é o meu maior projeto.
+          </Text>
+        </div>
+
+        <div className="flex flex-col gap-6 md:gap-12">
+          <div className="flex flex-col gap-2">
+            <Text
+              variant="headline-medium"
+              className="uppercase text-gradient-gray"
+            >
+              Sobre
+            </Text>
+            <Text
+              variant="h3"
+              className="text-text-primary uppercase font-normal"
+            >
+              Mais que <strong className="font-semibold">código</strong> e
+              interfaces
+            </Text>
+          </div>
+
+          <hr className="border-border-default" />
+
+          {/* Colunas de Texto */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-50">
+            <Text variant="section-body" className="text-text-secondary">
+              Minha jornada começou com Python, mas foi no front-end que
+              encontrei meu caminho, onde estética e funcionalidade se
+              encontram.
+            </Text>
+            <Text variant="section-body" className="text-text-secondary">
+              Desde então, desenvolvo interfaces com clareza e boas práticas.
+              Cada projeto fortalece meu repertório técnico e minha visão sobre
+              boas experiências digitais.
+            </Text>
+          </div>
+
+          {/* Botão de Chamada */}
+          <Button
+            variant="quaternary"
+            shape="rectangular"
+            className="justify-center md:w-fit"
+            onClick={() => navigate("/sobre")}
+          >
+            Conheça minha trajetória <Icon svg={ArrowUpRight} animate={true} />
+          </Button>
+        </div>
       </Section>
 
-      <Section id="skills" className="bg-neutral-gray-50">
-        <h1>Minhas habilidades</h1>
+      <Section id="skills">
+        <div className="flex flex-col items-center justify-center mx-auto">
+          <Text variant="headline-medium" className="text-gradient-gray mb-2">
+            Minhas Habilidades
+          </Text>
+
+          <Text
+            variant="h1"
+            className="uppercase font-normal mb-12 text-center"
+          >
+            <strong className="font-semibold">Tecnologias</strong> que utilizo
+          </Text>
+
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Tag dot="react" size="default">
+              React
+            </Tag>
+            <Tag dot="tailwind" size="default">
+              Tailwind CSS
+            </Tag>
+            <Tag dot="typescript" size="default">
+              TypeScript
+            </Tag>
+            <Tag dot="figma" size="default">
+              Figma
+            </Tag>
+            <Tag dot="git" size="default">
+              Git
+            </Tag>
+          </div>
+        </div>
       </Section>
+
+      <Section id="projects">
+        <div className="flex flex-col gap-20">
+          <div className="flex flex-col gap-2">
+            <Text
+              variant="headline-medium"
+              className="uppercase text-gradient-gray"
+            >
+              Projetos
+            </Text>
+            <Text
+              variant="h3"
+              className="text-text-primary uppercase font-normal"
+            >
+              Principais <strong className="font-semibold">desafios</strong>
+            </Text>
+          </div>
+
+          {/* ProjectCard */}
+          <div className="flex flex-col w-full overflow-hidden gap-12">
+            <ProjectCard
+              title="Landing Page - Clube de Assinatura de Livros"
+              description="Este projeto é um portfólio online interativo desenvolvido com foco em responsividade, acessibilidade e performance. A proposta é apresentar os projetos pessoais e profissionais de forma clara e objetiva, com navegação fluida e componentes reutilizáveis."
+              imageSrc={ThumbImg}
+              githubUrl="https://github.com/murilloressineti"
+              deployUrl="https://www.google.com/"
+              techs={["react", "react", "react", "react", "react", "react"]}
+            />
+            <hr className="border-border-default" />
+            <ProjectCard
+              title="Landing Page - Clube de Assinatura de Livros"
+              description="Este projeto é um portfólio online interativo desenvolvido com foco em responsividade, acessibilidade e performance. A proposta é apresentar os projetos pessoais e profissionais de forma clara e objetiva, com navegação fluida e componentes reutilizáveis."
+              imageSrc={ThumbImg}
+              githubUrl="https://github.com/murilloressineti"
+              deployUrl="https://www.google.com/"
+              techs={["react", "react", "react", "react", "react", "react"]}
+            />
+          </div>
+
+          {/* Botão de Chamada */}
+          <div className="flex items-center justify-center">
+            <Button
+              variant="quaternary"
+              shape="rectangular"
+              className="justify-center md:w-fit"
+              onClick={() => navigate("/projetos")}
+            >
+              Ver todos os projetos <Icon svg={ArrowUpRight} animate={true} />
+            </Button>
+          </div>
+        </div>
+      </Section>
+
+      <CTASection />
     </main>
   );
 }
