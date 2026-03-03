@@ -1,9 +1,10 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Button, Icon, Tag, Text } from "../components/ui";
 import { Section, CTASection } from "../components/layout";
 import { ProjectCard } from "../components/projects";
-import { Button, Icon, Tag, Text } from "../components/ui";
+import { projects } from "../constants/projects";
 import ArrowUpRight from "../assets/icons/arrow-up-right.svg?react";
-import ThumbImg from "../assets/images/thumbnail/thumb.png";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -156,23 +157,24 @@ export default function Home() {
 
           {/* ProjectCard */}
           <div className="flex flex-col w-full overflow-hidden gap-12">
-            <ProjectCard
-              title="Landing Page - Clube de Assinatura de Livros"
-              description="Este projeto é um portfólio online interativo desenvolvido com foco em responsividade, acessibilidade e performance. A proposta é apresentar os projetos pessoais e profissionais de forma clara e objetiva, com navegação fluida e componentes reutilizáveis."
-              imageSrc={ThumbImg}
-              githubUrl="https://github.com/murilloressineti"
-              deployUrl="https://www.google.com/"
-              techs={["react", "react", "react", "react", "react", "react"]}
-            />
-            <hr className="border-border-default" />
-            <ProjectCard
-              title="Landing Page - Clube de Assinatura de Livros"
-              description="Este projeto é um portfólio online interativo desenvolvido com foco em responsividade, acessibilidade e performance. A proposta é apresentar os projetos pessoais e profissionais de forma clara e objetiva, com navegação fluida e componentes reutilizáveis."
-              imageSrc={ThumbImg}
-              githubUrl="https://github.com/murilloressineti"
-              deployUrl="https://www.google.com/"
-              techs={["react", "react", "react", "react", "react", "react"]}
-            />
+            {projects.map((project, index) => (
+              <React.Fragment key={project.id}>
+                <ProjectCard
+                  id={project.id}
+                  title={project.title}
+                  description={project.description}
+                  imageSrc={project.imageSrc}
+                  githubUrl={project.githubUrl}
+                  deployUrl={project.deployUrl}
+                  techs={project.techs as any}
+                />
+
+                {/* Linha divisória, exceto após o último item */}
+                {index < projects.length - 1 && (
+                  <hr className="border-border-default" />
+                )}
+              </React.Fragment>
+            ))}
           </div>
 
           {/* Projects Call to Action */}

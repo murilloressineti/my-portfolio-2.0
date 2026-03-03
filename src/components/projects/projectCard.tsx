@@ -1,8 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 import { Button, Icon, Tag, Text } from "../ui";
-import { ProjectThumbnail } from "../projects"
+import { ProjectThumbnail } from "../projects";
 import ArrowUpRight from "../../assets/icons/arrow-up-right.svg?react";
 import GitHubLogo from "../../assets/icons/github-logo.svg?react";
 
@@ -22,6 +23,7 @@ interface ProjectCardProps
   extends
     React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof projectCardVariants> {
+  id: string;
   title: string;
   description: string;
   imageSrc: string;
@@ -31,6 +33,7 @@ interface ProjectCardProps
 }
 
 export default function ProjectCard({
+  id,
   variant = "default",
   title,
   description,
@@ -41,20 +44,27 @@ export default function ProjectCard({
   className,
   ...props
 }: ProjectCardProps) {
+  const navigate = useNavigate();
   const desktopTechs = techs.slice(0, 3);
   const remainingCount = techs.length - 3;
+
+  const handleNavigate = () => {
+    navigate(`/projetos/${id}`);
+  };
   return (
     <div className={cn(projectCardVariants({ variant, className }))} {...props}>
-      <ProjectThumbnail
-        src={imageSrc}
-        alt={`Preview do projeto ${title}`}
-        variant="default"
-        animate={true}
-        className={cn(
-          "w-full shrink-0",
-          variant === "grid" ? "md:w-full md:h-auto" : "w-full shrink-0",
-        )}
-      />
+      <div onClick={handleNavigate}>
+        <ProjectThumbnail
+          src={imageSrc}
+          alt={`Preview do projeto ${title}`}
+          variant="default"
+          animate={true}
+          className={cn(
+            "w-full shrink-0",
+            variant === "grid" ? "md:w-full md:h-auto" : "w-full shrink-0",
+          )}
+        />
+      </div>
 
       <div className="flex flex-col min-w-0 w-full">
         <div
