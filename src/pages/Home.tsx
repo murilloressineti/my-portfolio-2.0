@@ -9,6 +9,7 @@ export default function Home() {
   const navigate = useNavigate();
   return (
     <main>
+      {/* Hero Section */}
       <Section
         id="hero"
         className="flex flex-col items-center justify-center text-center pb-60 md:pt-40 md:pb-55"
@@ -47,6 +48,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* About Section */}
       <Section id="aboutMe" className="bg-bg-surface flex flex-col">
         <div className="border-l-5 border-brand-primary pl-8 mb-16 md:mb-22">
           <Text variant="h2" className="italic text-text-primary">
@@ -73,7 +75,7 @@ export default function Home() {
 
           <hr className="border-border-default" />
 
-          {/* Colunas de Texto */}
+          {/* About Text Columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-50">
             <Text variant="section-body" className="text-text-secondary">
               Minha jornada começou com Python, mas foi no front-end que
@@ -87,7 +89,7 @@ export default function Home() {
             </Text>
           </div>
 
-          {/* Botão de Chamada */}
+          {/* About Call to Action */}
           <Button
             variant="quaternary"
             shape="rectangular"
@@ -99,6 +101,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Skills Section */}
       <Section id="skills">
         <div className="flex flex-col items-center justify-center mx-auto">
           <Text variant="headline-medium" className="text-gradient-gray mb-2">
@@ -112,6 +115,7 @@ export default function Home() {
             <strong className="font-semibold">Tecnologias</strong> que utilizo
           </Text>
 
+          {/* Tech Tags */}
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Tag dot="react" size="default">
               React
@@ -132,6 +136,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Projects Section */}
       <Section id="projects">
         <div className="flex flex-col gap-20">
           <div className="flex flex-col gap-2">
@@ -170,7 +175,7 @@ export default function Home() {
             />
           </div>
 
-          {/* Botão de Chamada */}
+          {/* Projects Call to Action */}
           <div className="flex items-center justify-center">
             <Button
               variant="quaternary"
@@ -184,6 +189,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Footer CTA Section */}
       <CTASection />
     </main>
   );

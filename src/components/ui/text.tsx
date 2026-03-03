@@ -10,7 +10,10 @@ export const textVariants = cva("font-sans", {
       "body-hero":
         "text-[16px] md:text-[28px] leading-normal md:leading-[1.3] tracking-normal md:tracking-[-0.005em] font-normal",
       "section-body":
-        "text-[20px] md:text-[28px] leading-[1.6] md:leading-[1.3] tracking-normal md:tracking-[-0.005em] font-normal",
+        "text-[18px] md:text-[24px] leading-[1.6] md:leading-[1.3] tracking-normal md:tracking-[-0.005em] font-normal",
+      "about-title":
+        "text-[28px] md:text-[32px] leading-[1.3] tracking-normal font-semibold",
+      "about-body": "text-[18px] leading-[1.6] tracking-normal font-normal",
 
       // Body Text
       "body-extra-large":

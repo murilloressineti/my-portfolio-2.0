@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <div className="relative z-50 bg-bg-default border-b border-b-neutral-gray-100 md:border-0 md:bg-transparent">
-      <header className="w-full py-8 px-6 md:px-30">
+      <header className="w-full py-8 px-6 md:px-40">
         <div className="max-w-360 mx-auto flex items-center justify-between">
           {/* LOGO */}
           <Link to="/" className="shrink-0">
@@ -33,7 +33,7 @@ export default function Header() {
           </Link>
 
           {/* NAVEGAÇÃO DESKTOP */}
-          <nav className="hidden md:flex items-center gap-12 bg-neutral-gray-100 backdrop-blur-md rounded-full px-12 py-3">
+          <nav className="hidden md:flex items-center gap-8 bg-neutral-gray-100 backdrop-blur-md rounded-full px-8 py-3">
             {navLinks.map((link) => {
               const isSelected = location.pathname === link.href;
 
