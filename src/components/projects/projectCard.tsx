@@ -79,12 +79,14 @@ export default function ProjectCard({
             <Text
               variant="h3"
               as="h3"
-              className="hover:text-brand-primary transition-all duration-300 flex-1 cursor-pointer"
+              className={cn(
+                "hover:text-brand-primary transition-all duration-300 flex-1 cursor-pointer",
+                variant === "grid" ? "line-clamp-1" : "line-clamp-none",
+              )}
             >
               {title}
             </Text>
           </div>
-
           <div className="flex gap-3 shrink-0">
             {githubUrl && (
               <Button
@@ -113,7 +115,7 @@ export default function ProjectCard({
                 variant="tertiary"
                 shape="rectangular"
               >
-                Acessar <Icon svg={ArrowUpRight} animate={true} />
+                Acessar <Icon svg={ArrowUpRight} animate="rotate" />
               </Button>
             )}
           </div>
