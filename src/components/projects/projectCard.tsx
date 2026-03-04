@@ -75,9 +75,15 @@ export default function ProjectCard({
               : "flex-col md:flex-row md:justify-between md:items-start",
           )}
         >
-          <Text variant="h3" as="h3" className="flex-1">
-            {title}
-          </Text>
+          <div onClick={handleNavigate}>
+            <Text
+              variant="h3"
+              as="h3"
+              className="hover:text-brand-primary transition-all duration-300 flex-1 cursor-pointer"
+            >
+              {title}
+            </Text>
+          </div>
 
           <div className="flex gap-3 shrink-0">
             {githubUrl && (

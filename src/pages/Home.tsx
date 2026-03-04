@@ -97,7 +97,8 @@ export default function Home() {
             className="justify-center md:w-fit"
             onClick={() => navigate("/sobre")}
           >
-            Conheça minha trajetória <Icon svg={ArrowUpRight} animate={true} />
+            Conheça minha trajetória{" "}
+            <Icon svg={ArrowUpRight} animate="rotate" />
           </Button>
         </div>
       </Section>
@@ -157,20 +158,12 @@ export default function Home() {
 
           {/* ProjectCard */}
           <div className="flex flex-col w-full overflow-hidden gap-12">
-            {projects.map((project, index) => (
+            {projects.slice(0, 2).map((project, index, array) => (
               <React.Fragment key={project.id}>
-                <ProjectCard
-                  id={project.id}
-                  title={project.title}
-                  description={project.description}
-                  imageSrc={project.imageSrc}
-                  githubUrl={project.githubUrl}
-                  deployUrl={project.deployUrl}
-                  techs={project.techs as any}
-                />
+                <ProjectCard {...project} techs={project.techs as any} />
 
                 {/* Linha divisória, exceto após o último item */}
-                {index < projects.length - 1 && (
+                {index < array.length - 1 && (
                   <hr className="border-border-default" />
                 )}
               </React.Fragment>
@@ -185,7 +178,7 @@ export default function Home() {
               className="justify-center md:w-fit"
               onClick={() => navigate("/projetos")}
             >
-              Ver todos os projetos <Icon svg={ArrowUpRight} animate={true} />
+              Ver todos os projetos <Icon svg={ArrowUpRight} animate="rotate" />
             </Button>
           </div>
         </div>

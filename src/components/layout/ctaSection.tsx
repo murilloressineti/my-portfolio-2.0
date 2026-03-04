@@ -43,7 +43,7 @@ export default function CTASection() {
               Entre em contato
               <Icon
                 svg={ArrowUpRight}
-                animate={true}
+                animate="rotate"
                 className="fill-neutral-white group-hover:fill-black"
               />
             </Button>
@@ -55,8 +55,8 @@ export default function CTASection() {
               Baixar currículo
               <Icon
                 svg={Download}
-                animate={false}
-                className="fill-neutral-white group-hover:fill-black transition-all duration-300 group-hover:translate-y-1"
+                animate="down"
+                className="fill-neutral-white group-hover:fill-black"
               />
             </Button>
           </div>

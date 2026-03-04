@@ -42,4 +42,30 @@ export const projects: Project[] = [
     contribution: "-",
     challenge: "-",
   },
+  {
+    id: "sorteador-de-numeros",
+    title: "Sorteador de Números",
+    description:
+      "Este projeto é um sorteador de números interativo que oferece ao usuário controle total sobre a aleatoriedade. Permite definir um intervalo numérico personalizado, escolher a quantidade de números a serem sorteados e decidir se deseja incluir ou excluir números repetidos. ",
+    imageSrc: ThumbImg,
+    githubUrl: "https://github.com/murilloressineti",
+    deployUrl: "https://www.google.com/",
+    techs: ["react", "tailwind", "typescript", "figma"],
+    functions: "-",
+    contribution: "-",
+    challenge: "-",
+  },
+  {
+    id: "landing-page",
+    title: "Landing Page - Clube de Assinatura de Livros",
+    description:
+      "Landing page responsiva e visualmente atraente para um clube de assinatura de livros. O objetivo foi criar uma experiência informativa e envolvente, destacando o produto e capturando a atenção do visitante.",
+    imageSrc: ThumbImg,
+    githubUrl: "https://github.com/murilloressineti",
+    deployUrl: "https://www.google.com/",
+    techs: ["react", "tailwind", "typescript", "figma"],
+    functions: "-",
+    contribution: "-",
+    challenge: "-",
+  },
 ];

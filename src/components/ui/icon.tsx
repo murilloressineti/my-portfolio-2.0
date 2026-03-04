@@ -1,17 +1,21 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const iconVariants = cva("transition-all duration-300 ease-in-out", {
-  variants: {
-    animate: {
-      false: "",
-      true: "group-hover:rotate-45",
+export const iconVariants = cva(
+  "transition-all duration-300 ease-in-out w-6 h-6",
+  {
+    variants: {
+      animate: {
+        none: "",
+        rotate: "group-hover:rotate-45",
+        down: "group-hover:translate-y-1",
+      },
+    },
+    defaultVariants: {
+      animate: "none",
     },
   },
-  defaultVariants: {
-    animate: false,
-  },
-});
+);
 
 interface IconProps
   extends React.ComponentProps<"svg">, VariantProps<typeof iconVariants> {
