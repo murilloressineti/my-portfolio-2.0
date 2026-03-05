@@ -1,11 +1,8 @@
-import { Text } from "../components/ui";
 import { Section, CTASection } from "../components/layout";
-
+import { Text } from "../components/ui";
 import { Timeline, TimelineItem } from "../components/timeline";
-import { timelineSteps } from "../constants/timeline-steps";
-
 import { BentoGrid, BentoItem, BentoCarousel } from "../components/gallery";
-import { galleryItems } from "../constants/gallery-items";
+import { timelineSteps, galleryItems } from "../constants";
 
 import ProfileImg from "../assets/images/gallery/original-1.jpg";
 

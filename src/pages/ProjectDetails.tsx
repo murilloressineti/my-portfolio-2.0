@@ -1,11 +1,11 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { projects } from "../constants/projects";
 import { Section, CTASection } from "../components/layout";
 import { Tag, Text, Button, Icon } from "../components/ui";
+import { ProjectCard, ProjectThumbnail } from "../components/projects";
+import { projects } from "../constants";
 import ArrowLeft from "../assets/icons/arrow-down.svg?react";
 import ArrowUpRight from "../assets/icons/arrow-up-right.svg?react";
 import GitHubLogo from "../assets/icons/github-logo.svg?react";
-import { ProjectCard, ProjectThumbnail } from "../components/projects";
 
 export default function ProjectDetails() {
   const { id } = useParams();

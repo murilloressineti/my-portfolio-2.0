@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Section, CTASection } from "../components/layout";
-import { Button, Text, Icon } from "../components/ui";
+import { Button, Icon, Text } from "../components/ui";
 import { ProjectCard } from "../components/projects";
-import { projects } from "../constants/projects";
+import { projects } from "../constants";
 import ArrowDown from "../assets/icons/arrow-down.svg?react";
 
 export default function Projects() {

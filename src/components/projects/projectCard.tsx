@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 import { Button, Icon, Tag, Text } from "../ui";
-import { ProjectThumbnail } from "../projects";
+import { ProjectThumbnail } from ".";
 import ArrowUpRight from "../../assets/icons/arrow-up-right.svg?react";
 import GitHubLogo from "../../assets/icons/github-logo.svg?react";
 

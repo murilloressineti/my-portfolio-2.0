@@ -1,4 +1,4 @@
-export { default as Header } from './header';
-export { default as Section } from './section';
-export { default as CTASection } from './ctaSection';
-export { default as Footer } from './footer';
+export { default as Header } from './Header';
+export { default as Section } from './Section';
+export { default as CTASection } from './CtaSection';
+export { default as Footer } from './Footer';

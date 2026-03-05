@@ -1,6 +1,6 @@
-export { default as Button } from './button';
-export { default as Icon } from './icon';
-export { default as Input } from './input';
-export { default as NavLink } from './navLink';
-export { default as Tag } from './tag';
-export { default as Text } from './text';
+export { default as Button } from './Button';
+export { default as Icon } from './Icon';
+export { default as Input } from './Input';
+export { default as NavLink } from './NavLink';
+export { default as Tag } from './Tag';
+export { default as Text } from './Text';

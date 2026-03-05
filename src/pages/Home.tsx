@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Icon, Tag, Text } from "../components/ui";
 import { Section, CTASection } from "../components/layout";
+import { Button, Icon, Tag, Text } from "../components/ui";
 import { ProjectCard } from "../components/projects";
-import { projects } from "../constants/projects";
+import { projects } from "../constants";
 import ArrowUpRight from "../assets/icons/arrow-up-right.svg?react";
 
 export default function Home() {

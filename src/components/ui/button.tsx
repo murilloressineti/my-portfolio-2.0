@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
-import Text from "../ui/text";
+import Text from "./Text";
 
 export const buttonVariants = cva(
   "inline-flex items-center justify-between gap-2 transition-all duration-300 cursor-pointer uppercase group",

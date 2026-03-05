@@ -1,3 +1,3 @@
-export { default as BentoGrid } from './bentoGrid';
-export { default as BentoItem } from './bentoItem';
-export { default as BentoCarousel } from './bentoCarousel';
+export { default as BentoGrid } from './BentoGrid';
+export { default as BentoItem } from './BentoItem';
+export { default as BentoCarousel } from './BentoCarousel';
