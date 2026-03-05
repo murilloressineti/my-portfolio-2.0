@@ -61,17 +61,6 @@ export default function Header() {
               variant="secondary"
               shape="rounded"
               as="a"
-              href="https://github.com/murilloressineti"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Acessar meu GitHub"
-            >
-              <Icon svg={GitHubLogo} />
-            </Button>
-            <Button
-              variant="secondary"
-              shape="rounded"
-              as="a"
               href="https://www.linkedin.com/in/murilloressineti/"
               target="_blank"
               rel="noopener noreferrer"
@@ -79,6 +68,18 @@ export default function Header() {
             >
               <Icon svg={LinkedinLogo} />
             </Button>
+            <Button
+              variant="secondary"
+              shape="rounded"
+              as="a"
+              href="https://github.com/murilloressineti"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar meu GitHub"
+            >
+              <Icon svg={GitHubLogo} />
+            </Button>
+
             <Link to="/contato">
               <Button
                 variant="composite"
@@ -89,7 +90,7 @@ export default function Header() {
                   <Text variant="action-button">Vamos conversar</Text>
                 </div>
                 <div className="rounded-full p-3 bg-neutral-white border border-neutral-gray-300  group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:fill-text-primary transition-all duration-300">
-                  <Icon svg={ArrowUpRight} animate={true} />
+                  <Icon svg={ArrowUpRight} animate="rotate" />
                 </div>
               </Button>
             </Link>
@@ -107,7 +108,7 @@ export default function Header() {
                   <Text variant="action-button">Vamos conversar</Text>
                 </div>
                 <div className="rounded-full p-3 bg-neutral-white border border-neutral-gray-300  group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:fill-text-primary transition-all duration-300">
-                  <Icon svg={ArrowUpRight} animate={true} />
+                  <Icon svg={ArrowUpRight} animate="rotate" />
                 </div>
               </Button>
             </Link>
@@ -162,23 +163,23 @@ export default function Header() {
               variant="secondary"
               shape="rounded"
               as="a"
-              href="https://github.com/murilloressineti"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Acessar meu GitHub"
-            >
-              <Icon svg={GitHubLogo} />
-            </Button>
-            <Button
-              variant="secondary"
-              shape="rounded"
-              as="a"
               href="https://www.linkedin.com/in/murilloressineti/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Acessar meu LinkedIn"
             >
               <Icon svg={LinkedinLogo} />
+            </Button>
+            <Button
+              variant="secondary"
+              shape="rounded"
+              as="a"
+              href="https://github.com/murilloressineti"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar meu GitHub"
+            >
+              <Icon svg={GitHubLogo} />
             </Button>
           </div>
         </nav>
