@@ -3,9 +3,7 @@ import { Section, CTASection } from "../components/layout";
 import { Tag, Text, Button, Icon } from "../components/ui";
 import { ProjectCard, ProjectThumbnail } from "../components/projects";
 import { projects } from "../constants";
-import ArrowLeft from "../assets/icons/arrow-down.svg?react";
-import ArrowUpRight from "../assets/icons/arrow-up-right.svg?react";
-import GitHubLogo from "../assets/icons/github-logo.svg?react";
+import { ArrowLeft, ArrowUpRight, GitHubLogo } from "@/assets/icons";
 
 export default function ProjectDetails() {
   const { id } = useParams();

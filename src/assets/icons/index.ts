@@ -1,0 +1,14 @@
+export { default as ArrowDown } from "./arrow-down.svg?react";
+export { default as ArrowLeft } from "./arrow-left.svg?react";
+export { default as ArrowUpRight } from "./arrow-up-right.svg?react";
+export { default as Close } from "./close.svg?react";
+export { default as Copy } from "./copy.svg?react";
+export { default as Download } from "./download.svg?react";
+export { default as EnvelopeOpen } from "./envelope-open.svg?react";
+export { default as Footsprints } from "./footprints.svg?react";
+export { default as GitHubLogo } from "./github-logo.svg?react";
+export { default as GraduationCap } from "./graduation-cap.svg?react";
+export { default as LinkedinLogo } from "./linkedin-logo.svg?react";
+export { default as List } from "./list.svg?react";
+export { default as PencilRuler } from "./pencil-ruler.svg?react";
+export { default as RocketLaunch } from "./rocket-launch.svg?react";

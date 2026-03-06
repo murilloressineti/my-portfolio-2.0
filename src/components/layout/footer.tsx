@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Text } from "../ui";
-import LogoSymbol from "../../assets/logo/logo-symbol.svg?react";
+import { LogoSymbol } from "@/assets/logo";
 
 export default function Footer() {
   return (

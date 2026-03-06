@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Section } from "../components/layout";
 import { Button, Icon, Input, Text } from "../components/ui";
-import ArrowUpRight from "../assets/icons/arrow-up-right.svg?react";
-import LinkedinLogo from "../assets/icons/linkedin-logo.svg?react";
-import GitHubLogo from "../assets/icons/github-logo.svg?react";
-import Envelope from "../assets/icons/envelope-open.svg?react";
-import Copy from "../assets/icons/copy.svg?react";
+import {
+  ArrowUpRight,
+  Copy,
+  EnvelopeOpen,
+  GitHubLogo,
+  LinkedinLogo,
+} from "@/assets/icons";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -96,7 +98,7 @@ export default function Contact() {
               >
                 <div className="flex items-center gap-6">
                   <div>
-                    <Icon svg={Envelope} />
+                    <Icon svg={EnvelopeOpen} />
                   </div>
                   <div className="flex flex-col">
                     <Text

@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { Button, Text, Icon } from "../ui";
-import ArrowUpRight from "../../assets/icons/arrow-up-right.svg?react";
-import Download from "../../assets/icons/download.svg?react";
-import LinkedinLogo from "../../assets/icons/linkedin-logo.svg?react";
-import GitHubLogo from "../../assets/icons/github-logo.svg?react";
-import GridBG from "../../assets/images/background/grid-bg.png";
+import {
+  ArrowUpRight,
+  Download,
+  LinkedinLogo,
+  GitHubLogo,
+} from "@/assets/icons";
+import { GridBackground } from "@/assets/images/background";
 
 export default function CTASection() {
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ export default function CTASection() {
       <div
         className="absolute inset-0 opacity-50 pointer-events-none z-0"
         style={{
-          backgroundImage: `url(${GridBG})`,
+          backgroundImage: `url(${GridBackground})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}

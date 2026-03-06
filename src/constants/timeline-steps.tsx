@@ -1,8 +1,10 @@
 import React from "react";
-import FootPrints from "../assets/icons/footprints.svg?react";
-import PencilRuler from "../assets/icons/pencil-ruler.svg?react";
-import RocketLaunch from "../assets/icons/rocket-launch.svg?react";
-import GraduationCap from "../assets/icons/graduation-cap.svg?react";
+import {
+  Footsprints,
+  GraduationCap,
+  PencilRuler,
+  RocketLaunch,
+} from "@/assets/icons";
 
 export interface TimelineStep {
   side: "left" | "right";
@@ -20,7 +22,7 @@ export const timelineSteps: TimelineStep[] = [
     description: "Introdução à lógica e fundamentos.",
     date: "Setembro 2022",
     badgeText: "Início da Jornada",
-    badgeIcon: <FootPrints className="w-6 h-6" />,
+    badgeIcon: <Footsprints className="w-6 h-6" />,
   },
   {
     side: "right",

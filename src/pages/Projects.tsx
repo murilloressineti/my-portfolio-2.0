@@ -3,7 +3,7 @@ import { Section, CTASection } from "../components/layout";
 import { Button, Icon, Text } from "../components/ui";
 import { ProjectCard } from "../components/projects";
 import { projects } from "../constants";
-import ArrowDown from "../assets/icons/arrow-down.svg?react";
+import { ArrowDown } from "@/assets/icons";
 
 export default function Projects() {
   // Estado para controlar quantos projetos mostrar (começa com 3)

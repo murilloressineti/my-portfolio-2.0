@@ -4,7 +4,7 @@ import { Section, CTASection } from "../components/layout";
 import { Button, Icon, Tag, Text } from "../components/ui";
 import { ProjectCard } from "../components/projects";
 import { projects } from "../constants";
-import ArrowUpRight from "../assets/icons/arrow-up-right.svg?react";
+import { ArrowUpRight } from "@assets/icons";
 
 export default function Home() {
   const navigate = useNavigate();

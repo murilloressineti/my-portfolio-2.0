@@ -3,8 +3,7 @@ import { Text } from "../components/ui";
 import { Timeline, TimelineItem } from "../components/timeline";
 import { BentoGrid, BentoItem, BentoCarousel } from "../components/gallery";
 import { timelineSteps, galleryItems } from "../constants";
-
-import ProfileImg from "../assets/images/gallery/original-1.jpg";
+import { Profile } from "@/assets/images/background";
 
 export default function AboutMe() {
   return (
@@ -53,7 +52,7 @@ export default function AboutMe() {
           {/* Coluna da Imagem */}
           <div className="relative px-6 md:px-0">
             <img
-              src={ProfileImg}
+              src={Profile}
               alt="Murillo Ressineti trabalhando em seu notebook"
               className="w-full h-116 md:h-225 object-cover rounded-lg md:rounded-l-lg"
             />

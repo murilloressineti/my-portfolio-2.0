@@ -2,14 +2,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, NavLink, Text, Icon } from "../ui";
-import ArrowUpRight from "../../assets/icons/arrow-up-right.svg?react";
-import LinkedinLogo from "../../assets/icons/linkedin-logo.svg?react";
-import GitHubLogo from "../../assets/icons/github-logo.svg?react";
-import List from "../../assets/icons/list.svg?react";
-import Close from "../../assets/icons/close.svg?react";
+import {
+  ArrowUpRight,
+  Close,
+  GitHubLogo,
+  LinkedinLogo,
+  List,
+} from "@/assets/icons";
 
-import LogoFull from "../../assets/logo/logo.svg?react";
-import LogoSymbol from "../../assets/logo/logo-symbol.svg?react";
+import { LogoFull, LogoSymbol } from "@/assets/logo";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

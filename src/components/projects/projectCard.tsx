@@ -4,8 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 import { Button, Icon, Tag, Text } from "../ui";
 import { ProjectThumbnail } from ".";
-import ArrowUpRight from "../../assets/icons/arrow-up-right.svg?react";
-import GitHubLogo from "../../assets/icons/github-logo.svg?react";
+import { ArrowUpRight, GitHubLogo } from "@/assets/icons";
 
 export const projectCardVariants = cva("flex min-w-0 w-full", {
   variants: {

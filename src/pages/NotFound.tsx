@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Section } from "../components/layout";
 import { Button, Icon, Text } from "../components/ui";
-import ArrowUpRight from "../assets/icons/arrow-up-right.svg?react";
+import { ArrowUpRight } from "@assets/icons";
 
 export default function NotFound() {
   const navigate = useNavigate();
