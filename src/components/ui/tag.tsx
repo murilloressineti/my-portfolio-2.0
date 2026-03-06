@@ -47,8 +47,8 @@ export default function Tag({
   const selectedHex = dotHexColors[dot];
   const textClasses =
     size === "sm"
-      ? "text-[20px] leading-[1.6] tracking-normal font-normal"
-      : "text-[20px] leading-[1.6] md:text-[28px] md:leading-[1.3] md:tracking-[-0.005em] font-normal";
+      ? "text-lg md:text-xl leading-relaxed font-normal"
+      : "text-2xl leading-snug tracking-tight font-normal"
 
   return (
     <div

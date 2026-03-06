@@ -42,17 +42,7 @@ export default function Link({
       )}
       {...props}
     >
-      {/* O texto visível */}
-      <Text variant={isSelected ? "action-link" : "body-large"}>
-        {children}
-      </Text>
-
-      <span
-        className="invisible block h-0 overflow-hidden font-semibold text-[20px] select-none"
-        aria-hidden="true"
-      >
-        {children}
-      </span>
+      <Text variant="action-link">{children}</Text>
     </Component>
   );
 }

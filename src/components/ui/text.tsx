@@ -2,40 +2,40 @@ import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
-export const textVariants = cva("font-sans", {
+export const textVariants = cva("font-sans antialiased", {
   variants: {
     variant: {
-      // Display
-      hero: "text-[42px] md:text-[64px] leading-[1.2] md:leading-[1.2] tracking-[-0.005em] font-normal",
+      // Display & Hero
+      hero: "text-4xl md:text-6xl leading-[1.1] tracking-tight font-normal",
       "body-hero":
-        "text-[16px] md:text-[28px] leading-normal md:leading-[1.3] tracking-normal md:tracking-[-0.005em] font-normal",
+        "text-base md:text-2xl leading-relaxed md:leading-snug tracking-normal font-normal",
       "section-body":
-        "text-[18px] md:text-[24px] leading-[1.6] md:leading-[1.3] tracking-normal md:tracking-[-0.005em] font-normal",
+        "text-lg md:text-xl leading-relaxed tracking-normal font-normal",
       "about-title":
-        "text-[28px] md:text-[32px] leading-[1.3] tracking-normal font-semibold",
-      "about-body": "text-[18px] leading-[1.6] tracking-normal font-normal",
+        "text-2xl md:text-3xl leading-tight tracking-tight font-semibold",
+      "about-body": "text-lg leading-relaxed tracking-normal font-normal",
 
       // Body Text
-      "body-extra-large":
-        "text-[28px] leading-[1.3] tracking-[-0.005em] font-normal",
-      "body-large": "text-[20px] leading-[1.6] tracking-normal font-normal",
-      "body-base": "text-[16px] leading-normal tracking-normal font-normal",
-      "body-small": "text-[14px] leading-normal tracking-normal font-normal",
+      "body-extra-large": "text-2xl leading-snug tracking-tight font-normal",
+      "body-large": "text-lg md:text-xl leading-relaxed font-normal",
+      "body-base": "text-base leading-normal font-normal",
+      "body-small": "text-sm leading-normal font-normal",
 
       // Headings
-      h1: "text-[42px] leading-[1.3] tracking-normal font-semibold",
-      h2: "text-[32px] leading-[1.3] tracking-normal font-semibold",
-      h3: "text-[28px] leading-[1.3] tracking-normal font-semibold",
-      h4: "text-[20px] leading-[1.3] tracking-[-0.005em] font-semibold",
-      h5: "text-[16px] leading-[1.3] font-semibold",
+      h1: "text-4xl leading-tight font-semibold tracking-tight",
+      h2: "text-2xl md:text-3xl leading-tight font-semibold tracking-tight",
+      h3: "text-xl md:text-2xl leading-tight font-semibold tracking-tight",
+      h4: "text-lg md:text-xl leading-snug font-semibold",
+      h5: "text-base leading-snug font-semibold",
 
-      // UI Elements (Botões, Links e Headlines de seção)
-      "action-link": "text-[20px] leading-normal font-semibold",
-      "action-button": "text-[16px] leading-normal font-semibold",
+      // UI Elements
+      "action-link": "text-base md:text-lg leading-normal font-semibold",
+      "action-button":
+        "text-sm md:text-base leading-none font-semibold uppercase tracking-wider",
       "headline-medium":
-        "text-[16px] leading-[1.4] tracking-[0.2em] font-semibold uppercase",
+        "text-sm leading-6 tracking-[0.15em] font-semibold uppercase",
       "headline-small":
-        "text-[14px] leading-[1.4] tracking-[0.2em] font-semibold uppercase",
+        "text-xs leading-5 tracking-[0.15em] font-semibold uppercase",
     },
   },
   defaultVariants: {

@@ -22,11 +22,11 @@ export default function Home() {
 
           <Text
             variant="body-hero"
-            className="text-text-primary opacity-70 mb-6 md:mb-16"
+            className="text-text-primary opacity-90 mb-6 md:mb-16"
           >
             Transformo ideias em experiências digitais intuitivas, acessíveis e
-            impactantes. Meu foco está em performance, propósito e design
-            funcional.
+            impactantes. <br />
+            Meu foco está em performance, propósito e design funcional.
           </Text>
 
           <div className="flex flex-col md:flex-row gap-3">
@@ -149,7 +149,7 @@ export default function Home() {
               Projetos
             </Text>
             <Text
-              variant="h3"
+              variant="h1"
               className="text-text-primary uppercase font-normal"
             >
               Principais <strong className="font-semibold">desafios</strong>
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
 
           {/* ProjectCard */}
-          <div className="flex flex-col w-full overflow-hidden gap-12">
+          <div className="flex flex-col w-full overflow-hidden gap-12 p-8">
             {projects.slice(0, 2).map((project, index, array) => (
               <React.Fragment key={project.id}>
                 <ProjectCard {...project} techs={project.techs as any} />
