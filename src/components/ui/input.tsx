@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useId } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 import Text from "./Text";
 
 export const inputVariants = cva(
-  "w-full bg-bg-default border border-border-default rounded-lg p-4 text-text-primary placeholder:text-neutral-gray-400 hover:border-neutral-gray-400 focus:outline-none focus:border-border-focus resize-none transition-colors",
+  "w-full bg-bg-default border border-border-default rounded-lg p-4 text-base text-text-primary placeholder:text-neutral-400 hover:border-neutral-400 focus:outline-none focus:ring-2 focus:ring-brand-primary/10 focus:border-border-focus resize-none transition-all disabled:opacity-50 disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
         default: "",
-        error: "border-feedback-error focus:border-feedback-error",
+        error:
+          "border-feedback-error focus:border-feedback-error focus:ring-feedback-error/10",
       },
     },
     defaultVariants: {
@@ -20,37 +21,57 @@ export const inputVariants = cva(
 
 interface InputProps
   extends
-    Omit<React.AllHTMLAttributes<HTMLElement>, "as">,
+    Omit<
+      React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
+      "as"
+    >,
     VariantProps<typeof inputVariants> {
   as?: "input" | "textarea";
   label?: string;
+  error?: string;
+  rows?: number;
 }
 
 export default function Input({
   as: Component = "input",
   variant,
   className,
-  children,
   label,
+  error,
+  id,
   ...props
 }: InputProps) {
+  const generatedId = useId();
+  const inputId = id || generatedId;
   return (
-    <div className="w-full flex flex-col gap-3">
+    <div className="w-full flex flex-col gap-2.5">
       {label && (
-        <Text
-          variant="body-base"
-          className="text-text-primary font-semibold uppercase"
-        >
-          {label}
-        </Text>
+        <label htmlFor={inputId}>
+          <Text
+            variant="body-base"
+            className="text-text-primary font-semibold uppercase"
+          >
+            {label}
+          </Text>
+        </label>
       )}
 
       <Component
-        className={cn(inputVariants({ variant, className }))}
-        {...props}
-      >
-        {Component === "textarea" ? children : null}
-      </Component>
+        id={inputId}
+        className={cn(
+          inputVariants({
+            variant: error ? "error" : variant,
+            className,
+          }),
+        )}
+        {...(props as React.ComponentPropsWithRef<any>)}
+      />
+
+      {error && (
+        <Text variant="body-sm" className="text-feedback-error">
+          {error}
+        </Text>
+      )}
     </div>
   );
 }

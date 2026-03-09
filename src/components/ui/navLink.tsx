@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 import Text from "./Text";
 
 export const linkVariants = cva(
-  "transition-colors duration-300 cursor-pointer inline-block",
+  "transition-colors duration-300 cursor-pointer",
   {
     variants: {
       variant: {
@@ -37,12 +37,12 @@ export default function Link({
   return (
     <Component
       className={cn(
-        "relative flex flex-col items-center justify-center",
+        "flex flex-col items-center justify-center",
         linkVariants({ variant: isSelected ? "active" : variant, className }),
       )}
       {...props}
     >
-      <Text variant="action-link">{children}</Text>
+      <Text variant="ui-link">{children}</Text>
     </Component>
   );
 }

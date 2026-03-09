@@ -18,12 +18,12 @@ export default function Section({
     <section
       id={id}
       className={cn(
-        "py-30",
-        !isFullWidth && "px-6 md:px-12 lg:px-20 xl:px-30",
+        "py-20 md:py-30",
+        !isFullWidth && "px-6 md:px-30",
         className
       )}
     >
-      <div className={cn("mx-auto w-full", !isFullWidth && "max-w-360")}>
+      <div className={cn("w-full mx-auto border", !isFullWidth && "max-w-420")}>
         {children}
       </div>
     </section>

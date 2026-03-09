@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <header className="relative z-50 bg-bg-default border-b border-b-neutral-gray-100 md:border-0 md:bg-transparent">
-      <div className="w-full py-5 md:pb-0 px-6 md:px-30 max-w-480 mx-auto">
+      <div className="w-full py-5 md:pb-0 px-6 md:px-30 max-w-420 mx-auto">
         <div className="flex items-center justify-between md:p-5">
           {/* LOGO */}
           <Link to="/" aria-label="Ir para página inicial" className="shrink-0">
@@ -36,7 +36,7 @@ export default function Header() {
           {/* NAVEGAÇÃO DESKTOP */}
           <nav
             aria-label="Navegação principal"
-            className="hidden md:flex items-center gap-8 bg-neutral-gray-100 backdrop-blur-md rounded-full px-6 py-3"
+            className="hidden md:flex items-center gap-8 bg-neutral-100 backdrop-blur-md rounded-full px-6 py-3"
           >
             <ul className="flex items-center gap-8">
               {navLinks.map((link) => {
@@ -98,11 +98,11 @@ export default function Header() {
                 shape="none"
                 className="group gap-1.5"
               >
-                <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:text-text-primary transition-all duration-300">
-                  <Text variant="action-button">Vamos conversar</Text>
+                <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-300 group-hover:bg-neutral-200 group-hover:border-neutral-200 transition-all duration-300">
+                  <Text variant="ui-action">Vamos conversar</Text>
                 </div>
 
-                <div className="rounded-full p-3 bg-neutral-white border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:fill-text-primary transition-all duration-300">
+                <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-300 group-hover:bg-neutral-200 group-hover:border-neutral-200 transition-all duration-300">
                   <Icon svg={ArrowUpRight} animate="rotate" />
                 </div>
               </Button>
@@ -117,11 +117,11 @@ export default function Header() {
                 shape="none"
                 className="group gap-1.5"
               >
-                <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:text-text-primary transition-all duration-300">
-                  <Text variant="action-button">Vamos conversar</Text>
+                <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-300 group-hover:bg-neutral-200 group-hover:border-neutral-200 transition-all duration-300">
+                  <Text variant="ui-action">Vamos conversar</Text>
                 </div>
 
-                <div className="rounded-full p-3 bg-neutral-white border border-neutral-gray-300 group-hover:bg-neutral-gray-200 group-hover:border-neutral-gray-200 group-hover:fill-text-primary transition-all duration-300">
+                <div className="rounded-full p-3 bg-neutral-white text-text-secondary border border-neutral-300 group-hover:bg-neutral-200 group-hover:border-neutral-200 transition-all duration-300">
                   <Icon svg={ArrowUpRight} animate="rotate" />
                 </div>
               </Button>

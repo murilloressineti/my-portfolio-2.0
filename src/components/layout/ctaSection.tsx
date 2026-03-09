@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Button, Text, Icon } from "../ui";
+import { Section } from "../layout";
 import {
   ArrowUpRight,
   Download,
@@ -11,35 +12,30 @@ import { GridBackground } from "@/assets/images/background";
 export default function CTASection() {
   const navigate = useNavigate();
   return (
-    <section className="bg-black py-30 px-6 relative overflow-hidden">
+    <Section className="bg-neutral-black relative overflow-hidden text-center">
       <div
-        className="absolute inset-0 opacity-50 pointer-events-none z-0"
-        style={{
-          backgroundImage: `url(${GridBackground})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
+        className="absolute inset-0 opacity-50 pointer-events-none z-0 bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${GridBackground})` }}
       />
-      <div className="max-w-7xl mx-auto items-center justify-center flex flex-col text-center relative z-10">
+      <div className="relative z-10 flex flex-col items-center justify-center">
         <div className="max-w-175">
-          <div className="flex flex-col">
-            <Text variant="h1" className="text-neutral-white uppercase mb-3">
+          <header className="flex flex-col">
+            <Text variant="h2" className="text-neutral-white uppercase mb-3">
               Vamos trabalhar juntos?
             </Text>
             <Text
-              variant="body-extra-large"
-              className="text-neutral-gray-200 mb-8"
+              className="text-2xl leading-snug tracking-tight text-neutral-200 mb-8"
             >
               Sempre em busca de desafios e oportunidades que conectem
               propósito, tecnologia e impacto real.
             </Text>
-          </div>
+          </header>
 
           {/* Buttons */}
           <div className="flex flex-col items-center justify-center md:flex-row gap-5 mb-16">
             <Button
               variant="composite"
-              className="w-68 md:w-auto bg-black border border-neutral-gray-200 text-text-inverted hover:bg-neutral-gray-200 hover:text-black"
+              className="w-68 md:w-auto bg-black border border-neutral-200 text-text-inverted hover:bg-neutral-200 hover:text-black"
               onClick={() => navigate("/contato")}
             >
               Entre em contato
@@ -52,7 +48,7 @@ export default function CTASection() {
 
             <Button
               variant="composite"
-              className="w-68 md:w-auto bg-black border border-neutral-gray-200  text-text-inverted hover:bg-neutral-gray-200 hover:text-black"
+              className="w-68 md:w-auto bg-black border border-neutral-200  text-text-inverted hover:bg-neutral-200 hover:text-black"
             >
               Baixar currículo
               <Icon
@@ -74,7 +70,7 @@ export default function CTASection() {
             >
               <Icon
                 svg={LinkedinLogo}
-                className="fill-neutral-gray-400 transition-all duration-300 group-hover:fill-neutral-white group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+                className="fill-neutral-400 transition-all duration-300 group-hover:fill-neutral-white group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
               />
               <span className="absolute inset-0 bg-neutral-white/5 rounded-full scale-0 group-hover:scale-125 transition-transform duration-500 blur-xl" />
             </a>
@@ -88,13 +84,13 @@ export default function CTASection() {
             >
               <Icon
                 svg={GitHubLogo}
-                className="fill-neutral-gray-400 transition-all duration-300 group-hover:fill-neutral-white group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+                className="fill-neutral-400 transition-all duration-300 group-hover:fill-neutral-white group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
               />
               <span className="absolute inset-0 bg-neutral-white/5 rounded-full scale-0 group-hover:scale-125 transition-transform duration-500 blur-xl" />
             </a>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 import Text from "./Text";
 
 export const tagVariants = cva(
-  "inline-flex items-center rounded-lg border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-gray-100 cursor-default hover:shadow-sm",
+  "py-1.5 px-3 inline-flex items-center rounded-md border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-100 cursor-default hover:shadow-sm",
   {
     variants: {
       variant: {
@@ -12,12 +12,13 @@ export const tagVariants = cva(
         outline: "bg-transparent",
       },
       size: {
-        default: "gap-4 py-1.5 px-3",
-        sm: "gap-3 py-1 px-2",
+        default: "gap-4",
+        sm: "gap-3",
       },
     },
     defaultVariants: {
       variant: "default",
+      size: "default",
     },
   },
 );
@@ -28,17 +29,16 @@ const dotHexColors = {
   typescript: "#3178C6",
   figma: "#874FFF",
   git: "#F34F29",
-};
+} as const;
 
 interface TagProps
   extends React.ComponentProps<"div">, VariantProps<typeof tagVariants> {
   dot?: keyof typeof dotHexColors;
-  children: React.ReactNode;
 }
 
 export default function Tag({
   variant,
-  size = "default",
+  size,
   dot = "react",
   className,
   children,
@@ -47,8 +47,8 @@ export default function Tag({
   const selectedHex = dotHexColors[dot];
   const textClasses =
     size === "sm"
-      ? "text-lg md:text-xl leading-relaxed font-normal"
-      : "text-2xl leading-snug tracking-tight font-normal"
+      ? "text-lg leading-relaxed tracking-normal font-normal"
+      : "text-2xl leading-snug tracking-tight font-normal";
 
   return (
     <div
@@ -57,7 +57,7 @@ export default function Tag({
     >
       <span
         className={cn(
-          "rounded-full shrink-0 h-3 w-3 transition-all duration-500",
+          "rounded-full shrink-0 h-3 w-3 transition-all duration-300",
           size === "sm" ? "group-hover:scale-115" : "group-hover:scale-125",
         )}
         style={{
