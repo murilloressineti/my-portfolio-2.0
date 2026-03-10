@@ -17,27 +17,34 @@ export default function BentoItem({
 }: BentoItemProps) {
   return (
     <div
-      className={cn("flex flex-col gap-6 md:w-full md:h-full group", className)}
+      className={cn(
+        "flex flex-col gap-6 md:w-full md:min-h-126 group",
+        className,
+      )}
       {...props}
     >
+      {/* Texto no Top */}
       {textPosition === "top" && (
-        <div className="bg-neutral-gray-100 p-6 rounded-lg">
+        <div className="bg-neutral-100 p-6 rounded-lg">
           <Text variant="body-base" className="text-text-secondary">
             {title}
           </Text>
         </div>
       )}
 
-      <div className="md:h-94 w-full overflow-hidden rounded-lg">
+      {/* Container da Imagem */}
+      <div className="h-full w-full overflow-hidden rounded-lg">
         <img
           src={image}
           alt={title}
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
 
+      {/* Texto no Bottom */}
       {textPosition === "bottom" && (
-        <div className="bg-neutral-gray-100 p-6 rounded-lg">
+        <div className="bg-neutral-100 p-6 rounded-lg">
           <Text variant="body-base" className="text-text-secondary">
             {title}
           </Text>

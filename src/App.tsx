@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header, Footer } from "./components/layout";
 
 // Utils
-import ScrollToTop from "./components/utils/ScrollTotop";
+import ScrollToTop from "./components/utils/ScrollToTop";
 
 // Pages
 import {

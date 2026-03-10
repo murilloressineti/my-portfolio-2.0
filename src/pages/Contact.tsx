@@ -102,9 +102,9 @@ export default function Contact() {
 
             <div className="flex flex-col gap-12">
               {/* Card de Email com função de copiar */}
-              <button
-                type="button"
-                className="group flex items-center justify-between bg-bg-surface p-6 rounded-md border border-border-default hover:border-neutral-400 transition-all cursor-pointer text-left"
+              <Button
+                variant="wrapper"
+                className="normal-case group flex items-center justify-between bg-bg-surface p-6 rounded-md border border-border-default hover:border-neutral-400 transition-all cursor-pointer text-left"
                 onClick={handleCopyEmail}
               >
                 <div className="flex items-center gap-6">
@@ -125,7 +125,7 @@ export default function Contact() {
                   svg={Copy}
                   className="fill-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity"
                 />
-              </button>
+              </Button>
 
               {/* Redes Sociais */}
               <nav className="flex flex-col gap-6" aria-label="Redes sociais">
@@ -148,8 +148,8 @@ export default function Contact() {
                       as="a"
                       href={social.href}
                       target="_blank"
-                      variant="composite"
-                      className="w-full justify-between bg-bg-surface p-6 h-auto rounded-md border border-border-default hover:bg-neutral-black hover:text-neutral-white hover:fill-neutral-white normal-case transition-all duration-300"
+                      variant="contactCard"
+                      className="w-full justify-between "
                     >
                       <Text
                         className="flex items-center gap-6"

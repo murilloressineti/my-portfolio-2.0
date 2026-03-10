@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
-import Text from "../ui/Text";
+import { Icon, Text } from "../ui";
 
 export const timelineItemVariants = cva(
   "grid grid-cols-[1fr_auto_1fr] items-center gap-4 md:gap-12 w-full",
@@ -69,9 +69,8 @@ export default function TimelineItem({
       {/* COLUNA 2: Centro (Bolinha) */}
       <div className="relative flex justify-center items-center h-full">
         <span
-          className="relative z-10 rounded-full shrink-0 h-2 w-2"
+          className="relative z-10 rounded-full shrink-0 h-2 w-2 bg-neutral-black"
           style={{
-            backgroundColor: "black",
             boxShadow: `0 0 0 4px #FFFFFF, 0px 2px 4px rgba(0, 0, 0, 1)`,
           }}
         />
@@ -130,32 +129,24 @@ function TimelineContent({
       <Text variant="body-base" className="text-text-secondary mb-8">
         {description}
       </Text>
-      <Text
-        variant="headline-small"
-        className="mt-2 text-neutral-gray-400 uppercase"
-      >
+      <Text variant="ui-headline" className="mt-2 text-neutral-400 uppercase">
         {date}
       </Text>
     </div>
   );
 }
 
-function TimelineBadge({
-  text,
-  icon,
-}: {
-  text: string;
-  icon: React.ReactNode;
-}) {
+function TimelineBadge({ text, icon }: { text: string; icon: any }) {
   return (
     <div
       className={cn(
-        "group flex flex-col md:flex-row items-center justify-center gap-4 p-3 bg-neutral-gray-300 rounded-lg w-full md:w-fit h-full md:h-fit transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1",
+        "group flex flex-col md:flex-row items-center justify-center gap-4 p-3 bg-neutral-300 rounded-lg w-full md:w-fit h-full md:h-fit transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1",
       )}
     >
-      <div className="shrink-0 transition-transform duration-300 group-hover:scale-110">
-        {icon}
-      </div>
+      <Icon
+        svg={icon}
+        className="shrink-0 transition-transform duration-300 group-hover:scale-110"
+      ></Icon>
       <Text
         variant="body-base"
         className="text-neutral-black font-bold text-center"

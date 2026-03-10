@@ -11,13 +11,26 @@ export const buttonVariants = cva(
         primary: "bg-neutral-black text-text-inverted hover:bg-brand-primary",
         secondary:
           "bg-neutral-white text-text-secondary border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-200 hover:text-text-primary hover:fill-text-primary",
-        outline:
-          "bg-transparent text-text-secondary fill-text-secondary border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-400 hover:text-text-primary hover:fill-text-primary",
-        ghost:
+
+        ghost: // Verificar
           "bg-neutral-200 text-text-secondary fill-text-secondary hover:bg-neutral-300 hover:text-text-primary",
-        social:
+
+        navAction:
+          "bg-neutral-white text-text-secondary border border-neutral-300 group-hover:bg-neutral-200 group-hover:border-neutral-200 transition-all duration-300",
+
+        footerCta:
+          "bg-transparent border border-neutral-200 text-text-inverted hover:bg-neutral-200 hover:text-text-primary",
+
+        projectGithub:
           "bg-neutral-white text-text-inverted border border-neutral-300 hover:bg-neutral-black hover:fill-neutral-white",
-        composite: "bg-transparent border-0 p-0 hover:bg-transparent",
+
+        projectDeploy:
+          "bg-transparent text-text-secondary fill-text-secondary border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-200 hover:text-text-primary hover:fill-text-primary",
+
+        contactCard:
+          "bg-bg-surface p-6 h-auto rounded-md border border-border-default hover:bg-neutral-black hover:text-neutral-white hover:fill-neutral-white normal-case transition-all duration-300",
+
+        wrapper: "bg-transparent border-0 p-0 hover:bg-transparent",
       },
       shape: {
         rounded: "rounded-full p-3",
@@ -45,6 +58,7 @@ interface ButtonProps
     Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "shape" | "size">,
     VariantProps<typeof buttonVariants> {
   as?: React.ElementType;
+  to?: string;
   href?: string;
   target?: string;
   rel?: string;

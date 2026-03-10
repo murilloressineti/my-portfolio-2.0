@@ -52,7 +52,7 @@ export default function BentoCarousel({ children }: BentoCarouselProps) {
               "h-1.5 rounded-full transition-all duration-300 cursor-pointer",
               index === selectedIndex
                 ? "bg-brand-primary w-6"
-                : "bg-neutral-gray-300 w-1.5",
+                : "bg-neutral-300 w-1.5",
             )}
             onClick={() => emblaApi?.scrollTo(index)}
           />

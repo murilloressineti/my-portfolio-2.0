@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 import { Button, Icon, Tag, Text } from "../ui";
@@ -9,7 +9,8 @@ import { ArrowUpRight, GitHubLogo } from "@/assets/icons";
 export const projectCardVariants = cva("flex min-w-0 w-full", {
   variants: {
     variant: {
-      default: "flex-col md:flex-row items-start gap-7 md:gap-12",
+      // Ajustado: gap-16 no desktop para dar o ar de "espaço" do Figma
+      default: "flex-col md:flex-row items-start gap-6 md:gap-12",
       grid: "flex-col items-start gap-7",
     },
   },
@@ -43,29 +44,31 @@ export default function ProjectCard({
   className,
   ...props
 }: ProjectCardProps) {
-  const navigate = useNavigate();
   const desktopTechs = techs.slice(0, 3);
   const remainingCount = techs.length - 3;
+  const projectLink = `/projetos/${id}`;
 
-  const handleNavigate = () => {
-    navigate(`/projetos/${id}`);
-  };
   return (
     <div className={cn(projectCardVariants({ variant, className }))} {...props}>
-      <div onClick={handleNavigate}>
+      {/* THUMBNAIL */}
+      <Link
+        to={projectLink}
+        className={cn(
+          "shrink-0 block w-full self-stretch",
+          variant === "default" ? "md:w-auto" : "md:w-full",
+        )}
+      >
         <ProjectThumbnail
           src={imageSrc}
           alt={`Preview do projeto ${title}`}
           variant="default"
           animate={true}
-          className={cn(
-            "w-full shrink-0",
-            variant === "grid" ? "md:w-full md:h-auto" : "w-full shrink-0",
-          )}
+          className="w-full"
         />
-      </div>
+      </Link>
 
-      <div className="flex flex-col min-w-0 w-full">
+      {/* HEADER: TÍTULO E BOTÕES */}
+      <div className="flex flex-col min-w-0 flex-1 w-full">
         <div
           className={cn(
             "flex w-full gap-5",
@@ -74,31 +77,32 @@ export default function ProjectCard({
               : "flex-col md:flex-row md:justify-between md:items-start",
           )}
         >
-          <div onClick={handleNavigate}>
+          <Link to={projectLink} className="flex-1">
             <Text
               variant="h3"
               as="h3"
               className={cn(
-                "hover:text-brand-primary transition-all duration-300 flex-1 cursor-pointer",
+                "hover:text-brand-primary transition-all duration-300 cursor-pointer",
                 variant === "grid" ? "line-clamp-1" : "line-clamp-none",
               )}
             >
               {title}
             </Text>
-          </div>
+          </Link>
+
           <div className="flex gap-3 shrink-0">
             {githubUrl && (
               <Button
                 as="a"
                 href={githubUrl}
                 target="_blank"
-                variant="quinary"
+                variant="projectGithub"
                 shape="square"
-                className="gap-0 flex items-center overflow-hidden transition-all duration-500 ease-in-out rounded-md hover:pr-6"
+                className="gap-0 overflow-hidden transition-all duration-500 ease-in-out hover:pr-6"
               >
                 <Icon svg={GitHubLogo} />
                 <Text
-                  variant="action-button"
+                  variant="ui-action"
                   className="max-w-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-25 group-hover:opacity-100 group-hover:ml-2"
                 >
                   GITHUB
@@ -111,8 +115,9 @@ export default function ProjectCard({
                 as="a"
                 href={deployUrl}
                 target="_blank"
-                variant="tertiary"
+                variant="projectDeploy"
                 shape="rectangular"
+                className="uppercase"
               >
                 Acessar <Icon svg={ArrowUpRight} animate="rotate" />
               </Button>
@@ -120,8 +125,9 @@ export default function ProjectCard({
           </div>
         </div>
 
+        {/* DESCRIÇÃO */}
         <Text
-          variant="body-large"
+          variant="body-lg"
           className={cn(
             "text-text-secondary opacity-70 mt-7 md:mt-12",
             variant === "grid"
@@ -132,12 +138,12 @@ export default function ProjectCard({
           {description}
         </Text>
 
+        {/* TECNOLOGIAS */}
         <div className="relative mt-5 w-full">
-          {/* Versão MOBILE: Scroll Horizontal com Fade */}
+          {/* DEFAULT  */}
           <div
             className={cn(
               "flex gap-3 overflow-x-auto no-scrollbar w-full",
-              // No Desktop, escondemos esse container de scroll se for o modo grid
               variant === "grid" ? "md:hidden" : "md:flex md:flex-wrap",
             )}
           >
@@ -146,11 +152,10 @@ export default function ProjectCard({
                 {tech.charAt(0).toUpperCase() + tech.slice(1)}
               </Tag>
             ))}
-            {/* Gradiente de Fade (Mobile Only) */}
             <div className="absolute top-0 right-0 h-full w-12 bg-linear-to-l from-bg-surface to-transparent pointer-events-none md:hidden" />
           </div>
 
-          {/* Versão DESKTOP (Grid): Padrão +X */}
+          {/* GRID VIEW  */}
           {variant === "grid" && (
             <div className="hidden md:flex items-center gap-3">
               {desktopTechs.map((tech) => (
@@ -159,7 +164,7 @@ export default function ProjectCard({
                 </Tag>
               ))}
               {remainingCount > 0 && (
-                <Text variant="body-small" className="text-text-secondary ml-1">
+                <Text variant="body-sm" className="text-text-secondary ml-1">
                   +{remainingCount}
                 </Text>
               )}

@@ -12,7 +12,7 @@ export interface TimelineStep {
   description: string;
   date: string;
   badgeText: string;
-  badgeIcon: React.ReactNode;
+  badgeIcon: React.ElementType;
 }
 
 export const timelineSteps: TimelineStep[] = [
@@ -22,7 +22,7 @@ export const timelineSteps: TimelineStep[] = [
     description: "Introdução à lógica e fundamentos.",
     date: "Setembro 2022",
     badgeText: "Início da Jornada",
-    badgeIcon: <Footsprints className="w-6 h-6" />,
+    badgeIcon: Footsprints
   },
   {
     side: "right",
@@ -31,7 +31,7 @@ export const timelineSteps: TimelineStep[] = [
       "Foco em interfaces visuais, culminando no Projeto RocketMovies.",
     date: "Março 2023",
     badgeText: "Desenvolvimento Web",
-    badgeIcon: <PencilRuler className="w-6 h-6" />,
+    badgeIcon: PencilRuler
   },
   {
     side: "left",
@@ -40,7 +40,7 @@ export const timelineSteps: TimelineStep[] = [
       "Aprofundamento técnico, elevando o conhecimento para o desenvolvimento web completo.",
     date: "Agosto 2024",
     badgeText: "Expansão Técnica",
-    badgeIcon: <RocketLaunch className="w-6 h-6" />,
+    badgeIcon: RocketLaunch
   },
   {
     side: "right",
@@ -49,6 +49,6 @@ export const timelineSteps: TimelineStep[] = [
       "Início como Assistente de Sistemas no IJC e do curso de Análise e Desenvolvimento de Sistemas.",
     date: "Janeiro 2025",
     badgeText: "Início Profissional e Acadêmico",
-    badgeIcon: <GraduationCap className="w-6 h-6" />,
+    badgeIcon: GraduationCap
   },
 ];
