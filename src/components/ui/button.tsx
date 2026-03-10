@@ -12,7 +12,8 @@ export const buttonVariants = cva(
         secondary:
           "bg-neutral-white text-text-secondary border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-200 hover:text-text-primary hover:fill-text-primary",
 
-        ghost: // Verificar
+        // Verificar
+        ghost:
           "bg-neutral-200 text-text-secondary fill-text-secondary hover:bg-neutral-300 hover:text-text-primary",
 
         navAction:
@@ -25,7 +26,7 @@ export const buttonVariants = cva(
           "bg-neutral-white text-text-inverted border border-neutral-300 hover:bg-neutral-black hover:fill-neutral-white",
 
         projectDeploy:
-          "bg-transparent text-text-secondary fill-text-secondary border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-200 hover:text-text-primary hover:fill-text-primary",
+          "bg-neutral-white text-text-secondary fill-text-secondary border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-200 hover:text-text-primary hover:fill-text-primary",
 
         contactCard:
           "bg-bg-surface p-6 h-auto rounded-md border border-border-default hover:bg-neutral-black hover:text-neutral-white hover:fill-neutral-white normal-case transition-all duration-300",

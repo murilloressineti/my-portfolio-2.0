@@ -23,7 +23,7 @@ export default function Section({
         className
       )}
     >
-      <div className={cn("w-full mx-auto border", !isFullWidth && "max-w-420")}>
+      <div className={cn("w-full mx-auto ", !isFullWidth && "max-w-420")}>
         {children}
       </div>
     </section>

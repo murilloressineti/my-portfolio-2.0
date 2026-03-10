@@ -74,7 +74,7 @@ export default function ProjectCard({
             "flex w-full gap-5",
             variant === "grid"
               ? "flex-col items-start"
-              : "flex-col md:flex-row md:justify-between md:items-start",
+              : "flex-col md:flex-row md:justify-between md:items-center",
           )}
         >
           <Link to={projectLink} className="flex-1">
@@ -83,7 +83,7 @@ export default function ProjectCard({
               as="h3"
               className={cn(
                 "hover:text-brand-primary transition-all duration-300 cursor-pointer",
-                variant === "grid" ? "line-clamp-1" : "line-clamp-none",
+                variant === "grid" ? "line-clamp-1" : "line-clamp-1",
               )}
             >
               {title}
