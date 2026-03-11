@@ -54,7 +54,7 @@ export default function ProjectCard({
       <Link
         to={projectLink}
         className={cn(
-          "shrink-0 block w-full self-stretch",
+          "shrink-0 block w-full",
           variant === "default" ? "md:w-auto" : "md:w-full",
         )}
       >
@@ -117,7 +117,6 @@ export default function ProjectCard({
                 target="_blank"
                 variant="projectDeploy"
                 shape="rectangular"
-                className="uppercase"
               >
                 Acessar <Icon svg={ArrowUpRight} animate="rotate" />
               </Button>

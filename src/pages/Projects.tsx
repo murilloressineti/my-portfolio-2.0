@@ -20,21 +20,17 @@ export default function Projects() {
   return (
     <main>
       <Section>
+        {/* Cabeçalho da Página */}
         <div className="flex flex-col gap-2 mb-20">
-          <Text
-            variant="headline-medium"
-            className="uppercase text-gradient-gray"
-          >
+          <Text variant="ui-headline" className="text-gradient-gray">
             Portfólio
           </Text>
-          <Text
-            variant="h3"
-            className="text-text-primary uppercase font-normal"
-          >
+          <Text variant="h2" className="uppercase font-normal">
             <strong className="font-semibold">Trabalhos</strong> recentes
           </Text>
         </div>
 
+        {/* Lista de Cards de Projeto */}
         <div className="flex flex-col w-full overflow-hidden gap-12">
           {projects.slice(0, visibleCount).map((project, index, array) => (
             <React.Fragment key={project.id}>
@@ -48,12 +44,12 @@ export default function Projects() {
           ))}
         </div>
 
+        {/* Botão de Ação: Carregar Mais */}
         {hasMoreProjects && (
-          <div className="flex items-center justify-center mt-20">
+          <div className="flex items-center justify-center mt-24">
             <Button
-              variant="quaternary"
+              variant="tertiary"
               shape="rectangular"
-              className="justify-center md:w-fit"
               onClick={handleShowMore}
             >
               Mostrar mais <Icon svg={ArrowDown} animate="down" />

@@ -6,16 +6,16 @@ export const textVariants = cva("font-sans antialiased", {
   variants: {
     variant: {
       // HEADINGS
-      h1: "text-4xl md:text-6xl leading-tight font-semibold tracking-tight",
-      h2: "text-2xl md:text-4xl leading-tight font-semibold tracking-tight",
-      h3: "text-xl md:text-2xl leading-tight font-semibold tracking-tight",
-      h4: "text-lg md:text-xl leading-snug font-semibold",
-      h5: "text-base leading-snug font-semibold",
+      h1: "text-4xl md:text-6xl leading-tight font-semibold tracking-tight text-text-primary",
+      h2: "text-2xl md:text-4xl leading-tight font-semibold tracking-tight text-text-primary",
+      h3: "text-xl md:text-2xl leading-tight font-semibold tracking-tight text-text-primary",
+      h4: "text-lg md:text-xl leading-snug font-semibold text-text-primary",
+      h5: "text-base leading-snug font-semibold text-text-primary",
 
       // BODY TEXT
-      "body-lg": "text-lg md:text-xl leading-relaxed font-normal",
-      "body-base": "text-base leading-normal font-normal",
-      "body-sm": "text-sm leading-normal font-normal opacity-80",
+      "body-lg": "text-lg md:text-xl leading-relaxed font-normal text-text-primary",
+      "body-base": "text-base leading-normal font-normal text-text-primary",
+      "body-sm": "text-sm leading-normal font-normal opacity-80 text-text-primary",
 
       // UI ELEMENTS
       "ui-action":
@@ -32,7 +32,7 @@ export const textVariants = cva("font-sans antialiased", {
 
 interface TextProps
   extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof textVariants> {
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "label" | "div";
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "label" | "div" | "a";
 }
 
 export default function Text({

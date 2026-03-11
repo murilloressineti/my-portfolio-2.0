@@ -148,7 +148,7 @@ export default function Header() {
         {/* CTA */}
         <Link to="/contato">
           <div className="group">
-            <Button shape="rounded" variant="letsTalk">
+            <Button shape="rounded" variant="navAction">
               <Text variant="ui-action">Vamos conversar</Text>
             </Button>
           </div>

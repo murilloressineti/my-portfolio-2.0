@@ -3,12 +3,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
 export const projectThumbnailVariants = cva(
-  "relative flex items-end justify-center overflow-hidden rounded-md bg-neutral-100",
+  "w-full h-full relative flex items-end justify-center overflow-hidden rounded-md bg-neutral-100",
   {
     variants: {
       variant: {
-        default: "w-full h-full",
-        full: "w-full h-57.25 md:h-280.5 items-center",
+        default: "px-5 pt-5",
+        full: "items-center p-20",
       },
       animate: {
         false: "",
@@ -47,7 +47,7 @@ export default function ProjectThumbnail({
         src={src}
         alt={alt}
         className={cn(
-          "w-auto h-auto max-w-[90%] max-h-[90%] object-contain object-bottom drop-shadow-xl",
+          "w-auto h-auto object-contain object-bottom drop-shadow-xl",
           animate && "transition-transform duration-500 group-hover:scale-105",
         )}
       />

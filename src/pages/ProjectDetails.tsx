@@ -14,17 +14,28 @@ export default function ProjectDetails() {
 
   return (
     <main>
-      <Section id="header" className="pt-14 md:pt-60 pb-20">
-        <div className="flex flex-col">
-          <a
-            className="flex text-neutral-gray-400 mb-2 cursor-pointer"
+      <Section id="content" className="md:pb-20">
+        {/* HEADER: TÍTULO E BOTÕES */}
+        <div className="flex flex-col mb-20">
+          <Button
+            variant="wrapper"
             onClick={() => navigate(-1)}
+            className="group flex w-fit items-center gap-2 p-0 mb-2"
           >
-            <Icon svg={ArrowLeft} className="fill-neutral-gray-400" /> Voltar
-          </a>
+            <Icon
+              svg={ArrowLeft}
+              className="fill-neutral-400 group-hover:fill-neutral-black"
+            />
+            <Text
+              variant="ui-headline"
+              className="text-neutral-400 transition-all duration-300 group-hover:text-neutral-black"
+            >
+              Voltar
+            </Text>
+          </Button>
 
           <div className="flex flex-col md:flex-row gap-6 justify-between">
-            <Text variant="h1">{project.title}</Text>
+            <Text variant="h2">{project.title}</Text>
 
             <div className="flex gap-3 shrink-0">
               {project.githubUrl && (
@@ -32,13 +43,13 @@ export default function ProjectDetails() {
                   as="a"
                   href={project.githubUrl}
                   target="_blank"
-                  variant="quinary"
+                  variant="projectGithub"
                   shape="square"
-                  className="group gap-0 flex items-center overflow-hidden transition-all duration-500 ease-in-out rounded-md hover:pr-6"
+                  className="gap-0 overflow-hidden transition-all duration-500 ease-in-out hover:pr-6"
                 >
                   <Icon svg={GitHubLogo} />
                   <Text
-                    variant="action-button"
+                    variant="ui-action"
                     className="max-w-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-25 group-hover:opacity-100 group-hover:ml-2"
                   >
                     GITHUB
@@ -51,7 +62,7 @@ export default function ProjectDetails() {
                   as="a"
                   href={project.deployUrl}
                   target="_blank"
-                  variant="tertiary"
+                  variant="projectDeploy"
                   shape="rectangular"
                 >
                   Acessar <Icon svg={ArrowUpRight} animate="rotate" />
@@ -60,15 +71,12 @@ export default function ProjectDetails() {
             </div>
           </div>
         </div>
-      </Section>
 
-      <Section id="content" className="py-10 md:py-20">
-        <div className="flex flex-col gap-15 max-w-240">
+        {/* Content */}
+        <div className="flex flex-col gap-12 max-w-220">
           {/* Techs */}
-          <div className="flex flex-col gap-6">
-            <Text variant="h3" className="text-text-primary">
-              Techs
-            </Text>
+          <div className="flex flex-col gap-4">
+            <Text variant="h3">Techs</Text>
             <div className="flex flex-wrap gap-3">
               {project.techs.map((tech) => (
                 <Tag
@@ -85,33 +93,30 @@ export default function ProjectDetails() {
 
           {/* Descrição */}
           <div className="flex flex-col gap-4">
-            <Text variant="h3" className=" text-text-primary">
-              Descrição do projeto
-            </Text>
-            <Text
-              variant="body-large"
-              className="text-text-secondary opacity-80 leading-relaxed"
-            >
+            <Text variant="h3">Descrição do projeto</Text>
+            <Text variant="body-lg" className="text-text-secondary opacity-80">
               {project.description}
             </Text>
           </div>
 
           {/* Listas Dinâmicas (Funções, Contribuição e Desafios) */}
-          {[
-            { title: "Minhas funções no projeto", list: project.functions },
-            { title: "Minha Contribuição", list: project.contribution },
-            { title: "Desafios e Aprendizados", list: project.challenge },
-          ].map((section, idx) => (
+          {project.sections.map((section, idx) => (
             <div key={idx} className="flex flex-col gap-4">
-              <Text variant="h3" className=" text-text-primary">
+              {/* Título da Seção */}
+              <Text variant="h3" className="uppercase">
                 {section.title}
               </Text>
-              <ul className="flex flex-col gap-4">
-                {section.list.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-text-primary mt-1.5">•</span>
+
+              <ul className="flex flex-col gap-1">
+                {section.items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    {/* Bullet point */}
+                    <span className="text-text-primary font-bold text-lg leading-none mt-1.5">
+                      •
+                    </span>
+
                     <Text
-                      variant="body-large"
+                      variant="body-lg"
                       className="text-text-secondary opacity-80"
                     >
                       {item}
@@ -122,33 +127,26 @@ export default function ProjectDetails() {
             </div>
           ))}
         </div>
-      </Section>
 
-      <Section className="py-18">
         {/* Preview do Projeto */}
-
-        {project.imageDetails && (
-          <ProjectThumbnail
-            src={project.imageDetails}
-            alt={`Preview do projeto ${project.title}`}
-            variant="full"
-            animate={true}
-          />
-        )}
+        <div className="pt-20">
+          {project.imageDetails && (
+            <ProjectThumbnail
+              src={project.imageDetails}
+              alt={`Preview do projeto ${project.title}`}
+              variant="full"
+              animate={false}
+            />
+          )}
+        </div>
       </Section>
 
       <Section className="bg-bg-surface">
         <div className="flex flex-col gap-2 mb-20">
-          <Text
-            variant="headline-medium"
-            className="uppercase text-gradient-gray"
-          >
+          <Text variant="ui-headline" className="text-gradient-gray">
             Portfólio
           </Text>
-          <Text
-            variant="h3"
-            className="text-text-primary uppercase font-normal"
-          >
+          <Text variant="h2" className="uppercase font-normal">
             Veja os <strong className="font-semibold">outros projetos</strong>
           </Text>
         </div>

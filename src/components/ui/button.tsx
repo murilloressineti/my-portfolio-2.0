@@ -9,11 +9,11 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-neutral-black text-text-inverted hover:bg-brand-primary",
-        secondary:
-          "bg-neutral-white text-text-secondary border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-200 hover:text-text-primary hover:fill-text-primary",
 
-        // Verificar
-        ghost:
+        secondary:
+          "bg-neutral-white text-text-secondary fill-text-secondary border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-200 hover:text-text-primary hover:fill-text-primary",
+          
+        tertiary:
           "bg-neutral-200 text-text-secondary fill-text-secondary hover:bg-neutral-300 hover:text-text-primary",
 
         navAction:

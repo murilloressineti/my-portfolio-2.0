@@ -26,7 +26,7 @@ interface TimelineItemProps
   description: string;
   date: string;
   badgeText: string;
-  badgeIcon: React.ReactNode;
+  badgeIcon: React.ElementType;
 }
 
 export default function TimelineItem({

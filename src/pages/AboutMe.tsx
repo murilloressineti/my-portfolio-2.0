@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Section, CTASection } from "../components/layout";
 import { Text } from "../components/ui";
 import { Timeline, TimelineItem } from "../components/timeline";
@@ -6,25 +7,36 @@ import { timelineSteps, galleryItems } from "../constants";
 import { Profile } from "@/assets/images/background";
 
 export default function AboutMe() {
+  // Memoriza a lista para Desktop
+  const desktopGallery = useMemo(() => {
+    return [...galleryItems].sort(
+      (a, b) => (a.desktopOrder || 0) - (b.desktopOrder || 0),
+    );
+  }, []);
+
+  // Memoriza a lista para Mobile
+  const mobileGallery = useMemo(() => {
+    return [...galleryItems].sort(
+      (a, b) => (a.mobileOrder || 0) - (b.mobileOrder || 0),
+    );
+  }, []);
   return (
     <main>
       {/* Introduction Section */}
-      <Section id="intro" isFullWidth={true} className="py-10 md:p-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+      <Section id="intro" className="py-10 md:p-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center md:items-start gap-6 md:gap-0">
           {/* Coluna de Texto */}
-          <div className="flex flex-col gap-14 px-6 md:pl-30 md:pr-15 ml-auto w-full max-w-220">
-            <Text variant="about-title" className="uppercase font-normal">
-              Desenvolvendo <strong className="font-semibold">soluções </strong>
-              que <strong className="font-semibold">conectam pessoas</strong> e
-              <strong className="font-semibold">
-                {" "}
-                impulsionam resultados.
-              </strong>
+          <div className="flex flex-col gap-10 md:pl-30 md:pr-20 mx-auto w-full md:pt-[15%]">
+            <Text variant="h2" className="uppercase font-normal">
+              Desenvolvendo <strong className="font-semibold">soluções</strong>{" "}
+              que conectam <strong className="font-semibold">pessoas</strong> e
+              impulsionam
+              <strong className="font-semibold"> resultados.</strong>
             </Text>
 
             <div className="flex flex-col gap-8">
               <Text
-                variant="about-body"
+                variant="body-base"
                 className="text-text-secondary opacity-70"
               >
                 Minha jornada na tecnologia começou com Python, mas foi no
@@ -35,7 +47,7 @@ export default function AboutMe() {
               </Text>
 
               <Text
-                variant="about-body"
+                variant="body-base"
                 className="text-text-secondary opacity-70"
               >
                 Para aprimorar minhas habilidades, ingressei no bootcamp
@@ -50,11 +62,11 @@ export default function AboutMe() {
           </div>
 
           {/* Coluna da Imagem */}
-          <div className="relative px-6 md:px-0">
+          <div className="md:px-0">
             <img
               src={Profile}
               alt="Murillo Ressineti trabalhando em seu notebook"
-              className="w-full h-116 md:h-225 object-cover rounded-lg md:rounded-l-lg"
+              className="w-full h-screen md:h-220 object-cover md:object-[60%_40%] rounded-lg md:rounded-l-lg"
             />
           </div>
         </div>
@@ -72,10 +84,7 @@ export default function AboutMe() {
       {/* Gallery */}
       <Section>
         <div className="flex items-center justify-center md:justify-start mb-12 md:mb-20">
-          <Text
-            variant="h3"
-            className="text-text-primary uppercase font-normal"
-          >
+          <Text variant="h2" className="uppercase font-normal">
             Fora do <strong className="font-semibold">código</strong>
           </Text>
         </div>
@@ -84,21 +93,17 @@ export default function AboutMe() {
           {/* Gallery Desktop */}
           <div className="hidden md:block">
             <BentoGrid>
-              {[...galleryItems]
-                .sort((a, b) => (a.desktopOrder || 0) - (b.desktopOrder || 0))
-                .map((item, index) => (
-                  <BentoItem key={index} {...item} />
-                ))}
+              {desktopGallery.map((item, index) => (
+                <BentoItem key={index} {...item} />
+              ))}
             </BentoGrid>
           </div>
           {/* Gallery Mobile */}
           <div className="block md:hidden">
             <BentoCarousel>
-              {galleryItems
-                .sort((a, b) => (a.mobileOrder || 0) - (b.mobileOrder || 0))
-                .map((item, index) => (
-                  <BentoItem key={index} {...item} textPosition="bottom" />
-                ))}
+              {mobileGallery.map((item, index) => (
+                <BentoItem key={index} {...item} textPosition="bottom" />
+              ))}
             </BentoCarousel>
           </div>
         </div>
