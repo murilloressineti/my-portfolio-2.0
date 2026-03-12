@@ -1,6 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../../lib/utils";
+import { motion, type HTMLMotionProps } from "framer-motion";
+import { cn, fadeUp } from "@/lib";
 import { Icon, Text } from "../ui";
 
 export const timelineItemVariants = cva(
@@ -19,9 +20,7 @@ export const timelineItemVariants = cva(
 );
 
 interface TimelineItemProps
-  extends
-    React.ComponentProps<"div">,
-    VariantProps<typeof timelineItemVariants> {
+  extends HTMLMotionProps<"div">, VariantProps<typeof timelineItemVariants> {
   title: string;
   description: string;
   date: string;
@@ -40,13 +39,15 @@ export default function TimelineItem({
   ...props
 }: TimelineItemProps) {
   const isLeft = side === "left";
+
   return (
-    <div
+    <motion.div
+      {...fadeUp} // Aplica a animação de scroll em cada item individualmente
+      {...props}
       className={cn(
         timelineItemVariants({ side, className }),
         "md:items-center items-stretch mb-6 md:mb-13 last:mb-0",
       )}
-      {...props}
     >
       {/* COLUNA 1: Esquerda */}
       <div
@@ -93,7 +94,7 @@ export default function TimelineItem({
           />
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

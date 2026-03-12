@@ -20,7 +20,7 @@ export default function Section({
       className={cn(
         "py-20 md:py-30",
         !isFullWidth && "px-6 md:px-30",
-        className
+        className,
       )}
     >
       <div className={cn("w-full mx-auto ", !isFullWidth && "max-w-420")}>

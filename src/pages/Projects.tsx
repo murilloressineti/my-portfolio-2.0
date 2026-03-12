@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Section, CTASection } from "../components/layout";
 import { Button, Icon, Text } from "../components/ui";
 import { ProjectCard } from "../components/projects";
 import { projects } from "../constants";
 import { ArrowDown } from "@/assets/icons";
+import { fadeUp } from "@/lib/motion";
 
 export default function Projects() {
   // Estado para controlar quantos projetos mostrar (começa com 3)
@@ -20,33 +22,44 @@ export default function Projects() {
   return (
     <main>
       <Section id="portfolio">
-        {/* Cabeçalho da Página */}
+        {/* Cabeçalho da Página: Título e subtítulo com delay */}
         <div className="flex flex-col gap-2 mb-20">
-          <Text variant="ui-headline" className="text-gradient-gray">
-            Portfólio
-          </Text>
-          <Text variant="h2" className="uppercase font-normal">
-            <strong className="font-semibold">Trabalhos</strong> recentes
-          </Text>
+          <motion.div {...fadeUp}>
+            <Text variant="ui-headline" className="text-gradient-gray">
+              Portfólio
+            </Text>
+          </motion.div>
+          <motion.div {...fadeUp} transition={{ delay: 0.2 }}>
+            <Text variant="h2" className="uppercase font-normal">
+              <strong className="font-semibold">Trabalhos</strong> recentes
+            </Text>
+          </motion.div>
         </div>
 
         {/* Lista de Cards de Projeto */}
         <div className="flex flex-col w-full overflow-hidden gap-12">
           {projects.slice(0, visibleCount).map((project, index, array) => (
-            <React.Fragment key={project.id}>
+            <motion.div
+              key={project.id}
+              {...fadeUp}
+              transition={{ delay: index * 0.1 }}
+            >
               <ProjectCard {...project} techs={project.techs as any} />
 
-              {/* Linha divisória dinâmica */}
               {index < array.length - 1 && (
-                <hr className="border-border-default" />
+                <hr className="border-border-default mt-12" />
               )}
-            </React.Fragment>
+            </motion.div>
           ))}
         </div>
 
         {/* Botão de Ação: Carregar Mais */}
         {hasMoreProjects && (
-          <div className="flex items-center justify-center mt-24">
+          <motion.div
+            {...fadeUp}
+            transition={{ delay: 0.2 }}
+            className="flex items-center justify-center mt-24"
+          >
             <Button
               variant="tertiary"
               shape="rectangular"
@@ -54,7 +67,7 @@ export default function Projects() {
             >
               Mostrar mais <Icon svg={ArrowDown} animate="down" />
             </Button>
-          </div>
+          </motion.div>
         )}
       </Section>
 

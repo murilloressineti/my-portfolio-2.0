@@ -1,7 +1,7 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Button, NavLink, Text, Icon } from "../ui";
-
 import {
   ArrowUpRight,
   Close,
@@ -9,8 +9,8 @@ import {
   LinkedinLogo,
   List,
 } from "@/assets/icons";
-
 import { LogoFull, LogoSymbol } from "@/assets/logo";
+import { fadeDown } from "@/lib/motion";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,10 +22,8 @@ export default function Header() {
     { label: "Projetos", href: "/projetos" },
   ];
 
-  // Fecha o menu mobile ao trocar de rota
   useEffect(() => setIsMenuOpen(false), [location]);
 
-  // Trava o scroll do body quando o menu mobile está aberto
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
   }, [isMenuOpen]);
@@ -35,14 +33,22 @@ export default function Header() {
       {/* CONTAINER PRINCIPAL */}
       <div className="w-full py-5 lg:pb-0 px-6 md:px-30 lg:px-30 max-w-420 mx-auto">
         <div className="flex items-center justify-between lg:p-5">
-          {/* LOGO */}
-          <Link to="/" aria-label="Ir para página inicial" className="shrink-0">
-            <LogoFull className="hidden lg:block w-auto" />
-            <LogoSymbol className="block lg:hidden w-auto fill-brand-primary" />
-          </Link>
+          {/* LOGO - Entra primeiro */}
+          <motion.div {...fadeDown}>
+            <Link
+              to="/"
+              aria-label="Ir para página inicial"
+              className="shrink-0"
+            >
+              <LogoFull className="hidden lg:block w-auto" />
+              <LogoSymbol className="block lg:hidden w-auto fill-brand-primary" />
+            </Link>
+          </motion.div>
 
-          {/* NAVEGAÇÃO DESKTOP */}
-          <nav
+          {/* NAVEGAÇÃO DESKTOP - Delay 0.2s */}
+          <motion.nav
+            {...fadeDown}
+            transition={{ delay: 0.2 }}
             aria-label="Navegação principal"
             className="hidden lg:flex items-center gap-8 bg-neutral-100 backdrop-blur-lg rounded-full px-6 py-3"
           >
@@ -58,11 +64,14 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-          </nav>
+          </motion.nav>
 
-          {/* AÇÕES DESKTOP */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* LINKS SOCIAIS */}
+          {/* AÇÕES DESKTOP - Delay 0.4s */}
+          <motion.div
+            {...fadeDown}
+            transition={{ delay: 0.4 }}
+            className="hidden lg:flex items-center gap-3"
+          >
             <div className="flex items-center gap-3">
               {[
                 {
@@ -91,7 +100,6 @@ export default function Header() {
               ))}
             </div>
 
-            {/* CTA */}
             <Link to="/contato">
               <div className="flex group gap-1.5 ">
                 <Button shape="rounded" variant="navAction">
@@ -103,7 +111,7 @@ export default function Header() {
                 </Button>
               </div>
             </Link>
-          </div>
+          </motion.div>
 
           {/* BOTÃO MENU MOBILE */}
           <button
@@ -120,7 +128,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* MENU MOBILE OVERLAY */}
+      {/* MENU MOBILE OVERLAY - Mantendo sua lógica de CSS Transition para performance mobile */}
       <nav
         className={`fixed inset-0 bg-bg-default transition-all duration-500 ease-in-out lg:hidden flex flex-col items-center justify-center gap-10 ${
           isMenuOpen
@@ -128,6 +136,7 @@ export default function Header() {
             : "-translate-y-full opacity-0"
         }`}
       >
+        {/* ... conteúdo do menu mobile ... */}
         <ul className="flex flex-col items-center gap-10 text-center">
           {navLinks.map((link) => {
             const isSelected = location.pathname === link.href;
@@ -145,7 +154,6 @@ export default function Header() {
           })}
         </ul>
 
-        {/* CTA */}
         <Link to="/contato">
           <div className="group">
             <Button shape="rounded" variant="navAction">
@@ -154,9 +162,7 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Redes Sociais no Mobile */}
         <div className="flex items-center gap-3">
-          {/* LINKS SOCIAIS */}
           {[
             {
               href: "https://linkedin.com/in/murilloressineti/",

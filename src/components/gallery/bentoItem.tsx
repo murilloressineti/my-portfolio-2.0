@@ -1,8 +1,8 @@
-import React from "react";
-import { cn } from "../../lib/utils";
+import { motion, type HTMLMotionProps } from "framer-motion";
+import { cn, fadeUp } from "@/lib";
 import Text from "../ui/Text";
 
-interface BentoItemProps extends React.ComponentProps<"div"> {
+interface BentoItemProps extends HTMLMotionProps<"div"> {
   image: string;
   title: string;
   textPosition?: "top" | "bottom";
@@ -16,7 +16,8 @@ export default function BentoItem({
   ...props
 }: BentoItemProps) {
   return (
-    <div
+    <motion.div
+      {...fadeUp} // Aciona a animação de scroll em cada card individualmente
       className={cn(
         "flex flex-col gap-6 md:w-full md:min-h-126 group",
         className,
@@ -50,6 +51,6 @@ export default function BentoItem({
           </Text>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

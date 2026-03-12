@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "sonner";
+import { motion } from "framer-motion"; // Importando motion
 import { Section } from "../components/layout";
 import { Button, Icon, Input, Text } from "../components/ui";
 import {
@@ -9,6 +10,7 @@ import {
   GitHubLogo,
   LinkedinLogo,
 } from "@/assets/icons";
+import { fadeUp } from "@/lib/motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -84,9 +86,9 @@ export default function Contact() {
   return (
     <main>
       <Section id="contact" className="py-20 md:py-30">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center md:max-w-276 mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start md:max-w-276 mx-auto">
           {/* Coluna da Esquerda: Info */}
-          <div className="flex flex-col gap-12">
+          <motion.div {...fadeUp} className="flex flex-col gap-12">
             <header className="flex flex-col">
               <Text as="h2" className="text-4xl uppercase font-normal mb-3">
                 Vamos <strong className="font-semibold">conversar?</strong>
@@ -152,7 +154,7 @@ export default function Contact() {
                       href={social.href}
                       target="_blank"
                       variant="contactCard"
-                      className="w-full justify-between "
+                      className="w-full justify-between"
                     >
                       <Text
                         className="flex items-center gap-6"
@@ -175,10 +177,12 @@ export default function Contact() {
                 </div>
               </nav>
             </div>
-          </div>
+          </motion.div>
 
           {/* Coluna da Direita: Formulário */}
-          <form
+          <motion.form
+            {...fadeUp}
+            transition={{ delay: 0.2 }}
             className="flex flex-col gap-8"
             onSubmit={handleSubmit}
             noValidate
@@ -228,7 +232,7 @@ export default function Contact() {
                 />
               )}
             </Button>
-          </form>
+          </motion.form>
         </div>
       </Section>
     </main>

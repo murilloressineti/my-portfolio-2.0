@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button, Text, Icon } from "../ui";
 import { Section } from "../layout";
 import {
@@ -8,6 +9,7 @@ import {
   GitHubLogo,
 } from "@/assets/icons";
 import { GridBackground } from "@/assets/images/background";
+import { fadeUp } from "@/lib/motion";
 
 export default function CTASection() {
   return (
@@ -15,13 +17,19 @@ export default function CTASection() {
       id="cta"
       className="bg-neutral-black relative overflow-hidden text-center md:py-20"
     >
-      <div
-        className="absolute inset-0 opacity-50 pointer-events-none z-0 bg-center bg-no-repeat"
+      {/* Background Grid - Animado com um fade suave independente */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.5 }}
+        transition={{ duration: 1.5 }}
+        className="absolute inset-0 pointer-events-none z-0 bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${GridBackground})` }}
       />
+
       <div className="relative z-10 flex flex-col items-center justify-center">
         <div className="max-w-165">
-          <header className="flex flex-col">
+          {/* Header: Título e Subtítulo aparecem primeiro */}
+          <motion.header {...fadeUp} className="flex flex-col">
             <Text variant="h2" className="text-neutral-white uppercase mb-3">
               Vamos trabalhar juntos?
             </Text>
@@ -29,10 +37,14 @@ export default function CTASection() {
               Sempre em busca de desafios e oportunidades que conectem
               propósito, tecnologia e impacto real.
             </Text>
-          </header>
+          </motion.header>
 
-          {/* Buttons */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-5 mb-12">
+          {/* Buttons: Aparecem com 0.2s de delay */}
+          <motion.div
+            {...fadeUp}
+            transition={{ delay: 0.2 }}
+            className="flex flex-col md:flex-row items-center justify-center gap-5 mb-12"
+          >
             {[
               {
                 label: "Entre em contato",
@@ -65,10 +77,14 @@ export default function CTASection() {
                 />
               </Button>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Redes Sociais */}
-          <div className="flex items-center justify-center gap-5">
+          {/* Redes Sociais: Aparecem por último com 0.4s de delay */}
+          <motion.div
+            {...fadeUp}
+            transition={{ delay: 0.4 }}
+            className="flex items-center justify-center gap-5"
+          >
             {[
               {
                 href: "https://linkedin.com/in/murilloressineti/",
@@ -95,7 +111,7 @@ export default function CTASection() {
                 />
               </a>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </Section>

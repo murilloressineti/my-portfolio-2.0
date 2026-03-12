@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Section } from "../components/layout";
 import { Button, Icon, Text } from "../components/ui";
 import { ArrowUpRight } from "@assets/icons";
+import { fadeUp } from "@/lib/motion";
 
 export default function NotFound() {
   return (
@@ -12,20 +14,27 @@ export default function NotFound() {
       >
         <div className="flex flex-col gap-6 max-w-190 mx-auto">
           {/* Título Principal */}
-          <Text variant="h2" className="text-3xl uppercase font-normal">
-            <strong className="font-semibold">Ops!</strong> Parece que você se
-            perdeu no caminho.
-          </Text>
+          <motion.div {...fadeUp}>
+            <Text variant="h2" className="text-3xl uppercase font-normal">
+              <strong className="font-semibold">Ops!</strong> Parece que você se
+              perdeu no caminho.
+            </Text>
+          </motion.div>
 
-          {/* Mensagem */}
-          <Text variant="body-lg" className="text-text-secondary opacity-80">
-            A página que você procura não existe ou foi movida. Não se preocupe,
-            use os botões abaixo para voltar ao início ou entrar em contato.
-          </Text>
+          <motion.div {...fadeUp} transition={{ delay: 0.4 }}>
+            <Text variant="body-lg" className="text-text-secondary opacity-80">
+              A página que você procura não existe ou foi movida. Não se
+              preocupe, use os botões abaixo para voltar ao início ou entrar em
+              contato.
+            </Text>
+          </motion.div>
         </div>
 
-        {/* Ações */}
-        <div className="flex flex-col md:flex-row gap-4 justify-center mt-12 md:mt-18 w-full">
+        <motion.div
+          {...fadeUp}
+          transition={{ delay: 0.6 }}
+          className="flex flex-col md:flex-row gap-4 justify-center mt-12 md:mt-18 w-full"
+        >
           <Button
             as={Link}
             to="/"
@@ -49,7 +58,7 @@ export default function NotFound() {
             Entre em contato
             <Icon svg={ArrowUpRight} animate="rotate" />
           </Button>
-        </div>
+        </motion.div>
       </Section>
     </main>
   );
