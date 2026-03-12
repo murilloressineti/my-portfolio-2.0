@@ -63,7 +63,9 @@ export default function AboutMe() {
                 Full-Stack da Rocketseat, consolidando conhecimentos em HTML,
                 CSS, JavaScript, React, TypeScript e Node.js. Paralelamente,
                 busco uma base teórica sólida em Análise e Desenvolvimento de
-                Sistemas na Universidade Presbiteriana Mackenzie.
+                Sistemas na Universidade Presbiteriana Mackenzie. Essa
+                combinação de aprendizado prático e acadêmico me permite
+                construir soluções digitais que geram valor.
               </Text>
             </motion.div>
           </div>

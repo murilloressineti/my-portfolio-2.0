@@ -139,12 +139,14 @@ export default function Home() {
               >
                 <Text variant="body-lg" className="text-text-secondary">
                   Minha jornada começou com Python, mas foi no front-end que
-                  encontrei meu caminho...
+                  encontrei meu caminho, onde estética e funcionalidade se
+                  encontram.
                 </Text>
 
                 <Text variant="body-lg" className="text-text-secondary">
                   Desde então, desenvolvo interfaces com clareza e boas
-                  práticas...
+                  práticas. Cada projeto fortalece meu repertório técnico e
+                  minha visão sobre boas experiências digitais.
                 </Text>
               </motion.div>
 
