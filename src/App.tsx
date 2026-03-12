@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "sonner";
 
 // Layout
 import { Header, Footer } from "./components/layout";
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Toaster position="bottom-center" richColors />
       <Header />
       <main className="min-h-screen">
         <Routes>

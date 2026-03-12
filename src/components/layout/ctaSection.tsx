@@ -11,7 +11,10 @@ import { GridBackground } from "@/assets/images/background";
 
 export default function CTASection() {
   return (
-    <Section className="bg-neutral-black relative overflow-hidden text-center md:py-20">
+    <Section
+      id="cta"
+      className="bg-neutral-black relative overflow-hidden text-center md:py-20"
+    >
       <div
         className="absolute inset-0 opacity-50 pointer-events-none z-0 bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${GridBackground})` }}

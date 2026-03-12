@@ -19,7 +19,7 @@ export default function Projects() {
 
   return (
     <main>
-      <Section>
+      <Section id="portfolio">
         {/* Cabeçalho da Página */}
         <div className="flex flex-col gap-2 mb-20">
           <Text variant="ui-headline" className="text-gradient-gray">

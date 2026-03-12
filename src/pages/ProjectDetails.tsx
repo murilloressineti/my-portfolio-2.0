@@ -14,6 +14,7 @@ export default function ProjectDetails() {
 
   return (
     <main>
+      {/* SEÇÃO PRINCIPAL: DETALHES DO PROJETO */}
       <Section id="content" className="md:pb-20">
         {/* HEADER: TÍTULO E BOTÕES */}
         <div className="flex flex-col mb-20">
@@ -141,7 +142,8 @@ export default function ProjectDetails() {
         </div>
       </Section>
 
-      <Section className="bg-bg-surface">
+      {/* SEÇÃO DE SUGESTÕES: OUTROS PROJETOS */}
+      <Section id="related-projects" className="bg-bg-surface">
         <div className="flex flex-col gap-2 mb-20">
           <Text variant="ui-headline" className="text-gradient-gray">
             Portfólio

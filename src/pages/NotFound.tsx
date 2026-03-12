@@ -6,7 +6,10 @@ import { ArrowUpRight } from "@assets/icons";
 export default function NotFound() {
   return (
     <main>
-      <Section className="flex min-h-[90vh] flex-col items-center justify-center text-left">
+      <Section
+        id="not-found"
+        className="flex min-h-[90vh] flex-col items-center justify-center text-left"
+      >
         <div className="flex flex-col gap-6 max-w-190 mx-auto">
           {/* Título Principal */}
           <Text variant="h2" className="text-3xl uppercase font-normal">

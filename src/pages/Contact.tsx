@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "sonner";
 import { Section } from "../components/layout";
 import { Button, Icon, Input, Text } from "../components/ui";
 import {
@@ -33,8 +34,7 @@ export default function Contact() {
   // Função para copiar E-mail
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("murillo@ressineti.com.br");
-    // Trocar por um Toast no futuro para ser mais elegante que o alert
-    alert("E-mail copiado!");
+    toast.success("E-mail copiado para a área de transferência!");
   };
 
   // Função para validações
@@ -54,7 +54,10 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validate()) return;
+    if (!validate()) {
+      toast.error("Por favor, corrija os erros no formulário.");
+      return;
+    }
 
     setIsSubmitting(true);
 
@@ -66,13 +69,13 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        alert("Mensagem enviada com sucesso!");
+        toast.success("Mensagem enviada! Retornarei em breve.");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("Ops! Algo deu errado no servidor.");
+        toast.error("Ops! Ocorreu um erro ao enviar. Tente novamente.");
       }
     } catch {
-      alert("Erro de conexão. Verifique sua internet.");
+      toast.error("Erro de conexão. Verifique sua internet.");
     } finally {
       setIsSubmitting(false);
     }
@@ -80,7 +83,7 @@ export default function Contact() {
 
   return (
     <main>
-      <Section className="py-20 md:py-30">
+      <Section id="contact" className="py-20 md:py-30">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center md:max-w-276 mx-auto">
           {/* Coluna da Esquerda: Info */}
           <div className="flex flex-col gap-12">

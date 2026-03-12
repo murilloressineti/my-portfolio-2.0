@@ -24,9 +24,9 @@ export default function AboutMe() {
     <main>
       {/* Introduction Section */}
       <Section id="intro" className="py-10 md:p-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center md:items-start gap-6 md:gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-0">
           {/* Coluna de Texto */}
-          <div className="flex flex-col gap-10 md:pl-30 md:pr-20 mx-auto w-full md:pt-[15%]">
+          <div className="flex flex-col gap-10 md:pl-30 md:pr-20 mx-auto w-full">
             <Text variant="h2" className="uppercase font-normal">
               Desenvolvendo <strong className="font-semibold">soluções</strong>{" "}
               que conectam <strong className="font-semibold">pessoas</strong> e
@@ -66,14 +66,14 @@ export default function AboutMe() {
             <img
               src={Profile}
               alt="Murillo Ressineti trabalhando em seu notebook"
-              className="w-full h-screen md:h-220 object-cover md:object-[60%_40%] rounded-lg md:rounded-l-lg"
+              className="w-full h-screen object-cover md:object-[60%_40%] rounded-lg md:rounded-l-lg"
             />
           </div>
         </div>
       </Section>
 
       {/* TimeLine */}
-      <Section className="bg-bg-surface">
+      <Section id="timeline" className="bg-bg-surface">
         <Timeline>
           {timelineSteps.map((item, index) => (
             <TimelineItem key={index} {...item} />
@@ -82,7 +82,7 @@ export default function AboutMe() {
       </Section>
 
       {/* Gallery */}
-      <Section>
+      <Section id="gallery">
         <div className="flex items-center justify-center md:justify-start mb-12 md:mb-20">
           <Text variant="h2" className="uppercase font-normal">
             Fora do <strong className="font-semibold">código</strong>
