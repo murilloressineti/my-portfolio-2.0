@@ -32,7 +32,7 @@ export default function Header() {
     <header className="relative z-50 w-full bg-bg-surface lg:bg-transparent">
       {/* CONTAINER PRINCIPAL */}
       <div className="w-full py-5 lg:pb-0 px-6 md:px-12 lg:px-30 max-w-420 mx-auto">
-        <div className="flex items-center justify-between lg:p-5">
+        <div className="flex items-center justify-between lg:py-5">
           {/* LOGO - Entra primeiro */}
           <motion.div {...fadeDown}>
             <Link
@@ -45,10 +45,10 @@ export default function Header() {
             </Link>
           </motion.div>
 
-          {/* NAVEGAÇÃO DESKTOP - Delay 0.2s */}
+          {/* NAVEGAÇÃO DESKTOP - Delay 0.25s */}
           <motion.nav
             {...fadeDown}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.25 }}
             aria-label="Navegação principal"
             className="hidden lg:flex items-center gap-8 bg-neutral-100 backdrop-blur-lg rounded-full px-6 py-3"
           >
@@ -66,10 +66,10 @@ export default function Header() {
             </ul>
           </motion.nav>
 
-          {/* AÇÕES DESKTOP - Delay 0.4s */}
+          {/* AÇÕES DESKTOP - Delay 0.5s */}
           <motion.div
             {...fadeDown}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.5 }}
             className="hidden lg:flex items-center gap-3"
           >
             <div className="flex items-center gap-3">

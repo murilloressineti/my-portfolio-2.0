@@ -26,6 +26,7 @@ interface ProjectCardProps
   title: string;
   description: string;
   imageSrc: string;
+  imageDetails: string;
   githubUrl?: string;
   deployUrl?: string;
   techs: Array<"react" | "tailwind" | "typescript" | "figma" | "git">;
@@ -41,6 +42,7 @@ export default function ProjectCard({
   deployUrl,
   techs,
   className,
+  imageDetails,
   ...props
 }: ProjectCardProps) {
   const desktopTechs = techs.slice(0, 3);
@@ -145,8 +147,13 @@ export default function ProjectCard({
               variant === "grid" ? "md:hidden" : "md:flex md:flex-wrap",
             )}
           >
-            {techs.map((tech) => (
-              <Tag key={tech} dot={tech} size="default" className="shrink-0">
+            {techs.map((tech, index) => (
+              <Tag
+                key={`${tech}-${index}`}
+                dot={tech}
+                size="default"
+                className="shrink-0"
+              >
                 {tech.charAt(0).toUpperCase() + tech.slice(1)}
               </Tag>
             ))}
@@ -156,8 +163,8 @@ export default function ProjectCard({
           {/* GRID VIEW  */}
           {variant === "grid" && (
             <div className="hidden md:flex items-center gap-3">
-              {desktopTechs.map((tech) => (
-                <Tag key={tech} dot={tech} size="sm">
+              {desktopTechs.map((tech, index) => (
+                <Tag key={`${tech}-${index}`} dot={tech} size="sm">
                   {tech.charAt(0).toUpperCase() + tech.slice(1)}
                 </Tag>
               ))}

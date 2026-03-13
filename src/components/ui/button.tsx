@@ -63,6 +63,7 @@ interface ButtonProps
   href?: string;
   target?: string;
   rel?: string;
+  download?: string;
 }
 
 export default function Button({

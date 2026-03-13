@@ -58,7 +58,8 @@ export default function CTASection() {
               {
                 label: "Baixar currículo",
                 icon: Download,
-                href: "/seu-curriculo.pdf",
+                href: "/curriculo-murillo-ressineti.pdf",
+                download: "Curriculo_Murillo_Ressineti.pdf",
                 animate: "down" as const,
               },
             ].map((item) => (
@@ -67,6 +68,7 @@ export default function CTASection() {
                 as={item.to ? Link : "a"}
                 to={item.to}
                 href={item.href}
+                download={item.download}
                 target={item.href ? "_blank" : undefined}
                 rel={item.href ? "noopener noreferrer" : undefined}
                 variant="footerCta"

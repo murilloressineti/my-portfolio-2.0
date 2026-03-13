@@ -6,6 +6,8 @@ interface BentoItemProps extends HTMLMotionProps<"div"> {
   image: string;
   title: string;
   textPosition?: "top" | "bottom";
+  desktopOrder?: number;
+  mobileOrder?: number;
 }
 
 export default function BentoItem({
@@ -13,16 +15,20 @@ export default function BentoItem({
   title,
   textPosition = "bottom",
   className,
+  desktopOrder,
+  mobileOrder,
   ...props
 }: BentoItemProps) {
   return (
     <motion.div
       {...fadeUp} // Aciona a animação de scroll em cada card individualmente
+      {...props}
       className={cn(
         "flex flex-col gap-6 md:w-full md:min-h-126 group",
+        String(desktopOrder || ""),
+        String(mobileOrder || ""),
         className,
       )}
-      {...props}
     >
       {/* Texto no Top */}
       {textPosition === "top" && (

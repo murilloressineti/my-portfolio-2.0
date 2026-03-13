@@ -116,8 +116,8 @@ export default function AboutMe() {
           {/* Gallery Desktop */}
           <div className="hidden lg:block">
             <BentoGrid>
-              {desktopGallery.map((item, index) => (
-                <BentoItem key={index} {...item} />
+              {desktopGallery.map((item) => (
+                <BentoItem key={item.title} {...item} />
               ))}
             </BentoGrid>
           </div>
@@ -125,8 +125,8 @@ export default function AboutMe() {
           {/* Gallery Mobile */}
           <div className="block lg:hidden">
             <BentoCarousel>
-              {mobileGallery.map((item, index) => (
-                <BentoItem key={index} {...item} textPosition="bottom" />
+              {mobileGallery.map((item) => (
+                <BentoItem key={item.title} {...item} textPosition="bottom" />
               ))}
             </BentoCarousel>
           </div>

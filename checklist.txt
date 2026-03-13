@@ -4,10 +4,10 @@ PORTFÓLIO REACT — CHECKLIST
 2. Revisar pages: contact ✅, notfound ✅, home ✅, aboutme ✅, projects ✅, projectdetails ✅;
 3. Verificar formulário da página de contato ✅ e Id nas sections ✅;
 4. Implementar animações das páginas; ✅
-5. Colocar fotos e conteúdo real no projeto (Projects, Gallery); ⏳
+5. Colocar fotos e conteúdo real no projeto (Projects?, Gallery); ⏳
 6. Revisão responsividade; ✅
-7. Revisão geral do projeto; (Tag no ProjectCard Grid, PDF Currículo, Readme) ⏳
-8. Fazer deploy. 🏁
+7. Revisão geral do projeto; (Tag no ProjectCard Grid) ⏳
+8. Fazer deploy (Readme). 🏁
 
 UTILIZADOS
 
