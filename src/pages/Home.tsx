@@ -184,7 +184,7 @@ export default function Home() {
 
               <motion.div
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.2 }}
+                transition={{ delay: 0.2 }}
                 className="flex flex-wrap items-center justify-center gap-3"
               >
                 {["react", "tailwind", "typescript", "figma", "git"].map(

@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="bg-neutral-black py-8 px-6 md:px-12 lg:px-30">
       <motion.div
         {...fadeUp}
-        transition={{ ...fadeUp.transition, delay: 0.2 }}
+        transition={{ delay: 0.2 }}
         className="w-full max-w-420 mx-auto flex flex-row justify-between items-start md:items-center gap-4"
       >
         <Text variant="body-base" className="text-neutral-400">
