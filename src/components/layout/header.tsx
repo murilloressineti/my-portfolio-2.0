@@ -31,7 +31,7 @@ export default function Header() {
   return (
     <header className="relative z-50 w-full bg-bg-surface lg:bg-transparent">
       {/* CONTAINER PRINCIPAL */}
-      <div className="w-full py-5 lg:pb-0 px-6 md:px-30 lg:px-30 max-w-420 mx-auto">
+      <div className="w-full py-5 lg:pb-0 px-6 md:px-12 lg:px-30 max-w-420 mx-auto">
         <div className="flex items-center justify-between lg:p-5">
           {/* LOGO - Entra primeiro */}
           <motion.div {...fadeDown}>

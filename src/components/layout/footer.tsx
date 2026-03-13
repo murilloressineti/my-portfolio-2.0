@@ -8,7 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-black py-8 px-6 md:px-30">
+    <footer className="bg-neutral-black py-8 px-6 md:px-12 lg:px-30">
       <motion.div
         {...fadeUp}
         transition={{ ...fadeUp.transition, delay: 0.2 }}

@@ -26,10 +26,10 @@ export default function AboutMe() {
   return (
     <main>
       {/* Introduction Section */}
-      <Section id="intro" className="py-10 md:p-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-0">
+      <Section id="intro" className="py-10 md:py-20 lg:p-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-0">
           {/* Coluna de Texto */}
-          <div className="flex flex-col gap-10 md:pl-30 md:pr-20 mx-auto w-full">
+          <div className="flex flex-col gap-10 lg:pl-30 lg:pr-20 mx-auto w-full">
             <motion.div {...fadeUp}>
               <Text variant="h2" className="uppercase font-normal">
                 Desenvolvendo{" "}
@@ -106,15 +106,15 @@ export default function AboutMe() {
 
       {/* Gallery */}
       <Section id="gallery">
-        <div className="flex items-center justify-center md:justify-start mb-12 md:mb-20">
+        <div className="flex items-center justify-center lg:justify-start mb-12 lg:mb-20">
           <Text variant="h2" className="uppercase font-normal">
             Fora do <strong className="font-semibold">código</strong>
           </Text>
         </div>
 
-        <div className="max-w-7xl md:mx-auto md:px-30 overflow-hidden">
+        <div>
           {/* Gallery Desktop */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <BentoGrid>
               {desktopGallery.map((item, index) => (
                 <BentoItem key={index} {...item} />
@@ -123,7 +123,7 @@ export default function AboutMe() {
           </div>
 
           {/* Gallery Mobile */}
-          <div className="block md:hidden">
+          <div className="block lg:hidden">
             <BentoCarousel>
               {mobileGallery.map((item, index) => (
                 <BentoItem key={index} {...item} textPosition="bottom" />

@@ -33,7 +33,10 @@ export default function CTASection() {
             <Text variant="h2" className="text-neutral-white uppercase mb-3">
               Vamos trabalhar juntos?
             </Text>
-            <Text className="text-2xl leading-snug tracking-tight text-neutral-200 mb-8">
+            <Text
+              variant="body-lg"
+              className="md:text-2xl leading-snug tracking-tight text-neutral-200 mb-8"
+            >
               Sempre em busca de desafios e oportunidades que conectem
               propósito, tecnologia e impacto real.
             </Text>

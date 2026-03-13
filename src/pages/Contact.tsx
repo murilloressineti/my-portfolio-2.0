@@ -86,7 +86,7 @@ export default function Contact() {
   return (
     <main>
       <Section id="contact" className="py-20 md:py-30">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start md:max-w-276 mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-30 items-start md:max-w-276 mx-auto">
           {/* Coluna da Esquerda: Info */}
           <motion.div {...fadeUp} className="flex flex-col gap-12">
             <header className="flex flex-col">

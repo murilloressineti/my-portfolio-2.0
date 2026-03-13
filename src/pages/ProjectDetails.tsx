@@ -111,7 +111,7 @@ export default function ProjectDetails() {
             className="flex flex-col gap-4"
           >
             <Text variant="h3">Descrição do projeto</Text>
-            <Text variant="body-lg" className="text-text-secondary opacity-80">
+            <Text variant="body-lg" className="text-text-secondary">
               {project.description}
             </Text>
           </motion.div>
@@ -138,7 +138,7 @@ export default function ProjectDetails() {
 
                     <Text
                       variant="body-lg"
-                      className="text-text-secondary opacity-80"
+                      className="text-text-secondary"
                     >
                       {item}
                     </Text>
@@ -177,7 +177,7 @@ export default function ProjectDetails() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {projects
             .filter((p) => p.id !== id)
             .slice(0, 3)

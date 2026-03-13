@@ -61,8 +61,8 @@ export default function Home() {
                   variant="h1"
                   className="uppercase font-normal mb-4 md:mb-2"
                 >
-                  Desenvolvedor <br className="block md:hidden" />
-                  front-end
+                  Desenvolvedor <br className="block lg:hidden" />
+                  <strong className="font-semibold">front-end</strong>
                 </Text>
               </motion.div>
 
@@ -135,7 +135,7 @@ export default function Home() {
               <motion.div
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: 0.4 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-50"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-50"
               >
                 <Text variant="body-lg" className="text-text-secondary">
                   Minha jornada começou com Python, mas foi no front-end que
@@ -169,7 +169,7 @@ export default function Home() {
           </Section>
 
           {/* Skills Section */}
-          <Section id="skills" className="md:py-50">
+          <Section id="skills" className="py-60 md:py-60">
             <div className="flex flex-col items-center justify-center mx-auto">
               <motion.div {...fadeUp} className="text-center">
                 <Text variant="ui-headline" className="text-gradient-gray mb-2">

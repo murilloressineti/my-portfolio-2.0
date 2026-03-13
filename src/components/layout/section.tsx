@@ -19,7 +19,7 @@ export default function Section({
       id={id}
       className={cn(
         "py-20 md:py-30",
-        !isFullWidth && "px-6 md:px-30",
+        !isFullWidth && "px-6 md:px-12 lg:px-30",
         className,
       )}
     >

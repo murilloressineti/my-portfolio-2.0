@@ -13,7 +13,7 @@ export default function Timeline({
   return (
     <div
       className={cn(
-        "relative w-full max-w-6xl mx-auto flex flex-col",
+        "relative w-full max-w-5xl mx-auto flex flex-col",
         className,
       )}
       {...props}

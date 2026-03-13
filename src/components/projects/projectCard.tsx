@@ -9,8 +9,7 @@ import { ArrowUpRight, GitHubLogo } from "@/assets/icons";
 export const projectCardVariants = cva("flex min-w-0 w-full", {
   variants: {
     variant: {
-      // Ajustado: gap-16 no desktop para dar o ar de "espaço" do Figma
-      default: "flex-col md:flex-row items-start gap-6 md:gap-12",
+      default: "flex-col lg:flex-row items-start gap-6 md:gap-12",
       grid: "flex-col items-start gap-7",
     },
   },
@@ -55,7 +54,7 @@ export default function ProjectCard({
         to={projectLink}
         className={cn(
           "shrink-0 block w-full",
-          variant === "default" ? "md:w-auto" : "md:w-full",
+          variant === "default" ? "lg:w-auto" : "md:w-full",
         )}
       >
         <ProjectThumbnail

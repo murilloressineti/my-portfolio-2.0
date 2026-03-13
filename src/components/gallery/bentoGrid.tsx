@@ -13,7 +13,7 @@ export default function BentoGrid({
   return (
     <div
       className={cn(
-        "grid md:grid-cols-3 md:gap-8 w-full auto-rows-min",
+        "grid md:grid-cols-3 md:gap-8 w-full auto-rows-min max-w-5xl mx-auto overflow-hidden",
         className,
       )}
       {...props}

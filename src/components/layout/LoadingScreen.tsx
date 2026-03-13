@@ -67,12 +67,12 @@ export default function LoadingScreen() {
       >
         {/* Logo MR */}
         <motion.div variants={itemVariants} className="shrink-0">
-          <LogoMr className="h-9 md:h-11 w-auto" />
+          <LogoMr className="h-8 md:h-11 w-auto" />
         </motion.div>
 
         {/* Logo Text */}
         <motion.div variants={itemVariants}>
-          <LogoText className="h-5 md:h-6 w-auto" />
+          <LogoText className="h-4 md:h-6 w-auto" />
         </motion.div>
       </motion.div>
     </motion.div>

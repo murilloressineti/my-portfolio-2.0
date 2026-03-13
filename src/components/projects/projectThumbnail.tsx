@@ -8,7 +8,7 @@ export const projectThumbnailVariants = cva(
     variants: {
       variant: {
         default: "px-5 pt-5",
-        full: "items-center p-20",
+        full: "items-center p-5 lg:p-20",
       },
       animate: {
         false: "",

@@ -42,7 +42,7 @@ export default function TimelineItem({
 
   return (
     <motion.div
-      {...fadeUp} // Aplica a animação de scroll em cada item individualmente
+      {...fadeUp}
       {...props}
       className={cn(
         timelineItemVariants({ side, className }),
@@ -113,11 +113,11 @@ function TimelineContent({
   return (
     <div
       className={cn(
-        "flex flex-col w-full bg-bg-default rounded-lg p-6 transition-all duration-300 ease-in-out border border-transparent hover:border-neutral-200 hover:shadow-md hover:-translate-y-1",
+        "flex flex-col w-full bg-bg-default rounded-lg p-3 md:p-6 transition-all duration-300 ease-in-out border border-transparent hover:border-neutral-200 hover:shadow-md hover:-translate-y-1",
         align === "right" ? "items-end text-right" : "items-start text-left",
       )}
     >
-      <Text variant="h4" className="uppercase mb-2 font-normal">
+      <Text variant="h4" className="text-sm uppercase mb-2 font-semibold md:font-normal">
         {parts.map((part, index) => (
           <span
             key={index}
@@ -127,7 +127,7 @@ function TimelineContent({
           </span>
         ))}
       </Text>
-      <Text variant="body-base" className="text-text-secondary mb-8">
+      <Text variant="body-base" className="text-sm md:text-base text-text-secondary mb-6 md:mb-8">
         {description}
       </Text>
       <Text variant="ui-headline" className="mt-2 text-neutral-400 uppercase">
@@ -150,7 +150,7 @@ function TimelineBadge({ text, icon }: { text: string; icon: any }) {
       ></Icon>
       <Text
         variant="body-base"
-        className="text-neutral-black font-bold text-center"
+        className="text-sm md:text-base text-neutral-black font-bold text-center"
       >
         {text}
       </Text>
