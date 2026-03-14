@@ -1,2 +1,2 @@
-export { default as ProjectThumbnail } from './ProjectThumbnail';
-export { default as ProjectCard } from './ProjectCard';
+export { default as ProjectThumbnail } from './_ProjectThumbnail';
+export { default as ProjectCard } from './_ProjectCard';

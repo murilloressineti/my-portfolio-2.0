@@ -1,6 +1,6 @@
 import { motion, type HTMLMotionProps } from "framer-motion";
 import { cn, fadeUp } from "@/lib";
-import Text from "../ui/Text";
+import Text from "../ui/_Text";
 
 interface BentoItemProps extends HTMLMotionProps<"div"> {
   image: string;
