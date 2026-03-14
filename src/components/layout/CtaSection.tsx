@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button, Text, Icon } from "../ui";
-import { Section } from "../layout";
+import { Section } from ".";
 import {
   ArrowUpRight,
   Download,
