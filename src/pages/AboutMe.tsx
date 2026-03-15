@@ -48,23 +48,42 @@ export default function AboutMe() {
                 variant="body-base"
                 className="text-text-secondary opacity-70"
               >
-                Minha jornada na tecnologia começou com Python, mas foi no
-                front-end que encontrei meu caminho, unindo estética e
-                funcionalidade. Meus projetos focam em performance e experiência
-                do usuário. Acredito que constância é a maior força que
-                impulsiona e ajuda a superar qualquer desafio.
+                Minha jornada na tecnologia começou com Python, mas foi no{" "}
+                <strong className="font-semibold ">front-end</strong> que
+                encontrei meu caminho, unindo{" "}
+                <strong className="font-semibold ">
+                  estética e funcionalidade
+                </strong>
+                . Meus projetos focam em{" "}
+                <strong className="font-semibold ">
+                  performance e experiência do usuário
+                </strong>
+                . Acredito que{" "}
+                <strong className="font-semibold ">constância</strong> é a maior
+                força que impulsiona e ajuda a superar qualquer desafio.
               </Text>
 
               <Text
                 variant="body-base"
                 className="text-text-secondary opacity-70"
               >
-                Para aprimorar minhas habilidades, ingressei no bootcamp
-                Full-Stack da Rocketseat, consolidando conhecimentos em HTML,
-                CSS, JavaScript, React, TypeScript e Node.js. Paralelamente,
-                busco uma base teórica sólida em Análise e Desenvolvimento de
-                Sistemas na Universidade Presbiteriana Mackenzie. Essa
-                combinação de aprendizado prático e acadêmico me permite
+                Para aprimorar minhas habilidades, ingressei no bootcamp{" "}
+                <strong className="font-semibold ">
+                  Full-Stack da Rocketseat
+                </strong>
+                , consolidando conhecimentos em{" "}
+                <strong className="font-semibold ">
+                  React, TypeScript e Node.js
+                </strong>
+                . Paralelamente, busco uma base teórica sólida em{" "}
+                <strong className="font-semibold ">
+                  Análise e Desenvolvimento de Sistemas
+                </strong>{" "}
+                na{" "}
+                <strong className="font-semibold ">
+                  Universidade Presbiteriana Mackenzie
+                </strong>
+                . Essa combinação de aprendizado prático e acadêmico me permite
                 construir soluções digitais que geram valor.
               </Text>
             </motion.div>
