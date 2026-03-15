@@ -24,7 +24,7 @@ export default function BentoItem({
       {...fadeUp} // Aciona a animação de scroll em cada card individualmente
       {...props}
       className={cn(
-        "flex flex-col gap-6 md:w-full md:min-h-126 group",
+        "flex flex-col gap-6 w-full h-full md:max-h-126 group",
         String(desktopOrder || ""),
         String(mobileOrder || ""),
         className,
@@ -32,7 +32,7 @@ export default function BentoItem({
     >
       {/* Texto no Top */}
       {textPosition === "top" && (
-        <div className="bg-neutral-100 p-6 rounded-lg">
+        <div className="flex items-start md:items-center w-full h-1/4 p-6 rounded-lg bg-neutral-100">
           <Text variant="body-base" className="text-text-secondary">
             {title}
           </Text>
@@ -40,7 +40,7 @@ export default function BentoItem({
       )}
 
       {/* Container da Imagem */}
-      <div className="h-full w-full overflow-hidden rounded-lg">
+      <div className="h-3/4 w-full overflow-hidden rounded-lg">
         <img
           src={image}
           alt={title}
@@ -51,7 +51,7 @@ export default function BentoItem({
 
       {/* Texto no Bottom */}
       {textPosition === "bottom" && (
-        <div className="bg-neutral-100 p-6 rounded-lg">
+        <div className="flex items-start md:items-center w-full h-1/4 p-6 rounded-lg bg-neutral-100">
           <Text variant="body-base" className="text-text-secondary">
             {title}
           </Text>

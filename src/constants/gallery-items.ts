@@ -1,4 +1,11 @@
-import { Original1, Original2 } from "../assets/images/gallery";
+import {
+  PlayingGuitar,
+  Family,
+  Gaming,
+  Gym,
+  Reading,
+  Football,
+} from "../assets/images/gallery";
 
 export interface GalleryItem {
   image: string;
@@ -10,7 +17,7 @@ export interface GalleryItem {
 
 export const galleryItems: GalleryItem[] = [
   {
-    image: Original1,
+    image: PlayingGuitar,
     title:
       "Formado na EM&T e integrante de uma banda, encontrei na música minha forma de expressão.",
     textPosition: "bottom",
@@ -18,7 +25,7 @@ export const galleryItems: GalleryItem[] = [
     mobileOrder: 2,
   },
   {
-    image: Original2,
+    image: Family,
     title:
       "Meu ponto de equilíbrio. Onde recarrego a energia e lembro do que realmente importa.",
     textPosition: "top",
@@ -26,7 +33,7 @@ export const galleryItems: GalleryItem[] = [
     mobileOrder: 1,
   },
   {
-    image: Original1,
+    image: Gaming,
     title:
       "Jogos me divertem e desafiam. É onde relaxo, mergulho em boas histórias e deixo a imaginação correr solta.",
     textPosition: "bottom",
@@ -34,7 +41,7 @@ export const galleryItems: GalleryItem[] = [
     mobileOrder: 3,
   },
   {
-    image: Original2,
+    image: Gym,
     title:
       "Treinar me traz foco e disciplina, essenciais para manter a saúde física e mental em dia.",
     textPosition: "top",
@@ -42,7 +49,7 @@ export const galleryItems: GalleryItem[] = [
     mobileOrder: 4,
   },
   {
-    image: Original1,
+    image: Reading,
     title:
       "Autodesenvolvimento, espiritualidade, negócios e ficção. Ler me ajuda a evoluir como pessoa e profissional.",
     textPosition: "bottom",
@@ -50,7 +57,7 @@ export const galleryItems: GalleryItem[] = [
     mobileOrder: 5,
   },
   {
-    image: Original2,
+    image: Football,
     title:
       "Me conecto com o esporte desde cedo. Suas histórias de superação sempre me inspiram.",
     textPosition: "top",

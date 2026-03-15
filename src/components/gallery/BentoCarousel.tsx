@@ -37,7 +37,9 @@ export default function BentoCarousel({ children }: BentoCarouselProps) {
       >
         <div className="flex touch-pan-y">
           {React.Children.map(children, (child) => (
-            <div className="flex-[0_0_100%] min-w-0 p-4">{child}</div>
+            <div className="flex-[0_0_100%] min-w-0 p-4 h-125">
+              <div className="h-full w-full">{child}</div>
+            </div>
           ))}
         </div>
       </div>

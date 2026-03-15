@@ -1,2 +1,6 @@
-export { default as Original1 } from "./original-1.jpg";
-export { default as Original2 } from "./original.jpg";
+export { default as PlayingGuitar } from "./image-playing-guitar.webp";
+export { default as Family } from "./image-family.webp";
+export { default as Gaming } from "./image-family.webp";
+export { default as Gym } from "./image-family.webp";
+export { default as Reading } from "./image-family.webp";
+export { default as Football } from "./image-football.webp";
