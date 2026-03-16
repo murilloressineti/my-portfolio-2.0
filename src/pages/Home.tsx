@@ -232,6 +232,23 @@ export default function Home() {
                   </React.Fragment>
                 ))}
               </motion.div>
+
+              <motion.div
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.2 }}
+                className="flex items-center justify-center"
+              >
+                <Button
+                  variant="tertiary"
+                  as={Link}
+                  to="/projetos"
+                  shape="rectangular"
+                  className="justify-center md:w-fit"
+                >
+                  Ver todos os projetos{" "}
+                  <Icon svg={ArrowUpRight} animate="rotate" />
+                </Button>
+              </motion.div>
             </div>
           </Section>
 

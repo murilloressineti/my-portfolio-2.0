@@ -1,2 +1,2 @@
-export { default as GridBackground } from "./grid-bg.png";
-export { default as Profile } from "./profile.jpg";
+export { default as GridBackground } from "./grid-bg.webp";
+export { default as Profile } from "./profile.webp";

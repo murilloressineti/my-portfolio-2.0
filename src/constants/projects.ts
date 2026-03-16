@@ -1,4 +1,4 @@
-import * as Images from "../assets/images/projectsThumbnail";
+import * as Images from "../assets/images/projects";
 
 export interface ProjectContent {
   title: string;
@@ -17,146 +17,299 @@ export interface Project {
   sections: ProjectContent[];
 }
 export const projects: Project[] = [
+  // Portal Tech News
   {
-    id: "rocket-movies",
-    title: "RocketMovies",
-    description:
-      "Desenvolvi uma plataforma Full-Stack para o cadastro e gerenciamento de filmes, oferecendo uma experiência intuitiva para o usuário organizar sua biblioteca pessoal. A aplicação permite registrar detalhes como nome, descrição e nota, além de categorizar filmes com tags personalizadas.",
-    imageSrc: Images.RocketThumb,
-    imageDetails: Images.RocketDetails,
-    githubUrl: "https://github.com/murilloressineti",
-    deployUrl: "https://www.google.com/",
+    id: "1",
+    title: "Portal Tech News",
+    description: "-",
+    imageSrc: Images.PortalTechNewsThumb,
+    imageDetails: Images.PortalTechNewsDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/projetos/portal-de-noticias",
+    deployUrl: "https://portaltechnews.netlify.app/",
     techs: ["react", "react", "react", "react"],
     sections: [
       {
         title: "Minhas funções no projeto",
-        items: [
-          "Cadastro completo de filmes e notas",
-          "Sistema de tags dinâmicas",
-          "Gerenciamento de perfil de usuário",
-        ],
+        items: ["-", "-", "-"],
       },
       {
         title: "Minha Contribuição",
-        items: [
-          "Construção da interface visual com Styled Components",
-          "Estruturação do Back-end com Node.js e Express",
-        ],
+        items: ["-", "-"],
       },
       {
         title: "Desafios e Aprendizados",
-        items: [
-          "Integração fluida entre Front e Back-end",
-          "Consumo de API com tratamento de erros global",
-        ],
+        items: ["-", "-"],
       },
     ],
   },
 
+  // Estrelas Do Amanha
   {
-    id: "agenda-petshop",
-    title: "Agenda Petshop",
-    description:
-      "O Agenda Petshop é um sistema de agendamento que otimiza a gestão de atendimentos para estabelecimentos do ramo. A plataforma permite o registro de informações completas como nome do tutor, nome do pet, telefone, descrição do serviço, data e horário do atendimento. Os agendamentos são organizados automaticamente por períodos do dia (manhã, tarde e noite), garantindo uma interface clara e funcional.",
-    imageSrc: Images.RocketThumb,
-    imageDetails: Images.RocketDetails,
-    githubUrl: "https://github.com/murilloressineti",
-    deployUrl: "https://www.google.com/",
-    techs: ["tailwind", "tailwind", "tailwind", "tailwind"],
+    id: "2",
+    title: "Estrelas Do Amanhã",
+    description: "-",
+    imageSrc: Images.EstrelasDoAmanhaThumb,
+    imageDetails: Images.EstrelasDoAmanhaDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/projetos/formulario-de-matricula",
+    deployUrl: "https://escolaestrelas.netlify.app/",
+    techs: ["react", "react", "react", "react"],
     sections: [
       {
         title: "Minhas funções no projeto",
-        items: [
-          "Cadastro completo de filmes e notas",
-          "Sistema de tags dinâmicas",
-          "Gerenciamento de perfil de usuário",
-        ],
+        items: ["-", "-", "-"],
       },
       {
         title: "Minha Contribuição",
-        items: [
-          "Construção da interface visual com Styled Components",
-          "Estruturação do Back-end com Node.js e Express",
-        ],
+        items: ["-", "-"],
       },
       {
         title: "Desafios e Aprendizados",
-        items: [
-          "Integração fluida entre Front e Back-end",
-          "Consumo de API com tratamento de erros global",
-        ],
+        items: ["-", "-"],
       },
     ],
   },
 
+  // Zingen Karaoke
   {
-    id: "sorteador-de-numeros",
-    title: "Sorteador de Números",
-    description:
-      "Este projeto é um sorteador de números interativo que oferece ao usuário controle total sobre a aleatoriedade. Permite definir um intervalo numérico personalizado, escolher a quantidade de números a serem sorteados e decidir se deseja incluir ou excluir números repetidos. ",
-    imageSrc: Images.RocketThumb,
-    imageDetails: Images.RocketDetails,
-    githubUrl: "https://github.com/murilloressineti",
-    deployUrl: "https://www.google.com/",
-    techs: ["typescript", "typescript", "typescript", "typescript"],
+    id: "3",
+    title: "Zingen Karaoke",
+    description: "-",
+    imageSrc: Images.ZingenKaraokeThumb,
+    imageDetails: Images.ZingenKaraokeDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/projetos/landing-page",
+    deployUrl: "https://zingenkaraoke.netlify.app/",
+    techs: ["react", "react", "react", "react"],
     sections: [
       {
         title: "Minhas funções no projeto",
-        items: [
-          "Cadastro completo de filmes e notas",
-          "Sistema de tags dinâmicas",
-          "Gerenciamento de perfil de usuário",
-        ],
+        items: ["-", "-", "-"],
       },
       {
         title: "Minha Contribuição",
-        items: [
-          "Construção da interface visual com Styled Components",
-          "Estruturação do Back-end com Node.js e Express",
-        ],
+        items: ["-", "-"],
       },
       {
         title: "Desafios e Aprendizados",
-        items: [
-          "Integração fluida entre Front e Back-end",
-          "Consumo de API com tratamento de erros global",
-        ],
+        items: ["-", "-"],
       },
     ],
   },
 
+  // Snitap Patins
   {
-    id: "landing-page",
-    title: "Landing Page - Clube de Assinatura de Livros",
-    description:
-      "Landing page responsiva e visualmente atraente para um clube de assinatura de livros. O objetivo foi criar uma experiência informativa e envolvente, destacando o produto e capturando a atenção do visitante.",
-    imageSrc: Images.RocketThumb,
-    imageDetails: Images.RocketDetails,
-    githubUrl: "https://github.com/murilloressineti",
-    deployUrl: "https://www.google.com/",
-    techs: ["figma", "figma", "figma", "figma"],
+    id: "4",
+    title: "Snitap Patins",
+    description: "-",
+    imageSrc: Images.SnitapPatinsThumb,
+    imageDetails: Images.SorteadorDeNumerosDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/projetos/lp-patins-animations",
+    deployUrl: "https://snitappatins.netlify.app/",
+    techs: ["react", "react", "react", "react"],
     sections: [
       {
         title: "Minhas funções no projeto",
-        items: [
-          "Cadastro completo de filmes e notas",
-          "Sistema de tags dinâmicas",
-          "Gerenciamento de perfil de usuário",
-        ],
+        items: ["-", "-", "-"],
       },
       {
         title: "Minha Contribuição",
-        items: [
-          "Construção da interface visual com Styled Components",
-          "Estruturação do Back-end com Node.js e Express",
-        ],
+        items: ["-", "-"],
       },
       {
         title: "Desafios e Aprendizados",
-        items: [
-          "Integração fluida entre Front e Back-end",
-          "Consumo de API com tratamento de erros global",
-        ],
+        items: ["-", "-"],
+      },
+    ],
+  },
+
+  // Encantos Literarios
+  {
+    id: "5",
+    title: "Encantos Literarios",
+    description: "-",
+    imageSrc: Images.EncantosLiterariosThumb,
+    imageDetails: Images.EncantosLiterariosDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/desafios/lp-clube-de-assinatura",
+    deployUrl: "https://encantosliterarios.netlify.app/",
+    techs: ["react", "react", "react", "react"],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: ["-", "-", "-"],
+      },
+      {
+        title: "Minha Contribuição",
+        items: ["-", "-"],
+      },
+      {
+        title: "Desafios e Aprendizados",
+        items: ["-", "-"],
+      },
+    ],
+  },
+
+  // Convert BR
+  {
+    id: "6",
+    title: "Convert BR",
+    description: "-",
+    imageSrc: Images.ConvertBRThumb,
+    imageDetails: Images.ConvertBRDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/javascript/projetos/convert",
+    deployUrl: "https://convertbr.netlify.app/",
+    techs: ["react", "react", "react", "react"],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: ["-", "-", "-"],
+      },
+      {
+        title: "Minha Contribuição",
+        items: ["-", "-"],
+      },
+      {
+        title: "Desafios e Aprendizados",
+        items: ["-", "-"],
+      },
+    ],
+  },
+
+  // QuickList
+  {
+    id: "7",
+    title: "QuickList",
+    description: "-",
+    imageSrc: Images.QuickListThumb,
+    imageDetails: Images.QuickListDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/javascript/desafios/quicklist",
+    deployUrl: "https://quicklistapp.netlify.app/",
+    techs: ["react", "react", "react", "react"],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: ["-", "-", "-"],
+      },
+      {
+        title: "Minha Contribuição",
+        items: ["-", "-"],
+      },
+      {
+        title: "Desafios e Aprendizados",
+        items: ["-", "-"],
+      },
+    ],
+  },
+
+  // Sorteador De Números
+  {
+    id: "8",
+    title: "Sorteador De Números",
+    description: "-",
+    imageSrc: Images.SorteadorDeNumerosThumb,
+    imageDetails: Images.SorteadorDeNumerosDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/javascript/desafios/sorteador-de-numeros",
+    deployUrl: "https://sorteanumeros.netlify.app/",
+    techs: ["react", "react", "react", "react"],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: ["-", "-", "-"],
+      },
+      {
+        title: "Minha Contribuição",
+        items: ["-", "-"],
+      },
+      {
+        title: "Desafios e Aprendizados",
+        items: ["-", "-"],
+      },
+    ],
+  },
+
+  // Agendamento Petshop
+  {
+    id: "9",
+    title: "Agendamento Petshop",
+    description: "-",
+    imageSrc: Images.AgendaPetThumb,
+    imageDetails: Images.AgendaPetDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/javascript/desafios/agendamento-petshop",
+    deployUrl: "https://agendapet.netlify.app/",
+    techs: ["react", "react", "react", "react"],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: ["-", "-", "-"],
+      },
+      {
+        title: "Minha Contribuição",
+        items: ["-", "-"],
+      },
+      {
+        title: "Desafios e Aprendizados",
+        items: ["-", "-"],
+      },
+    ],
+  },
+
+  // Jogo De Adivinhação
+  {
+    id: "10",
+    title: "Jogo De Adivinhação",
+    description: "-",
+    imageSrc: Images.JogoDeAdvinhacaoThumb,
+    imageDetails: Images.JogoDeAdvinhacaoDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/react/iniciando-no-react/jogo-de-advinhacao",
+    deployUrl: "https://adivinhapalavra.vercel.app/",
+    techs: ["react", "react", "react", "react"],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: ["-", "-", "-"],
+      },
+      {
+        title: "Minha Contribuição",
+        items: ["-", "-"],
+      },
+      {
+        title: "Desafios e Aprendizados",
+        items: ["-", "-"],
+      },
+    ],
+  },
+
+  // Refund
+  {
+    id: "11",
+    title: "Refund",
+    description: "-",
+    imageSrc: Images.RefundThumb,
+    imageDetails: Images.RefundDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/react/avan%C3%A7ando-no-react/refund-2.0",
+    deployUrl: "https://formrefund.vercel.app/",
+    techs: ["react", "react", "react", "react"],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: ["-", "-", "-"],
+      },
+      {
+        title: "Minha Contribuição",
+        items: ["-", "-"],
+      },
+      {
+        title: "Desafios e Aprendizados",
+        items: ["-", "-"],
       },
     ],
   },
