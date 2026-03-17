@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 import { Button, Icon, Tag, Text } from "../ui";
-import { ProjectThumbnail } from ".";
+import { ProjectThumbnail } from "./";
 import { ArrowUpRight, GitHubLogo } from "@/assets/icons";
+import type { AvailableTechs } from "../ui/Tag";
 
 export const projectCardVariants = cva("flex min-w-0 w-full", {
   variants: {
@@ -29,7 +30,7 @@ interface ProjectCardProps
   imageDetails: string;
   githubUrl?: string;
   deployUrl?: string;
-  techs: Array<"react" | "tailwind" | "typescript" | "figma" | "git">;
+  techs: AvailableTechs[];
 }
 
 export default function ProjectCard({

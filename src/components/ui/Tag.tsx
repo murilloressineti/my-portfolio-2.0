@@ -23,17 +23,42 @@ export const tagVariants = cva(
   },
 );
 
-const dotHexColors = {
+export const dotHexColors = {
+  // Base
+  HTML: "#E65100",
+  CSS: "#214CE5",
+  javaScript: "#F0DC4E",
+  typeScript: "#3178C6",
+
+  // Front-end
   react: "#61DAFB",
   tailwind: "#38BDF8",
-  typescript: "#3178C6",
+  axios: "#671DDF",
+  "styled-components": "#d273ad",
+
+  // Back-end
+  "node.js": "#339933",
+  express: "#000000",
+
+  // Database & ORM
+  prisma: "#0D344B",
+  postgreSQL: "#336791",
+
+  // Segurança e Validação
+  zod: "#3178C6",
+  JWT: "#F30058",
+  bcrypt: "#323330",
+
+  // Design e Versionamento
   figma: "#874FFF",
   git: "#F34F29",
 } as const;
 
+export type AvailableTechs = keyof typeof dotHexColors;
+
 interface TagProps
   extends React.ComponentProps<"div">, VariantProps<typeof tagVariants> {
-  dot?: keyof typeof dotHexColors;
+  dot?: AvailableTechs;
 }
 
 export default function Tag({

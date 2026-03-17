@@ -41,7 +41,7 @@ export default function ProjectDetails() {
 
           <motion.div
             {...fadeUp}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
             className="flex flex-col md:flex-row gap-6 justify-between"
           >
             <Text variant="h2">{project.title}</Text>
@@ -86,7 +86,7 @@ export default function ProjectDetails() {
           {/* Techs */}
           <motion.div
             {...fadeUp}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
             className="flex flex-col gap-4"
           >
             <Text variant="h3">Techs</Text>
@@ -107,7 +107,7 @@ export default function ProjectDetails() {
           {/* Descrição */}
           <motion.div
             {...fadeUp}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.3 }}
             className="flex flex-col gap-4"
           >
             <Text variant="h3">Descrição do projeto</Text>
@@ -121,12 +121,10 @@ export default function ProjectDetails() {
             <motion.div
               key={idx}
               {...fadeUp}
-              transition={{ delay: 0.5 + idx * 0.1 }}
+              transition={{ delay: 0.1 + idx * 0.1 }}
               className="flex flex-col gap-4"
             >
-              <Text variant="h3" className="uppercase">
-                {section.title}
-              </Text>
+              <Text variant="h3">{section.title}</Text>
 
               <ul className="flex flex-col gap-1">
                 {section.items.map((item, i) => (
@@ -136,10 +134,7 @@ export default function ProjectDetails() {
                       •
                     </span>
 
-                    <Text
-                      variant="body-lg"
-                      className="text-text-secondary"
-                    >
+                    <Text variant="body-lg" className="text-text-secondary">
                       {item}
                     </Text>
                   </li>
@@ -150,7 +145,7 @@ export default function ProjectDetails() {
         </div>
 
         {/* Preview do Projeto */}
-        <motion.div {...fadeUp} transition={{ delay: 0.7 }} className="pt-20">
+        <motion.div {...fadeUp} transition={{ delay: 0.1 }} className="pt-20">
           {project.imageDetails && (
             <ProjectThumbnail
               src={project.imageDetails}
@@ -170,7 +165,7 @@ export default function ProjectDetails() {
               Portfólio
             </Text>
           </motion.div>
-          <motion.div {...fadeUp} transition={{ delay: 0.2 }}>
+          <motion.div {...fadeUp} transition={{ delay: 0.1 }}>
             <Text variant="h2" className="uppercase font-normal">
               Veja os <strong className="font-semibold">outros projetos</strong>
             </Text>
@@ -178,10 +173,19 @@ export default function ProjectDetails() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {projects
-            .filter((p) => p.id !== id)
-            .slice(0, 3)
-            .map((item, index) => (
+          {(() => {
+            // 1. Encontra o índice do projeto atual na lista original
+            const currentIndex = projects.findIndex((p) => p.id === id);
+
+            // 2. Cria uma lista circular
+            // Pega todos os projetos DEPOIS do atual e juntamos com os projetos ANTES do atual
+            const circularProjects = [
+              ...projects.slice(currentIndex + 1),
+              ...projects.slice(0, currentIndex),
+            ];
+
+            // 3. Pega os 3 primeiros dessa nova lista "embaralhada"
+            return circularProjects.slice(0, 3).map((item, index) => (
               <motion.div
                 key={item.id}
                 {...fadeUp}
@@ -194,7 +198,8 @@ export default function ProjectDetails() {
                   techs={item.techs as any}
                 />
               </motion.div>
-            ))}
+            ));
+          })()}
         </div>
       </Section>
 

@@ -38,11 +38,11 @@ export default function Projects() {
 
         {/* Lista de Cards de Projeto */}
         <div className="flex flex-col w-full overflow-hidden gap-12">
-          {projects.slice(0, visibleCount).map((project, index, array) => (
+          {[...projects].reverse().slice(0, visibleCount).map((project, index, array) => (
             <motion.div
               key={project.id}
               {...fadeUp}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
             >
               <ProjectCard {...project} techs={project.techs as any} />
 
@@ -57,7 +57,7 @@ export default function Projects() {
         {hasMoreProjects && (
           <motion.div
             {...fadeUp}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
             className="flex items-center justify-center mt-24"
           >
             <Button

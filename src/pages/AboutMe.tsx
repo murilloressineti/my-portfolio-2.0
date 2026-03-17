@@ -106,7 +106,7 @@ export default function AboutMe() {
               // Transição: Duração maior e ease mais lento no final (premium)
               transition={{
                 duration: 1, // Um pouco mais lenta que o texto para ser notada
-                delay: 0.3, // Aparece por último na sequência
+                delay: 0.2, // Aparece por último na sequência
                 ease: "easeOut", // Curva Cubic-Bezier para desaceleração extra suave
               }}
             />
@@ -125,11 +125,12 @@ export default function AboutMe() {
 
       {/* Gallery */}
       <Section id="gallery">
-        <div className="flex items-center justify-center lg:justify-start mb-12 lg:mb-20">
+        <motion.div {...fadeUp}
+                        transition={{ ...fadeUp.transition, delay: 0.1 }} className="flex items-center justify-center lg:justify-start mb-12 lg:mb-20">
           <Text variant="h2" className="uppercase font-normal">
             Fora do <strong className="font-semibold">código</strong>
           </Text>
-        </div>
+        </motion.div>
 
         <div>
           {/* Gallery Desktop */}

@@ -113,7 +113,7 @@ export default function Home() {
             <div className="flex flex-col gap-6 md:gap-12">
               <motion.div
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.2 }}
+                transition={{ ...fadeUp.transition, delay: 0.1 }}
                 className="flex flex-col gap-2"
               >
                 <Text variant="ui-headline" className="text-gradient-gray">
@@ -128,13 +128,13 @@ export default function Home() {
 
               <motion.hr
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.3 }}
+                transition={{ ...fadeUp.transition, delay: 0.2 }}
                 className="border-border-default"
               />
 
               <motion.div
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.4 }}
+                transition={{ ...fadeUp.transition, delay: 0.3 }}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-50"
               >
                 <Text variant="body-lg" className="text-text-secondary">
@@ -152,7 +152,7 @@ export default function Home() {
 
               <motion.div
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.5 }}
+                transition={{ ...fadeUp.transition, delay: 0.4 }}
               >
                 <Button
                   as={Link}
@@ -171,7 +171,11 @@ export default function Home() {
           {/* Skills Section */}
           <Section id="skills" className="py-60 md:py-60">
             <div className="flex flex-col items-center justify-center mx-auto">
-              <motion.div {...fadeUp} className="text-center">
+              <motion.div
+                {...fadeUp}
+                transition={{ delay: 0.2 }}
+                className="text-center"
+              >
                 <Text variant="ui-headline" className="text-gradient-gray mb-2">
                   Minhas Habilidades
                 </Text>
@@ -184,10 +188,10 @@ export default function Home() {
 
               <motion.div
                 {...fadeUp}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.1 }}
                 className="flex flex-wrap items-center justify-center gap-3"
               >
-                {["react", "tailwind", "typescript", "figma", "git"].map(
+                {["react", "tailwind", "typeScript", "figma", "git"].map(
                   (tech) => (
                     <Tag key={tech} dot={tech as any} size="default">
                       {tech.charAt(0).toUpperCase() + tech.slice(1)}
@@ -201,7 +205,11 @@ export default function Home() {
           {/* Projects Section */}
           <Section id="projects">
             <div className="flex flex-col gap-20">
-              <motion.div {...fadeUp} className="flex flex-col gap-2">
+              <motion.div
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: 0.1 }}
+                className="flex flex-col gap-2"
+              >
                 <Text
                   variant="ui-headline"
                   className="uppercase text-gradient-gray"
@@ -219,23 +227,26 @@ export default function Home() {
 
               <motion.div
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.2 }}
+                transition={{ ...fadeUp.transition, delay: 0.1 }}
                 className="flex flex-col w-full gap-12"
               >
-                {projects.slice(0, 2).map((project, index, array) => (
-                  <React.Fragment key={project.id}>
-                    <ProjectCard {...project} techs={project.techs as any} />
+                {[...projects]
+                  .reverse()
+                  .slice(0, 2)
+                  .map((project, index, array) => (
+                    <React.Fragment key={project.id}>
+                      <ProjectCard {...project} techs={project.techs as any} />
 
-                    {index < array.length - 1 && (
-                      <hr className="border-border-default" />
-                    )}
-                  </React.Fragment>
-                ))}
+                      {index < array.length - 1 && (
+                        <hr className="border-border-default" />
+                      )}
+                    </React.Fragment>
+                  ))}
               </motion.div>
 
               <motion.div
                 {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: 0.2 }}
+                transition={{ ...fadeUp.transition, delay: 0.15 }}
                 className="flex items-center justify-center"
               >
                 <Button
