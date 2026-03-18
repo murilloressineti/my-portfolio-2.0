@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, type HTMLMotionProps, type Variants } from "framer-motion";
+import { motion, type HTMLMotionProps } from "framer-motion";
 import { cn, fadeUp, fadeRight } from "@/lib";
 import Text from "../ui/Text";
 
