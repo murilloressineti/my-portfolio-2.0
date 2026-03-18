@@ -5,7 +5,7 @@ import { Toaster } from "sonner";
 import { Header, Footer } from "./components/layout";
 
 // Utils
-import ScrollToTop from "./components/utils/_ScrollToTop";
+import ScrollToTop from "./components/utils/ScrollToTop";
 
 // Pages
 import {
