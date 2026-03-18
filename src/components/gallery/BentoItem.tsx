@@ -1,5 +1,6 @@
-import { motion, type HTMLMotionProps } from "framer-motion";
-import { cn, fadeUp } from "@/lib";
+import { useState, useEffect } from "react";
+import { motion, type HTMLMotionProps, type Variants } from "framer-motion";
+import { cn, fadeUp, fadeRight } from "@/lib";
 import Text from "../ui/Text";
 
 interface BentoItemProps extends HTMLMotionProps<"div"> {
@@ -19,9 +20,16 @@ export default function BentoItem({
   mobileOrder,
   ...props
 }: BentoItemProps) {
+  const [animation, setAnimation] = useState<any>(fadeUp);
+
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    setAnimation(isMobile ? fadeRight : fadeUp);
+  }, []);
+
   return (
     <motion.div
-      {...fadeUp} // Aciona a animação de scroll em cada card individualmente
+      {...animation}
       {...props}
       className={cn(
         "flex flex-col gap-6 w-full h-full md:max-h-126 group",

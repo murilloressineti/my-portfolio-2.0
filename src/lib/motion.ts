@@ -27,3 +27,10 @@ export const fadeDown = {
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6, ease: "easeOut" as const },
 };
+
+export const fadeRight = {
+  initial: { opacity: 0, x: -20 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.6, ease: "easeOut" as const },
+};
