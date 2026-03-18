@@ -46,7 +46,7 @@ export default function TimelineItem({
       {...props}
       className={cn(
         timelineItemVariants({ side, className }),
-        "md:items-center items-stretch mb-6 md:mb-13 last:mb-0",
+        "md:items-center items-center mb-6 md:mb-13 last:mb-0",
       )}
     >
       {/* COLUNA 1: Esquerda */}
