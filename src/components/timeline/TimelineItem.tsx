@@ -5,7 +5,7 @@ import { cn, fadeUp } from "@/lib";
 import { Icon, Text } from "../ui";
 
 export const timelineItemVariants = cva(
-  "grid grid-cols-[1fr_auto_1fr] items-center gap-4 md:gap-12 w-full",
+  "grid grid-cols-[1fr_32px_1fr] items-center gap-4 md:gap-12 w-full",
   {
     variants: {
       side: {
