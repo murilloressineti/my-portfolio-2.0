@@ -125,8 +125,11 @@ export default function AboutMe() {
 
       {/* Gallery */}
       <Section id="gallery">
-        <motion.div {...fadeUp}
-                        transition={{ ...fadeUp.transition, delay: 0.1 }} className="flex items-center justify-center lg:justify-start mb-12 lg:mb-20">
+        <motion.div
+          {...fadeUp}
+          transition={{ ...fadeUp.transition, delay: 0.1 }}
+          className="flex items-center justify-center lg:justify-start mb-12 lg:mb-20"
+        >
           <Text variant="h2" className="uppercase font-normal">
             Fora do <strong className="font-semibold">código</strong>
           </Text>

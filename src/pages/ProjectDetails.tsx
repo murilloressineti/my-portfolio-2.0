@@ -177,14 +177,14 @@ export default function ProjectDetails() {
             // 1. Encontra o índice do projeto atual na lista original
             const currentIndex = projects.findIndex((p) => p.id === id);
 
-            // 2. Cria uma lista circular
-            // Pega todos os projetos DEPOIS do atual e juntamos com os projetos ANTES do atual
+            // 2. Cria uma lista circular voltada para trás
+            // Pega o que vem ANTES do atual e colocamos no final o que vem DEPOIS
             const circularProjects = [
-              ...projects.slice(currentIndex + 1),
-              ...projects.slice(0, currentIndex),
+              ...projects.slice(0, currentIndex).reverse(),
+              ...projects.slice(currentIndex + 1).reverse(),
             ];
 
-            // 3. Pega os 3 primeiros dessa nova lista "embaralhada"
+            // 3. Pega os 3 primeiros dessa lista invertida
             return circularProjects.slice(0, 3).map((item, index) => (
               <motion.div
                 key={item.id}
