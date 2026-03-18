@@ -32,7 +32,7 @@ export const textVariants = cva("font-sans antialiased", {
 
 interface TextProps
   extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof textVariants> {
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "label" | "div" | "a";
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "label" | "div" | "a"; // Permite usar tags HTML comuns como variantes
 }
 
 export default function Text({

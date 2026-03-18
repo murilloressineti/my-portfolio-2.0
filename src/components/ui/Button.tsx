@@ -56,7 +56,7 @@ export const buttonVariants = cva(
 
 interface ButtonProps
   extends
-    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "shape" | "size">,
+    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "shape" | "size">, // Herdamos os atributos de um botão HTML, mas omitimos "shape" e "size" para evitar conflitos com as variantes do cva
     VariantProps<typeof buttonVariants> {
   as?: React.ElementType;
   to?: string;
@@ -81,17 +81,17 @@ export default function Button({
       {...props}
     >
       {/* Usamos React.Children.map para percorrer os filhos (children) com segurança. 
-      Diferente do .map comum, ele funciona mesmo se houver apenas um filho (objeto) ou vários (array).*/}
-      {React.Children.map(children, (child) => {
+      Diferente do .map comum que funciona apenas com um filho (objeto), o React.Children.map funciona mesmo se houver apenas um filho (objeto) ou vários (array).*/}
+      {React.Children.map(children, (child) => { // O 'child' é cada item que está dentro do botão
         // Se o filho for uma string (texto puro), envolvemos no componente Text
         if (typeof child === "string") {
-          return (
-            <Text variant="ui-action" as="span">
+          return ( // Dentro de um botão, não é permitido por lei (regras do HTML) ter um parágrafo (<p>) ou um título (<h1>). O <span> é a etiqueta neutra perfeita para ficar dentro de botões.
+            <Text variant="ui-action" as="span"> 
               {child}
             </Text>
           );
         }
-        // Se for um ícone ou qualquer outro componente, renderiza ele como está
+        // Se for um ícone ou qualquer outro componente, renderiza ele como está (sem envolver no Text)
         return child;
       })}
     </Component>

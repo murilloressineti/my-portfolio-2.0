@@ -23,6 +23,7 @@ export const tagVariants = cva(
   },
 );
 
+// Definindo um objeto de cores para as bolinhas, onde cada chave é o nome da tecnologia e o valor é a cor hexadecimal correspondente. O "as const" garante que os tipos sejam inferidos como literais, permitindo que o TypeScript reconheça os nomes das tecnologias como tipos específicos.
 export const dotHexColors = {
   // Base
   HTML: "#E65100",
@@ -56,7 +57,7 @@ export const dotHexColors = {
 
 export type AvailableTechs = keyof typeof dotHexColors;
 
-interface TagProps
+interface TagProps // Define as props para o componente Tag, incluindo as variantes e o tipo de tecnologia para a bolinha colorida
   extends React.ComponentProps<"div">, VariantProps<typeof tagVariants> {
   dot?: AvailableTechs;
 }
@@ -69,7 +70,7 @@ export default function Tag({
   children,
   ...props
 }: TagProps) {
-  const selectedHex = dotHexColors[dot];
+  const selectedHex = dotHexColors[dot]; // Usa o nome da tecnologia (dot) como chave para buscar sua cor hexadecimal no objeto de cores.
   const textClasses =
     size === "sm"
       ? "text-lg leading-relaxed tracking-normal font-normal"

@@ -25,12 +25,12 @@ export const iconVariants = cva(
 );
 
 interface IconProps
-  extends React.SVGProps<SVGSVGElement>, VariantProps<typeof iconVariants> {
-  svg: React.ElementType;
+  extends React.SVGProps<SVGSVGElement>, VariantProps<typeof iconVariants> { // Herda os poderes de um componente SVG e as variantes do cva
+  svg: React.ElementType; // O componente SVG a ser renderizado, passado como prop
 }
 
 export default function Icon({
-  svg: SvgComponent,
+  svg: SvgComponent, // Componente especial criado para renderizar o SVG
   animate,
   size,
   className,

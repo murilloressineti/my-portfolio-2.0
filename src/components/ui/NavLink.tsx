@@ -20,8 +20,8 @@ export const linkVariants = cva(
 
 interface LinkProps
   extends
-    React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof linkVariants> {
+    React.AnchorHTMLAttributes<HTMLAnchorElement>, // Certidão de nascimento para atributos de link padrão
+    VariantProps<typeof linkVariants> { // Permite usar as variantes definidas em linkVariants
   as?: React.ElementType;
   isSelected?: boolean;
 }

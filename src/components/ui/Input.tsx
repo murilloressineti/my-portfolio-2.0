@@ -21,12 +21,12 @@ export const inputVariants = cva(
 
 interface InputProps
   extends
-    Omit<
-      React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
+    Omit< // Exclui o atributo "as" para evitar conflitos, já que estamos definindo nosso próprio "as"
+      React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>, // Certidão de nascimento para atributos de input padrão, mas sem "as"
       "as"
     >,
-    VariantProps<typeof inputVariants> {
-  as?: "input" | "textarea";
+    VariantProps<typeof inputVariants> { // Permite usar as variantes definidas em inputVariants
+  as?: "input" | "textarea"; // Restringe "as" para apenas "input" ou "textarea"
   label?: string;
   error?: string;
   rows?: number;
@@ -41,12 +41,12 @@ export default function Input({
   id,
   ...props
 }: InputProps) {
-  const generatedId = useId();
-  const inputId = id || generatedId;
+  const generatedId = useId(); // Gera um ID único para associar o label ao input
+  const inputId = id || generatedId; // Usa o ID fornecido ou o gerado
   return (
-    <div className="w-full flex flex-col gap-2.5">
-      {label && (
-        <label htmlFor={inputId}>
+    <div className="w-full flex flex-col gap-2.5"> // Container para o label, input e mensagem de erro
+      {label && ( // Renderiza o label apenas se ele for fornecido
+        <label htmlFor={inputId}> // Associa o label ao input usando htmlFor e o ID do input
           <Text
             variant="body-base"
             className="text-text-primary font-semibold uppercase"
@@ -56,18 +56,18 @@ export default function Input({
         </label>
       )}
 
-      <Component
-        id={inputId}
+      <Component // Renderiza o input ou textarea com base na prop "as"
+        id={inputId} // Atribui o ID ao input para associação com o label
         className={cn(
           inputVariants({
-            variant: error ? "error" : variant,
+            variant: error ? "error" : variant, // Aplica a variante de erro se houver uma mensagem de erro, caso contrário, usa a variante fornecida
             className,
           }),
         )}
-        {...(props as React.ComponentPropsWithRef<any>)}
+        {...(props as React.ComponentPropsWithRef<any>)} // Garante que as props sejam passadas corretamente para o input ou textarea, mesmo com a tipagem genérica
       />
 
-      {error && (
+      {error && ( // Renderiza a mensagem de erro apenas se ela for fornecida
         <Text variant="body-sm" className="text-feedback-error">
           {error}
         </Text>
