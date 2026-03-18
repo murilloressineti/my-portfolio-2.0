@@ -6,15 +6,5 @@ PORTFÓLIO REACT — CHECKLIST
 4. Implementar animações das páginas; ✅
 5. Colocar fotos e conteúdo real no projeto (Gallery); ⏳
 6. Revisão responsividade; ✅
-7. Revisão geral do projeto; (Currículo) ⏳
-8. Fazer deploy (Readme). 🏁
-
-UTILIZADOS
-
-- tailwind
-- cva
-- clsx
-- react-router-dom
-- embla-carousel-react
-- sonner
-- framer-motion
+7. Revisão geral do projeto;✅
+8. Fazer deploy. 🏁
