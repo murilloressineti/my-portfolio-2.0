@@ -5,7 +5,7 @@ import { cn, fadeUp } from "@/lib";
 import { Icon, Text } from "../ui";
 
 export const timelineItemVariants = cva(
-  "grid grid-cols-[1fr_32px_1fr] items-center gap-4 md:gap-12 w-full",
+  "grid grid-cols-[1fr_auto_1fr] grid-rows-1 items-center gap-4 md:gap-12 w-full",
   {
     variants: {
       side: {
@@ -46,12 +46,12 @@ export default function TimelineItem({
       {...props}
       className={cn(
         timelineItemVariants({ side, className }),
-        "md:items-center items-center mb-6 md:mb-13 last:mb-0",
+        "items-center mb-6 md:mb-13 last:mb-0",
       )}
     >
       {/* COLUNA 1: Esquerda */}
       <div
-        className={cn("flex w-full ", isLeft ? "justify-end" : "justify-start")}
+        className={cn("flex w-full self-stretch", isLeft ? "justify-end" : "justify-start")}
       >
         {isLeft ? (
           <TimelineContent
@@ -79,7 +79,7 @@ export default function TimelineItem({
 
       {/* COLUNA 3: Direita */}
       <div
-        className={cn("flex w-full", isLeft ? "justify-start" : "justify-end")}
+        className={cn("flex w-full self-stretch", isLeft ? "justify-start" : "justify-end")}
       >
         {isLeft ? (
           <div className="flex w-full justify-start">
@@ -113,7 +113,7 @@ function TimelineContent({
   return (
     <div
       className={cn(
-        "flex flex-col w-full bg-bg-default rounded-lg p-3 md:p-6 transition-all duration-300 ease-in-out border border-transparent hover:border-neutral-200 hover:shadow-md hover:-translate-y-1",
+        "flex flex-col w-full h-full bg-bg-default rounded-lg p-3 md:p-6 transition-all duration-300 ease-in-out border border-transparent hover:border-neutral-200 hover:shadow-md hover:-translate-y-1",
         align === "right" ? "items-end text-right" : "items-start text-left",
       )}
     >
@@ -141,7 +141,7 @@ function TimelineBadge({ text, icon }: { text: string; icon: any }) {
   return (
     <div
       className={cn(
-        "group flex flex-col md:flex-row items-center justify-center gap-4 p-3 bg-neutral-300 rounded-lg w-full md:w-fit h-full md:h-fit transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1",
+        "group flex flex-col md:flex-row items-center justify-center gap-4 p-3 bg-neutral-300 rounded-lg w-full h-full md:w-fit md:h-fit transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1",
       )}
     >
       <Icon
