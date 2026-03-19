@@ -15,14 +15,15 @@ export default function Section({
   isFullWidth = false,
 }: SectionProps) {
   return (
-    <section
+    <section // Seção principal do conteúdo
       id={id}
       className={cn(
         "py-20 md:py-30",
         !isFullWidth && "px-6 md:px-12 lg:px-30",
         className,
       )}
-    >
+    > 
+      {/* Container centralizado para o conteúdo da seção */}
       <div className={cn("w-full mx-auto ", !isFullWidth && "max-w-420")}>
         {children}
       </div>

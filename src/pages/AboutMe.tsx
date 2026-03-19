@@ -11,10 +11,15 @@ import { fadeUp } from "@/lib/motion";
 export default function AboutMe() {
   // Memoriza a lista para Desktop
   const desktopGallery = useMemo(() => {
+    /* * 1. [...galleryItems]: Cria uma cópia para não alterar o array original.
+     * 2. .sort(): Organiza os itens comparando o 'desktopOrder'.
+     * 3. (a - b): Se o resultado for negativo, 'a' vem primeiro. Se positivo, 'b' vem primeiro.
+     * 4. || 0: Segurança para caso algum item esteja sem o número de ordem.
+     */
     return [...galleryItems].sort(
       (a, b) => (a.desktopOrder || 0) - (b.desktopOrder || 0),
     );
-  }, []);
+  }, []); // O array de dependências vazio ([]) indica que a função de ordenação será executada apenas uma vez, na montagem do componente, e os resultados serão memorizados para uso em renderizações subsequentes, melhorando a performance ao evitar reordenações desnecessárias.
 
   // Memoriza a lista para Mobile
   const mobileGallery = useMemo(() => {
@@ -117,8 +122,9 @@ export default function AboutMe() {
       {/* TimeLine */}
       <Section id="timeline" className="bg-bg-surface">
         <Timeline>
+          {/* Mapeia cada item da timelineSteps e renderiza um TimelineItem para cada um, passando as propriedades do item como props para o componente TimelineItem. */}
           {timelineSteps.map((item, index) => (
-            <TimelineItem key={index} {...item} />
+            <TimelineItem key={index} {...item} /> // Renderiza o item da linha do tempo
           ))}
         </Timeline>
       </Section>
@@ -140,7 +146,7 @@ export default function AboutMe() {
           <div className="hidden lg:block">
             <BentoGrid>
               {desktopGallery.map((item) => (
-                <BentoItem key={item.title} {...item} />
+                <BentoItem key={item.title} {...item} /> // Renderiza o item do carrossel para desktop, passando as propriedades do item como props para o componente BentoItem. item.title é usado como chave única para cada item renderizado, garantindo que o React possa identificar e gerenciar corretamente cada elemento na lista.
               ))}
             </BentoGrid>
           </div>

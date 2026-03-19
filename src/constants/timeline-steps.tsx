@@ -15,7 +15,7 @@ export interface TimelineStep {
   badgeIcon: React.ElementType;
 }
 
-export const timelineSteps: TimelineStep[] = [
+export const timelineSteps: TimelineStep[] = [ // Array de objetos que representam os passos da linha do tempo
   {
     side: "left",
     title: "*Primeiros passos* na programação",

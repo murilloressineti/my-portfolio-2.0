@@ -1,7 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import { LogoMr, LogoText } from "@/assets/logo";
 
-const containerVariants: Variants = {
+const containerVariants: Variants = { // Variantes para o container do loader, controlando a animação dos filhos
   hidden: {},
   visible: {
     transition: {
@@ -10,7 +10,7 @@ const containerVariants: Variants = {
   },
 };
 
-const itemVariants: Variants = {
+const itemVariants: Variants = { // Variantes para os itens do loader, controlando a animação de entrada e saída
   hidden: { opacity: 0, x: 20 },
   visible: {
     opacity: 1,
@@ -27,7 +27,7 @@ const itemVariants: Variants = {
   },
 };
 
-const maskVariants: Variants = {
+const maskVariants: Variants = { // Variantes para a máscara do loader, controlando a animação de entrada e saída
   initial: {
     opacity: 1,
     maskImage:
@@ -38,7 +38,7 @@ const maskVariants: Variants = {
   exit: {
     maskImage:
       "radial-gradient(circle 150vw at 50% 50%, transparent 100%, black 100%)",
-    WebkitMaskImage:
+    WebkitMaskImage: 
       "radial-gradient(circle 150vw at 50% 50%, transparent 100%, black 100%)",
     transition: {
       duration: 1.2,

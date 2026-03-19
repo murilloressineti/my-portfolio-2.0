@@ -17,54 +17,62 @@ export default function Contact() {
     name: "",
     email: "",
     message: "",
-  });
-  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  }); // Estado para dados do formulário
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" }); // Estado para erros de validação
+  const [isSubmitting, setIsSubmitting] = useState(false); // Estado para controle de envio, evita usuário clicar várias vezes no botão de enviar
 
   // Função para atualizar dados e limpar erro ao digitar
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, // Tipo para inputs e textarea
   ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value } = e.target; // Desestruturação para nome e valor do campo
+    setFormData((prev) => ({ ...prev, [name]: value })); // Atualiza o estado do formulário mantendo os outros campos inalterados
 
+    // Verifica se há um erro para o campo atual e limpa se houver
     if (errors[name as keyof typeof errors]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
+      setErrors((prev) => ({ ...prev, [name]: "" })); // Limpa o erro para o campo atual se houver um erro existente
     }
   };
 
   // Função para copiar E-mail
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("murillo@ressineti.com.br");
-    toast.success("E-mail copiado para a área de transferência!");
+    navigator.clipboard.writeText("murillo@ressineti.com.br"); // Copia o e-mail para a área de transferência
+    toast.success("E-mail copiado para a área de transferência!"); // Exibe uma notificação de sucesso usando o Sonner
   };
 
   // Função para validações
   const validate = () => {
-    const newErrors = { name: "", email: "", message: "" };
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const newErrors = { name: "", email: "", message: "" }; // Objeto para armazenar mensagens de erro
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expressão regular simples para validar e-mail
 
-    if (!formData.name.trim()) newErrors.name = "Por favor, me diga seu nome.";
+    if (!formData.name.trim()) newErrors.name = "Por favor, me diga seu nome."; // Verifica se o campo de nome está vazio
     if (!emailRegex.test(formData.email))
+      // Verifica se o e-mail é válido usando a expressão regular
       newErrors.email = "Insira um e-mail válido.";
     if (formData.message.length < 10)
+      // Verifica se a mensagem tem pelo menos 10 caracteres
       newErrors.message = "A mensagem precisa de pelo menos 10 caracteres.";
 
-    setErrors(newErrors);
-    return !Object.values(newErrors).some((error) => error !== "");
+    setErrors(newErrors); // Atualiza o estado de erros com as mensagens geradas
+    return !Object.values(newErrors).some((error) => error !== ""); // Retorna true se não houver erros, ou seja, se todas as mensagens de erro forem vazias
   };
 
+  // Função para enviar o formulário
   const handleSubmit = async (e: React.FormEvent) => {
+    // Tipo para evento de formulário
     e.preventDefault();
     if (!validate()) {
+      // Chama a função de validação e, se retornar false, exibe uma notificação de erro e interrompe o envio
       toast.error("Por favor, corrija os erros no formulário.");
       return;
     }
 
-    setIsSubmitting(true);
+    setIsSubmitting(true); // Define o estado de envio como verdadeiro para desabilitar o botão e evitar múltiplos envios
 
     try {
+      // Tenta enviar os dados do formulário para o endpoint do Formspree usando fetch
       const response = await fetch("https://formspree.io/f/mzdjpkak", {
+        // Substitua pelo seu endpoint do Formspree
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -79,7 +87,7 @@ export default function Contact() {
     } catch {
       toast.error("Erro de conexão. Verifique sua internet.");
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false); // Define o estado de envio como falso para reabilitar o botão, independentemente do resultado do envio
     }
   };
 
@@ -184,16 +192,16 @@ export default function Contact() {
             {...fadeUp}
             transition={{ delay: 0.2 }}
             className="flex flex-col gap-8"
-            onSubmit={handleSubmit}
-            noValidate
+            onSubmit={handleSubmit} // Adiciona o manipulador de envio ao formulário
+            noValidate // Evita validação nativa do HTML para usar nossa função de validação personalizada
           >
             <Input
               name="name"
               label="Nome"
               placeholder="Seu nome"
-              value={formData.name}
-              onChange={handleInputChange}
-              error={errors.name}
+              value={formData.name} // Controla o valor do input com o estado
+              onChange={handleInputChange} // Atualiza o estado ao digitar
+              error={errors.name} // Passa a mensagem de erro para o componente Input, se houver
             />
 
             <Input
@@ -224,7 +232,7 @@ export default function Contact() {
               disabled={isSubmitting}
             >
               {isSubmitting ? "Enviando..." : "Enviar mensagem"}
-              {!isSubmitting && (
+              {!isSubmitting && ( // Exibe o ícone apenas quando não estiver enviando
                 <Icon
                   svg={ArrowUpRight}
                   animate="rotate"

@@ -38,7 +38,7 @@ export default function TimelineItem({
   className,
   ...props
 }: TimelineItemProps) {
-  const isLeft = side === "left";
+  const isLeft = side === "left"; // Determina se o conteúdo deve estar à esquerda ou à direita
 
   return (
     <motion.div
@@ -58,7 +58,7 @@ export default function TimelineItem({
             title={title}
             description={description}
             date={date}
-            align="right"
+            align="right" // Alinha o conteúdo à direita para itens do lado esquerdo
           />
         ) : (
           <div className="flex w-full justify-end">
@@ -90,7 +90,7 @@ export default function TimelineItem({
             title={title}
             description={description}
             date={date}
-            align="left"
+            align="left" // Alinha o conteúdo à esquerda para itens do lado direito
           />
         )}
       </div>

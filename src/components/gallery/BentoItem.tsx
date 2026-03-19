@@ -20,12 +20,14 @@ export default function BentoItem({
   mobileOrder,
   ...props
 }: BentoItemProps) {
-  const [animation, setAnimation] = useState<any>(fadeUp);
+  const [animation, setAnimation] = useState<any>(fadeUp); // Estado inicial para a animação
 
+  // O useEffect só roda dentro do navegador do usuário. É a forma segura de dizer: "Ei React, só tente medir a tela quando você tiver certeza de que já chegou no navegador do cliente".
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    setAnimation(isMobile ? fadeRight : fadeUp);
-  }, []);
+    // Detecta como se fosse um scanner se é mobile ou desktop para escolher a animação
+    const isMobile = window.innerWidth < 768; // breakpoint para mobile
+    setAnimation(isMobile ? fadeRight : fadeUp); // Define a animação com base no tipo de dispositivo
+  }, []); // Executa apenas uma vez na montagem do componente
 
   return (
     <motion.div
@@ -33,13 +35,13 @@ export default function BentoItem({
       {...props}
       className={cn(
         "flex flex-col gap-6 w-full h-full md:max-h-126 group",
-        String(desktopOrder || ""),
-        String(mobileOrder || ""),
+        String(desktopOrder || ""), // Converte para string para evitar problemas de tipo
+        String(mobileOrder || ""), // Converte para string para evitar problemas de tipo
         className,
       )}
     >
       {/* Texto no Top */}
-      {textPosition === "top" && (
+      {textPosition === "top" && ( // Renderiza o texto apenas se a posição for "top"
         <div className="flex items-start md:items-center w-full h-1/4 p-6 rounded-lg bg-neutral-100">
           <Text variant="body-base" className="text-text-secondary">
             {title}
@@ -58,7 +60,7 @@ export default function BentoItem({
       </div>
 
       {/* Texto no Bottom */}
-      {textPosition === "bottom" && (
+      {textPosition === "bottom" && ( // Renderiza o texto apenas se a posição for "bottom"
         <div className="flex items-start md:items-center w-full h-1/4 p-6 rounded-lg bg-neutral-100">
           <Text variant="body-base" className="text-text-secondary">
             {title}

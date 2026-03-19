@@ -10,24 +10,28 @@ import { staggerContainer, childItem, fadeUp } from "@/lib/motion";
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(() => {
+    // Verifica se o loader já foi exibido nesta sessão
     const hasLoaded = sessionStorage.getItem("portfolioLoaded");
     return !hasLoaded;
   });
 
-  const [loaderFinished, setLoaderFinished] = useState(false);
+  const [loaderFinished, setLoaderFinished] = useState(false); // Estado para controlar a visibilidade do conteúdo principal
 
   useEffect(() => {
+    // Controla o tempo de exibição do loader
     if (!showLoader) {
+      // Se o loader não deve ser exibido, marca como finalizado imediatamente
       setLoaderFinished(true);
       return;
     }
 
     const timer = setTimeout(() => {
+      // Após 2.5 segundos, marca o loader como finalizado e armazena na sessão que ele já foi exibido
       sessionStorage.setItem("portfolioLoaded", "true");
-      setShowLoader(false);
+      setShowLoader(false); // Manda fechar a cortina
     }, 2500);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado antes do tempo acabar
   }, [showLoader]);
 
   return (
@@ -191,6 +195,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 className="flex flex-wrap items-center justify-center gap-3"
               >
+                {/* Mapeia as tecnologias para exibir as tags correspondentes */}
                 {["react", "tailwind", "typeScript", "figma", "git"].map(
                   (tech) => (
                     <Tag key={tech} dot={tech as any} size="default">
@@ -230,18 +235,27 @@ export default function Home() {
                 transition={{ ...fadeUp.transition, delay: 0.1 }}
                 className="flex flex-col w-full gap-12"
               >
-                {[...projects]
-                  .reverse()
-                  .slice(0, 2)
-                  .map((project, index, array) => (
-                    <React.Fragment key={project.id}>
-                      <ProjectCard {...project} techs={project.techs as any} />
+                {[...projects] // Cria uma cópia do array para evitar mutação
+                  .reverse() // Inverte a ordem para mostrar os projetos mais recentes primeiro
+                  .slice(0, 2) // Pega apenas os 2 primeiros projetos
+                  .map(
+                    (
+                      project,
+                      index,
+                      array, // Mapeia os projetos para exibir os cards
+                    ) => (
+                      <React.Fragment key={project.id}>
+                        <ProjectCard
+                          {...project}
+                          techs={project.techs as any}
+                        />
 
-                      {index < array.length - 1 && (
-                        <hr className="border-border-default" />
-                      )}
-                    </React.Fragment>
-                  ))}
+                        {index < array.length - 1 && (
+                          <hr className="border-border-default" />
+                        )}
+                      </React.Fragment>
+                    ),
+                  )}
               </motion.div>
 
               <motion.div

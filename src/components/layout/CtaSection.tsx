@@ -19,11 +19,11 @@ export default function CTASection() {
     >
       {/* Background Grid - Animado com um fade suave independente */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.5 }}
-        transition={{ duration: 1.5 }}
+        initial={{ opacity: 0 }} // Inicia invisível
+        whileInView={{ opacity: 0.5 }} // Fica semi-transparente quando entra na viewport
+        transition={{ duration: 1.5 }} // Duração do fade
         className="absolute inset-0 pointer-events-none z-0 bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${GridBackground})` }}
+        style={{ backgroundImage: `url(${GridBackground})` }} // Define a imagem de fundo usando a variável importada
       />
 
       <div className="relative z-10 flex flex-col items-center justify-center">
@@ -48,7 +48,7 @@ export default function CTASection() {
             transition={{ delay: 0.2 }}
             className="flex flex-col md:flex-row items-center justify-center gap-5 mb-12"
           >
-            {[
+            {[ // Criação de array diretamente no map para evitar repetição de código
               {
                 label: "Entre em contato",
                 icon: ArrowUpRight,
@@ -90,7 +90,7 @@ export default function CTASection() {
             transition={{ delay: 0.4 }}
             className="flex items-center justify-center gap-5"
           >
-            {[
+            {[ // Criação de array diretamente no map para evitar repetição de código
               {
                 href: "https://linkedin.com/in/murilloressineti/",
                 icon: LinkedinLogo,

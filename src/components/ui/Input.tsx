@@ -21,11 +21,13 @@ export const inputVariants = cva(
 
 interface InputProps
   extends
-    Omit< // Exclui o atributo "as" para evitar conflitos, já que estamos definindo nosso próprio "as"
+    Omit<
+      // Exclui o atributo "as" para evitar conflitos, já que estamos definindo nosso próprio "as"
       React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>, // Certidão de nascimento para atributos de input padrão, mas sem "as"
       "as"
     >,
-    VariantProps<typeof inputVariants> { // Permite usar as variantes definidas em inputVariants
+    VariantProps<typeof inputVariants> {
+  // Permite usar as variantes definidas em inputVariants
   as?: "input" | "textarea"; // Restringe "as" para apenas "input" ou "textarea"
   label?: string;
   error?: string;
@@ -44,9 +46,11 @@ export default function Input({
   const generatedId = useId(); // Gera um ID único para associar o label ao input
   const inputId = id || generatedId; // Usa o ID fornecido ou o gerado
   return (
-    <div className="w-full flex flex-col gap-2.5"> // Container para o label, input e mensagem de erro
+    // Container para o label, input e mensagem de erro
+    <div className="w-full flex flex-col gap-2.5">
       {label && ( // Renderiza o label apenas se ele for fornecido
-        <label htmlFor={inputId}> // Associa o label ao input usando htmlFor e o ID do input
+        // Associa o label ao input usando htmlFor e o ID do input
+        <label htmlFor={inputId}>
           <Text
             variant="body-base"
             className="text-text-primary font-semibold uppercase"

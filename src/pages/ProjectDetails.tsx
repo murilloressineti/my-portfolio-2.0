@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Section, CTASection } from "../components/layout";
 import { Tag, Text, Button, Icon } from "../components/ui";
@@ -8,11 +8,13 @@ import { ArrowLeft, ArrowUpRight, GitHubLogo } from "@/assets/icons";
 import { fadeUp } from "@/lib/motion";
 
 export default function ProjectDetails() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const project = projects.find((p) => p.id === id);
+  const { id } = useParams(); // Obtém o ID do projeto a partir da URL
+  const navigate = useNavigate(); // Hook para navegação programática
+  const project = projects.find((p) => p.id === id); // Encontra o projeto correspondente ao ID
 
-  if (!project) return null;
+  if (!project) {
+    return <Navigate to="/404" replace />; // Redireciona para a página 404 se o projeto não for encontrado
+  }
 
   return (
     <main>
@@ -117,31 +119,38 @@ export default function ProjectDetails() {
           </motion.div>
 
           {/* Listas Dinâmicas (Funções, Contribuição e Desafios) */}
-          {project.sections.map((section, idx) => (
-            <motion.div
-              key={idx}
-              {...fadeUp}
-              transition={{ delay: 0.1 + idx * 0.1 }}
-              className="flex flex-col gap-4"
-            >
-              <Text variant="h3">{section.title}</Text>
+          {project.sections.map(
+            (
+              section,
+              idx, // Itera sobre as seções adicionais do projeto
+            ) => (
+              <motion.div
+                key={idx} // Usa o índice como chave, pois as seções são estáticas e não reordenáveis
+                {...fadeUp}
+                transition={{ delay: 0.1 + idx * 0.1 }}
+                className="flex flex-col gap-4"
+              >
+                {/*Título da seção (ex: "Funções", "Contribuição", "Desafios")*/}
+                <Text variant="h3">{section.title}</Text>
 
-              <ul className="flex flex-col gap-1">
-                {section.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    {/* Bullet point */}
-                    <span className="text-text-primary font-bold text-lg leading-none mt-1.5">
-                      •
-                    </span>
+                <ul className="flex flex-col gap-1">
+                  {/*Itera sobre os itens de cada seção e os exibe como uma lista com bullet points*/}
+                  {section.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      {/* Bullet point */}
+                      <span className="text-text-primary font-bold text-lg leading-none mt-1.5">
+                        •
+                      </span>
 
-                    <Text variant="body-lg" className="text-text-secondary">
-                      {item}
-                    </Text>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+                      <Text variant="body-lg" className="text-text-secondary">
+                        {item}
+                      </Text>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ),
+          )}
         </div>
 
         {/* Preview do Projeto */}
@@ -175,13 +184,13 @@ export default function ProjectDetails() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {(() => {
             // 1. Encontra o índice do projeto atual na lista original
-            const currentIndex = projects.findIndex((p) => p.id === id);
+            const currentIndex = projects.findIndex((p) => p.id === id); 
 
             // 2. Cria uma lista circular voltada para trás
             // Pega o que vem ANTES do atual e colocamos no final o que vem DEPOIS
             const circularProjects = [
-              ...projects.slice(0, currentIndex).reverse(),
-              ...projects.slice(currentIndex + 1).reverse(),
+              ...projects.slice(0, currentIndex).reverse(), // slice do início até o atual (exclusivo) e inverte a ordem
+              ...projects.slice(currentIndex + 1).reverse(), // slice do próximo do atual até o final e inverte a ordem
             ];
 
             // 3. Pega os 3 primeiros dessa lista invertida

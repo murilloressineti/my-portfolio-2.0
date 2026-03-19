@@ -11,13 +11,13 @@ export default function Projects() {
   // Estado para controlar quantos projetos mostrar (começa com 3)
   const [visibleCount, setVisibleCount] = useState(3);
 
-  // Função para carregar mais 3 projetos
-  const handleShowMore = () => {
-    setVisibleCount((prevCount) => prevCount + 3);
-  };
-
   // Verifica se ainda existem projetos para mostrar
   const hasMoreProjects = visibleCount < projects.length;
+
+  // Função para carregar mais 3 projetos
+  const handleShowMore = () => {
+    setVisibleCount((prevCount) => prevCount + 3); // prevCount é o número atual de projetos visíveis, e adicionamos 3 a ele
+  };
 
   return (
     <main>
@@ -38,19 +38,30 @@ export default function Projects() {
 
         {/* Lista de Cards de Projeto */}
         <div className="flex flex-col w-full overflow-hidden gap-12">
-          {[...projects].reverse().slice(0, visibleCount).map((project, index, array) => (
-            <motion.div
-              key={project.id}
-              {...fadeUp}
-              transition={{ delay: index * 0.05 }}
-            >
-              <ProjectCard {...project} techs={project.techs as any} />
-
-              {index < array.length - 1 && (
-                <hr className="border-border-default mt-12" />
-              )}
-            </motion.div>
-          ))}
+          {/* Faz uma cópia do array de projetos, reverte a ordem para mostrar os mais recentes primeiro, e depois limita a quantidade de projetos mostrados com base no estado visibleCount */}
+          {[...projects]
+            .reverse()
+            .slice(0, visibleCount)
+            .map(
+              (
+                project,
+                index,
+                array, // "Ei, aluno (project), você está na posição X (index), você é o último da fila inteira (array.length)? Se você for o último, eu não vou te dar uma linha de separação."
+              ) => (
+                <motion.div
+                  key={project.id}
+                  {...fadeUp}
+                  transition={{ delay: index * 0.05 }} // Adiciona um pequeno delay incremental para cada card, criando um efeito de cascata
+                >
+                  {/* Passa as propriedades do projeto para o componente ProjectCard, incluindo as tecnologias usadas no projeto */}
+                  <ProjectCard {...project} techs={project.techs as any} />
+                  {/* Adiciona uma linha divisória entre os projetos, exceto após o último projeto */}
+                  {index < array.length - 1 && (
+                    <hr className="border-border-default mt-12" />
+                  )}
+                </motion.div>
+              ),
+            )}
         </div>
 
         {/* Botão de Ação: Carregar Mais */}

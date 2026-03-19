@@ -13,20 +13,23 @@ import { LogoFull, LogoSymbol } from "@/assets/logo";
 import { fadeDown } from "@/lib/motion";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para controlar o menu mobile. Funciona como uma lâmpada que acende quando o menu está aberto e apaga quando fechado
+
+  const location = useLocation(); // Hook para detectar mudanças de rota e fechar o menu
+
+  useEffect(() => setIsMenuOpen(false), [location]); // Toda vez que o GPS (location) mudar, apague a lâmpada do menu
+
+  useEffect(() => {
+    // Controla o scroll do body quando o menu está aberto
+    document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
+  }, [isMenuOpen]);
 
   const navLinks = [
+    // Centralizando os links de navegação para evitar repetição
     { label: "Página Inicial", href: "/" },
     { label: "Sobre", href: "/sobre" },
     { label: "Projetos", href: "/projetos" },
   ];
-
-  useEffect(() => setIsMenuOpen(false), [location]);
-
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
-  }, [isMenuOpen]);
 
   return (
     <header className="relative z-50 w-full bg-bg-surface lg:bg-transparent">
@@ -57,7 +60,7 @@ export default function Header() {
                 <li key={link.href}>
                   <NavLink
                     href={link.href}
-                    isSelected={location.pathname === link.href}
+                    isSelected={location.pathname === link.href} // Verifica se o link é o selecionado para aplicar estilos
                   >
                     {link.label}
                   </NavLink>
@@ -115,7 +118,7 @@ export default function Header() {
 
           {/* BOTÃO MENU MOBILE */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen(!isMenuOpen)} // Alterna o estado do menu
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
             className="lg:hidden p-2 z-50 relative cursor-pointer"
           >
@@ -139,7 +142,7 @@ export default function Header() {
         {/* ... conteúdo do menu mobile ... */}
         <ul className="flex flex-col items-center gap-10 text-center">
           {navLinks.map((link) => {
-            const isSelected = location.pathname === link.href;
+            const isSelected = location.pathname === link.href; // Verifica se o link é o selecionado para aplicar estilos
             return (
               <li key={link.href} className="overflow-hidden">
                 <NavLink
