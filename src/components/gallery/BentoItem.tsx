@@ -55,7 +55,7 @@ export default function BentoItem({
           src={image}
           alt={title}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 transform-gpu backface-hidden will-change-transform"
         />
       </div>
 
