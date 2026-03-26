@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <>
       {/* Loader */}
-      <AnimatePresence onExitComplete={() => setLoaderFinished(true)}>
+      <AnimatePresence mode="wait" onExitComplete={() => setLoaderFinished(true)}>
         {showLoader && <LoadingScreen key="loader" />}
       </AnimatePresence>
 

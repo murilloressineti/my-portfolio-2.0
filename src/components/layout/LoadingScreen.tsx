@@ -1,7 +1,8 @@
 import { motion, type Variants } from "framer-motion";
 import { LogoMr, LogoText } from "@/assets/logo";
 
-const containerVariants: Variants = { // Variantes para o container do loader, controlando a animação dos filhos
+const containerVariants: Variants = {
+  // Variantes para o container do loader, controlando a animação dos filhos
   hidden: {},
   visible: {
     transition: {
@@ -10,7 +11,8 @@ const containerVariants: Variants = { // Variantes para o container do loader, c
   },
 };
 
-const itemVariants: Variants = { // Variantes para os itens do loader, controlando a animação de entrada e saída
+const itemVariants: Variants = {
+  // Variantes para os itens do loader, controlando a animação de entrada e saída
   hidden: { opacity: 0, x: 20 },
   visible: {
     opacity: 1,
@@ -27,7 +29,8 @@ const itemVariants: Variants = { // Variantes para os itens do loader, controlan
   },
 };
 
-const maskVariants: Variants = { // Variantes para a máscara do loader, controlando a animação de entrada e saída
+const maskVariants: Variants = {
+  // Variantes para a máscara do loader, controlando a animação de entrada e saída
   initial: {
     opacity: 1,
     maskImage:
@@ -38,7 +41,7 @@ const maskVariants: Variants = { // Variantes para a máscara do loader, control
   exit: {
     maskImage:
       "radial-gradient(circle 150vw at 50% 50%, transparent 100%, black 100%)",
-    WebkitMaskImage: 
+    WebkitMaskImage:
       "radial-gradient(circle 150vw at 50% 50%, transparent 100%, black 100%)",
     transition: {
       duration: 1.2,
@@ -57,6 +60,9 @@ export default function LoadingScreen() {
       style={{
         maskRepeat: "no-repeat",
         WebkitMaskRepeat: "no-repeat",
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+        perspective: 1000,
       }}
     >
       <motion.div
