@@ -11,8 +11,8 @@ import { staggerContainer, childItem, fadeUp } from "@/lib/motion";
 export default function Home() {
   const [showLoader, setShowLoader] = useState(() => {
     // Verifica se o loader já foi exibido nesta sessão
-    const hasLoaded = sessionStorage.getItem("portfolioLoaded");
-    return !hasLoaded;
+    const hasLoaded = sessionStorage.getItem("portfolioLoaded"); // Verifica se o loader já foi exibido nesta sessão
+    return !hasLoaded; // Se não tiver sido exibido, mostra o loader; caso contrário, pula direto para o conteúdo
   });
 
   const [loaderFinished, setLoaderFinished] = useState(false); // Estado para controlar a visibilidade do conteúdo principal
