@@ -51,7 +51,7 @@ export default function TimelineItem({
     >
       {/* COLUNA 1: Esquerda */}
       <div
-        className={cn("flex w-full self-stretch", isLeft ? "justify-end" : "justify-start")}
+        className={cn("flex w-full self-stretch md:items-center", isLeft ? "justify-end" : "justify-start")}
       >
         {isLeft ? (
           <TimelineContent
@@ -79,7 +79,7 @@ export default function TimelineItem({
 
       {/* COLUNA 3: Direita */}
       <div
-        className={cn("flex w-full self-stretch", isLeft ? "justify-start" : "justify-end")}
+        className={cn("flex w-full self-stretch md:items-center", isLeft ? "justify-start" : "justify-end")}
       >
         {isLeft ? (
           <div className="flex w-full justify-start">
