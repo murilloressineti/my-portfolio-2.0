@@ -432,8 +432,8 @@ export const projects: Project[] = [
     title: "DSR Gráfica",
     description:
       "Landing page profissional de alta conversão para uma gráfica com 40 anos de tradição. O projeto foca em uma experiência visual premium, utilizando animações, componentes polimórficos e otimização mobile.",
-    imageSrc: Images.JogoDeAdvinhacaoThumb,
-    imageDetails: Images.JogoDeAdvinhacaoDetails,
+    imageSrc: Images.DSRGraficaThumb,
+    imageDetails: Images.DSRGraficaDetails,
     githubUrl: "https://github.com/murilloressineti/dsr-grafica-2.0",
     deployUrl: "https://dsrgrafica.com.br/",
     techs: ["react", "typeScript", "tailwind", "figma"],
