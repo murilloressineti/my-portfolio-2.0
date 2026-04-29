@@ -426,6 +426,47 @@ export const projects: Project[] = [
     ],
   },
 
+  // DSR Gráfica
+  {
+    id: "dsr-grafica",
+    title: "DSR Gráfica",
+    description:
+      "Landing page profissional de alta conversão para uma gráfica com 40 anos de tradição. O projeto foca em uma experiência visual premium, utilizando animações, componentes polimórficos e otimização mobile.",
+    imageSrc: Images.JogoDeAdvinhacaoThumb,
+    imageDetails: Images.JogoDeAdvinhacaoDetails,
+    githubUrl: "https://github.com/murilloressineti/dsr-grafica-2.0",
+    deployUrl: "https://dsrgrafica.com.br/",
+    techs: ["react", "typeScript", "tailwind", "figma"],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: [
+          "Desenvolvimento da interface Pixel Perfect a partir do design no Figma",
+          "Arquitetura de componentes modulares e escaláveis utilizando CVA (Class Variance Authority)",
+          "Orquestração de sistema de animações para retenção e engajamento do usuário",
+          "Implementação de carrosséis interativos para mobile",
+        ],
+      },
+      {
+        title: "Desafios técnicos",
+        items: [
+          "Criação de componentes polimórficos que suportam múltiplas variantes de estilo e comportamento",
+          "Gerenciamento de performance em animações de scroll e desfoque progressivo (blur)",
+          "Desenvolvimento de lógica responsiva para adaptação dinâmica de textos e layouts entre breakpoints",
+          "Configuração de pipeline de CI/CD para deploy automatizado e verificação de tipos via TypeScript",
+        ],
+      },
+      {
+        title: "Aprendizados e evolução",
+        items: [
+          "Domínio do Framer Motion para criar transições fluidas que não impactam a performance",
+          "Aplicação prática de conceitos de Clean Code na construção de uma biblioteca de componentes internos",
+          "Aprimoramento na entrega de projetos focados em conversão real e autoridade de marca para o cliente",
+        ],
+      },
+    ],
+  },
+
   // Refund
   {
     id: "refund",
@@ -437,14 +478,7 @@ export const projects: Project[] = [
     githubUrl:
       "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/react/avan%C3%A7ando-no-react/refund-2.0",
     deployUrl: "https://formrefund.vercel.app/",
-    techs: [
-      "react",
-      "tailwind",
-      "typeScript",
-      "node.js",
-      "prisma",
-      "figma",
-    ],
+    techs: ["react", "tailwind", "typeScript", "node.js", "prisma", "figma"],
     sections: [
       {
         title: "Minhas funções no projeto",
