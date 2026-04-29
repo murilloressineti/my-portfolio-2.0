@@ -436,7 +436,7 @@ export const projects: Project[] = [
     imageDetails: Images.DSRGraficaDetails,
     githubUrl: "https://github.com/murilloressineti/dsr-grafica-2.0",
     deployUrl: "https://dsrgrafica.com.br/",
-    techs: ["react", "typeScript", "tailwind", "figma"],
+    techs: ["react", "tailwind", "typeScript", "figma"],
     sections: [
       {
         title: "Minhas funções no projeto",
