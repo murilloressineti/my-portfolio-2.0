@@ -426,6 +426,46 @@ export const projects: Project[] = [
     ],
   },
 
+  // Refund
+  {
+    id: "refund",
+    title: "Refund",
+    description:
+      "Sistema completo de solicitação de reembolsos com autenticação de usuários, integração com API, upload de comprovantes e dashboard para gerenciamento das solicitações com paginação e filtros.",
+    imageSrc: Images.RefundThumb,
+    imageDetails: Images.RefundDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/react/avan%C3%A7ando-no-react/refund-2.0",
+    deployUrl: "https://formrefund.vercel.app/",
+    techs: ["react", "tailwind", "typeScript", "node.js", "prisma", "figma"],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: [
+          "Desenvolvimento completo da aplicação full-stack (frontend em React e backend em Node.js)",
+          "Implementação de autenticação com JWT e controle de acesso por usuário",
+          "Criação de funcionalidades como cadastro, login, envio de solicitações e dashboard com listagem paginada",
+        ],
+      },
+      {
+        title: "Desafios técnicos",
+        items: [
+          "Integração entre frontend e API, lidando com estados assíncronos, erros e feedback ao usuário",
+          "Implementação de upload de arquivos e validação de dados no frontend e backend",
+          "Gerenciamento de rotas protegidas e fluxo de autenticação na aplicação",
+        ],
+      },
+      {
+        title: "Aprendizados e evolução",
+        items: [
+          "Evolução na construção de aplicações full-stack, conectando frontend, backend e banco de dados",
+          "Maior domínio no consumo de APIs e tratamento de estados assíncronos em aplicações React",
+          "Aprofundamento em arquitetura de aplicações, separação de responsabilidades e organização de código em escala maior",
+        ],
+      },
+    ],
+  },
+
   // DSR Gráfica
   {
     id: "dsr-grafica",
@@ -462,46 +502,6 @@ export const projects: Project[] = [
           "Domínio do Framer Motion para criar transições fluidas que não impactam a performance",
           "Aplicação prática de conceitos de Clean Code na construção de uma biblioteca de componentes internos",
           "Aprimoramento na entrega de projetos focados em conversão real e autoridade de marca para o cliente",
-        ],
-      },
-    ],
-  },
-
-  // Refund
-  {
-    id: "refund",
-    title: "Refund",
-    description:
-      "Sistema completo de solicitação de reembolsos com autenticação de usuários, integração com API, upload de comprovantes e dashboard para gerenciamento das solicitações com paginação e filtros.",
-    imageSrc: Images.RefundThumb,
-    imageDetails: Images.RefundDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/react/avan%C3%A7ando-no-react/refund-2.0",
-    deployUrl: "https://formrefund.vercel.app/",
-    techs: ["react", "tailwind", "typeScript", "node.js", "prisma", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Desenvolvimento completo da aplicação full-stack (frontend em React e backend em Node.js)",
-          "Implementação de autenticação com JWT e controle de acesso por usuário",
-          "Criação de funcionalidades como cadastro, login, envio de solicitações e dashboard com listagem paginada",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Integração entre frontend e API, lidando com estados assíncronos, erros e feedback ao usuário",
-          "Implementação de upload de arquivos e validação de dados no frontend e backend",
-          "Gerenciamento de rotas protegidas e fluxo de autenticação na aplicação",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Evolução na construção de aplicações full-stack, conectando frontend, backend e banco de dados",
-          "Maior domínio no consumo de APIs e tratamento de estados assíncronos em aplicações React",
-          "Aprofundamento em arquitetura de aplicações, separação de responsabilidades e organização de código em escala maior",
         ],
       },
     ],
