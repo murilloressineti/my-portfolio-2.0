@@ -171,7 +171,7 @@ export default function ProjectCard({
               variant === "grid" ? "md:hidden" : "md:flex md:flex-wrap",
             )}
           >
-            {techs.map(
+            {techs.slice(0, 5).map(
               (
                 tech,
                 index, // tech aqui é o nome da tecnologia, por exemplo: "react", "nodejs", etc. index é o número do índice no array, usado para criar uma key única para cada Tag
@@ -201,14 +201,14 @@ export default function ProjectCard({
 
           {/* GRID VIEW  */}
           {variant === "grid" && ( // Na visualização em grid, mostramos apenas as 3 primeiras tecnologias e um contador de quantas mais existem, para evitar poluição visual. Na visualização padrão, mostramos todas as tecnologias.
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-2">
               {desktopTechs.map((tech, index) => (
                 <Tag key={`${tech}-${index}`} dot={tech} size="sm">
                   {tech.charAt(0).toUpperCase() + tech.slice(1)}
                 </Tag>
               ))}
               {remainingCount > 0 && ( // Se houver mais de 3 tecnologias, mostramos o contador "+X"
-                <Text variant="body-sm" className="text-text-secondary ml-1">
+                <Text variant="body-sm" className="text-text-secondary">
                   +{remainingCount}
                 </Text>
               )}

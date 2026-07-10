@@ -38,10 +38,14 @@ export { default as AgendaPetDetails } from "./Details/AgendaPetDetails.webp";
 export { default as JogoDeAdvinhacaoThumb } from "./Thumbnail/JogoDeAdvinhacaoThumb.webp";
 export { default as JogoDeAdvinhacaoDetails } from "./Details/JogoDeAdvinhacaoDetails.webp";
 
+// Refund
+export { default as RefundThumb } from "./Thumbnail/RefundThumb.webp";
+export { default as RefundDetails } from "./Details/RefundDetails.webp";
+
 // DSR Gráfica
 export { default as DSRGraficaThumb } from "./Thumbnail/DSRGraficaThumb.webp";
 export { default as DSRGraficaDetails } from "./Details/DSRGraficaDetails.webp";
 
-// Refund
-export { default as RefundThumb } from "./Thumbnail/RefundThumb.webp";
-export { default as RefundDetails } from "./Details/RefundDetails.webp";
+// Zingen Karaoke
+export { default as HelpDeskThumb } from "./Thumbnail/HelpDeskThumb.webp";
+export { default as HelpDeskDetails } from "./Details/HelpDeskDetails.webp";

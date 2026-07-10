@@ -40,6 +40,7 @@ export const dotHexColors = {
   // Back-end
   "node.js": "#339933",
   express: "#000000",
+  docker: "#2496ED",
 
   // Database & ORM
   prisma: "#0D344B",
@@ -74,7 +75,7 @@ export default function Tag({
   const textClasses =
     size === "sm"
       ? "text-lg leading-relaxed tracking-normal font-normal"
-      : "text-2xl leading-snug tracking-tight font-normal";
+      : "text-lg leading-snug tracking-tight font-normal";
 
   return (
     <div

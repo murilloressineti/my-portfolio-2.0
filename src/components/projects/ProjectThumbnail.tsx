@@ -47,7 +47,7 @@ export default function ProjectThumbnail({
         src={src}
         alt={alt}
         className={cn(
-          variant === "default" ? "w-130" : "w-auto",
+          variant === "default" ? "w-110" : "w-auto",
           "h-auto object-contain object-bottom drop-shadow-xl",
           animate && "transition-transform duration-500 group-hover:scale-105",
         )}

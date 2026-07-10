@@ -13,7 +13,7 @@ export const textVariants = cva("font-sans antialiased", {
       h5: "text-base leading-snug font-semibold text-text-primary",
 
       // BODY TEXT
-      "body-lg": "text-lg md:text-xl leading-relaxed font-normal text-text-primary",
+      "body-lg": "text-lg leading-relaxed font-normal text-text-primary",
       "body-base": "text-base leading-normal font-normal text-text-primary",
       "body-sm": "text-sm leading-normal font-normal opacity-80 text-text-primary",
 

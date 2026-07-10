@@ -506,4 +506,57 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  // Help Desk
+  {
+    id: "help-desk",
+    title: "Help Desk",
+    description:
+      "Sistema de gerenciamento de chamados. A aplicação possui autenticação via JWT, controle de acesso por perfis, gerenciamento de usuários, abertura e acompanhamento de chamados, além de integração completa entre frontend, backend e banco de dados.",
+    imageSrc: Images.HelpDeskThumb,
+    imageDetails: Images.HelpDeskDetails,
+    githubUrl: "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/help-desk",
+    deployUrl: "https://webhelpdesk.vercel.app/",
+    techs: [
+      "react",
+      "tailwind",
+      "typeScript",
+      "node.js",
+      "express",
+      "prisma",
+      "postgreSQL",
+      "docker",
+      "zod",
+      "JWT",
+    ],
+    sections: [
+      {
+        title: "Minhas funções no projeto",
+        items: [
+          "Desenvolvimento completo da aplicação full-stack, desde a modelagem do banco de dados até a construção da interface utilizando React e TypeScript.",
+          "Implementação de autenticação com JWT, autorização baseada em perfis (Administrador, Técnico e Cliente) e proteção de rotas.",
+          "Desenvolvimento de funcionalidades como gerenciamento de usuários, abertura e acompanhamento de chamados, alteração de status, serviços adicionais, upload de avatar e alteração de senha.",
+          "Criação de uma arquitetura baseada em componentes reutilizáveis, formulários tipados com React Hook Form e Zod, além de integração completa com API REST.",
+        ],
+      },
+      {
+        title: "Desafios técnicos",
+        items: [
+          "Projetar uma arquitetura escalável para suportar diferentes fluxos de navegação e permissões entre três perfis de usuários.",
+          "Modelar relacionamentos complexos utilizando Prisma e PostgreSQL, incluindo chamados, usuários, técnicos e serviços.",
+          "Implementar autenticação, autorização e persistência de sessão utilizando JWT de forma segura entre frontend e backend.",
+          "Organizar a aplicação em componentes reutilizáveis e serviços desacoplados, reduzindo duplicação de código e facilitando futuras manutenções.",
+        ],
+      },
+      {
+        title: "Aprendizados e evolução",
+        items: [
+          "Consolidei conhecimentos em desenvolvimento full-stack, integrando React, Node.js, Express, Prisma e PostgreSQL em uma única aplicação.",
+          "Evoluí significativamente na organização de projetos maiores, aplicando princípios de componentização, separação de responsabilidades e reutilização de código.",
+          "Desenvolvi maior maturidade na implementação de regras de negócio, tratamento de estados assíncronos, tipagem com TypeScript e comunicação entre frontend e backend.",
+          "Ganhei experiência prática com deploy em produção utilizando Vercel e Render, além da configuração de variáveis de ambiente, CORS e integração entre serviços.",
+        ],
+      },
+    ],
+  },
 ];
