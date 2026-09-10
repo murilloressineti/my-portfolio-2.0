@@ -35,23 +35,27 @@ export const dotHexColors = {
   react: "#61DAFB",
   tailwind: "#38BDF8",
   axios: "#671DDF",
-  "styled-components": "#d273ad",
+  "React Hook Form": "#EC5990",
+  "Framer Motion": "#BB4B96",
+  "styled-components": "#D273AD",
 
   // Back-end
   "node.js": "#339933",
   express: "#000000",
-  docker: "#2496ED",
 
   // Database & ORM
   prisma: "#0D344B",
   postgreSQL: "#336791",
 
-  // Segurança e Validação
-  zod: "#3178C6",
+  // Validação e autenticação
+  zod: "#3E67B1",
   JWT: "#F30058",
   bcrypt: "#323330",
 
-  // Design e Versionamento
+  // Infraestrutura
+  docker: "#2496ED",
+
+  // Design e versionamento
   figma: "#874FFF",
   git: "#F34F29",
 } as const;

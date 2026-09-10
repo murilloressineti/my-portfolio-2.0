@@ -19,339 +19,12 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // Portal Tech News
-  {
-    id: "portal-tech-news",
-    title: "Portal Tech News",
-    description:
-      "Portal de notícias desenvolvido com CSS Grid, com foco em layouts modernos e responsivos. Estrutura organizada em múltiplas seções hierárquicas, seguindo protótipo do Figma.",
-    imageSrc: Images.PortalTechNewsThumb,
-    imageDetails: Images.PortalTechNewsDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/projetos/portal-de-noticias",
-    deployUrl: "https://portaltechnews.netlify.app/",
-    techs: ["HTML", "CSS", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Estruturei toda a página utilizando HTML semântico, organizando corretamente seções como header, main, section e aside.",
-          "Implementei o layout completo com CSS Grid, distribuindo os elementos em diferentes áreas da página de forma consistente.",
-          "Realizei a estilização seguindo fielmente o protótipo do Figma, incluindo tipografia, espaçamentos e organização visual.",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Compreender e aplicar corretamente o funcionamento do CSS Grid para estruturar um layout mais complexo.",
-          "Organizar múltiplas seções com diferentes hierarquias visuais mantendo consistência no design.",
-          "Adaptar o posicionamento dos elementos para evitar quebra de layout em diferentes resoluções.",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Desenvolvi uma base sólida no uso de CSS Grid para criação de layouts mais estruturados e escaláveis.",
-          "Passei a entender melhor como dividir a interface em áreas reutilizáveis e organizadas.",
-          "Evoluí na leitura e interpretação de layouts no Figma, conseguindo transformar protótipos em código com mais precisão.",
-        ],
-      },
-    ],
-  },
-
-  // Estrelas Do Amanha
-  {
-    id: "estrelas-do-amanha",
-    title: "Estrelas Do Amanhã",
-    description:
-      "Formulário de matrícula escolar desenvolvido com HTML e CSS, com foco em estruturação, responsividade e organização visual. O projeto utiliza CSS Grid para distribuir diferentes tipos de campos com base em um layout do Figma.",
-    imageSrc: Images.EstrelasDoAmanhaThumb,
-    imageDetails: Images.EstrelasDoAmanhaDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/projetos/formulario-de-matricula",
-    deployUrl: "https://escolaestrelas.netlify.app/",
-    techs: ["HTML", "CSS", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Estruturei o formulário completo utilizando HTML semântico, organizando os campos em fieldsets para melhorar a hierarquia e acessibilidade.",
-          "Implementei diferentes tipos de inputs, como text, date, select, radio, checkbox e upload de arquivos.",
-          "Desenvolvi o layout utilizando CSS Grid e Flexbox para organizar os campos de forma clara e responsiva.",
-          "Apliquei estilizações personalizadas em elementos como radio buttons, checkboxes e área de upload para melhorar a experiência visual.",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Organizar um grande volume de campos mantendo clareza visual e boa experiência de preenchimento.",
-          "Customizar inputs nativos do HTML (radio, checkbox e file) mantendo consistência com o design do Figma.",
-          "Garantir alinhamento e proporção entre campos diferentes utilizando Grid e Flexbox em conjunto.",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Aprofundei minha habilidade em estruturar formulários complexos de forma organizada e escalável.",
-          "Desenvolvi maior atenção à experiência do usuário em formulários, pensando na clareza e fluidez do preenchimento.",
-          "Evoluí na criação de componentes visuais customizados a partir de elementos nativos do HTML.",
-        ],
-      },
-    ],
-  },
-
-  // Zingen Karaoke
-  {
-    id: "zingen-karaoke",
-    title: "Zingen Karaoke",
-    description:
-      "Landing page de um aplicativo de karaokê, desenvolvida com foco em hierarquia visual, organização de conteúdo e modularização de estilos. O projeto segue um protótipo no Figma e prioriza clareza e responsividade.",
-    imageSrc: Images.ZingenKaraokeThumb,
-    imageDetails: Images.ZingenKaraokeDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/projetos/landing-page",
-    deployUrl: "https://zingenkaraoke.netlify.app/",
-    techs: ["HTML", "CSS", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Estruturei a landing page utilizando HTML semântico, organizando seções como hero, funcionalidades, planos e chamada para download.",
-          "Implementei o layout completo com CSS, utilizando Grid e Flexbox para distribuir os elementos de forma consistente e responsiva.",
-          "Organizei os estilos de forma modular, criando classes reutilizáveis para botões, cards e espaçamentos.",
-          "Apliquei o design do Figma com foco na hierarquia visual, destacando áreas estratégicas como CTA, funcionalidades e planos.",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Organizar uma página longa com múltiplas seções mantendo consistência visual e fluidez na navegação.",
-          "Equilibrar o uso de Grid e Flexbox para diferentes tipos de layout dentro da mesma página.",
-          "Reproduzir fielmente a hierarquia visual do design, principalmente em seções com grande volume de conteúdo.",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Desenvolvi uma melhor compreensão sobre construção de landing pages focadas em apresentação de produto.",
-          "Evoluí na organização de estilos reutilizáveis, facilitando a manutenção e escalabilidade do CSS.",
-          "Passei a entender melhor como estruturar páginas com múltiplas seções mantendo consistência visual e clareza na navegação.",
-        ],
-      },
-    ],
-  },
-
-  // Snitap Patins
-  {
-    id: "snitap-patins",
-    title: "Snitap Patins",
-    description:
-      "Landing page com foco em animações em CSS, explorando transições e efeitos visuais para criar uma experiência dinâmica e interativa na apresentação de produto.",
-    imageSrc: Images.SnitapPatinsThumb,
-    imageDetails: Images.SnitapPatinsDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/projetos/lp-patins-animations",
-    deployUrl: "https://snitappatins.netlify.app/",
-    techs: ["HTML", "CSS", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Estruturei a landing page utilizando HTML semântico, organizando as seções de apresentação do produto.",
-          "Implementei o layout responsivo com CSS, utilizando Grid e Flexbox para distribuir os elementos.",
-          "Desenvolvi animações utilizando CSS, aplicando keyframes, transições e efeitos visuais em diferentes partes da interface.",
-          "Criei interações visuais em elementos como botões, banners e galeria, tornando a navegação mais dinâmica.",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Compreender e aplicar animações com CSS de forma controlada, evitando excessos que comprometessem a usabilidade.",
-          "Sincronizar diferentes animações na mesma interface mantendo fluidez e consistência visual.",
-          "Equilibrar performance e efeitos visuais, garantindo que as animações não impactassem negativamente a experiência.",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Aprofundei meus conhecimentos em animações com CSS, incluindo uso de keyframes e transições.",
-          "Passei a entender melhor como utilizar animações para enriquecer a experiência do usuário, e não apenas como efeito visual.",
-          "Evoluí na criação de interfaces mais dinâmicas, explorando movimento como parte da comunicação visual do produto.",
-        ],
-      },
-    ],
-  },
-
-  // Encantos Literários
-  {
-    id: "encantos-literarios",
-    title: "Encantos Literários",
-    description:
-      "Landing page para clube de livros com foco em experiência visual e composição de interface. Utiliza animações em CSS e organização responsiva para apresentação do produto.",
-    imageSrc: Images.EncantosLiterariosThumb,
-    imageDetails: Images.EncantosLiterariosDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/html-css/avan%C3%A7ando-no-html-e-css/desafios/lp-clube-de-assinatura",
-    deployUrl: "https://encantosliterarios.netlify.app/",
-    techs: ["HTML", "CSS", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Estruturei a landing page utilizando HTML semântico, organizando seções como hero, apresentação do produto, kit mensal e planos de assinatura.",
-          "Implementei o layout responsivo com CSS, utilizando Grid e Flexbox para lidar com diferentes níveis de complexidade visual.",
-          "Desenvolvi animações e transições em CSS para enriquecer a experiência do usuário em elementos como destaques do produto, ícones e seções.",
-          "Trabalhei a composição visual de elementos sobrepostos, criando uma interface mais dinâmica e imersiva.",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Gerenciar uma grande quantidade de elementos visuais e decorativos sem comprometer a organização da interface.",
-          "Criar animações que complementassem a experiência sem prejudicar a legibilidade e usabilidade.",
-          "Trabalhar com sobreposição de elementos e posicionamentos mais complexos mantendo responsividade.",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Aprofundei minha capacidade de construir interfaces visualmente mais complexas e organizadas.",
-          "Evoluí no uso de animações como parte da experiência do usuário, integrando movimento à comunicação do produto.",
-          "Desenvolvi maior domínio sobre composição visual e posicionamento de elementos em layouts mais avançados.",
-        ],
-      },
-    ],
-  },
-
-  // Convert BR
-  {
-    id: "convert-br",
-    title: "Convert BR",
-    description:
-      "Aplicação de conversão de moedas para BRL com interface dinâmica. Utiliza JavaScript para manipulação de DOM, validação de dados e cálculo sob demanda a partir da interação do usuário.",
-    imageSrc: Images.ConvertBRThumb,
-    imageDetails: Images.ConvertBRDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/javascript/projetos/convert",
-    deployUrl: "https://convertbr.netlify.app/",
-    techs: ["HTML", "CSS", "javaScript", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Implementei a lógica de conversão de moedas utilizando JavaScript, considerando diferentes taxas e símbolos.",
-          "Realizei a manipulação do DOM para capturar dados do formulário e exibir os resultados dinamicamente.",
-          "Implementei validação de entrada, restringindo o campo de valor para aceitar apenas números.",
-          "Criei feedback visual ao usuário após a conversão, atualizando a interface com base na ação realizada.",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Entender o fluxo de eventos no JavaScript, como input e submit, e como utilizá-los corretamente.",
-          "Garantir a manipulação correta dos dados inseridos pelo usuário antes de realizar os cálculos.",
-          "Trabalhar com formatação de valores monetários utilizando toLocaleString.",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Deixei de trabalhar apenas com interfaces estáticas e passei a desenvolver funcionalidades interativas com JavaScript.",
-          "Compreendi na prática conceitos fundamentais como eventos, funções e manipulação de DOM.",
-          "Evoluí na construção de aplicações que respondem às ações do usuário em tempo real.",
-        ],
-      },
-    ],
-  },
-
-  // QuickList
-  {
-    id: "quicklist",
-    title: "QuickList",
-    description:
-      "Aplicação de lista de compras interativa com manipulação de DOM e eventos. Permite adicionar, marcar e remover itens dinamicamente em tempo real.",
-    imageSrc: Images.QuickListThumb,
-    imageDetails: Images.QuickListDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/javascript/desafios/quicklist",
-    deployUrl: "https://quicklistapp.netlify.app/",
-    techs: ["HTML", "CSS", "javaScript", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Implementei a lógica de adição, remoção e marcação de itens utilizando JavaScript.",
-          "Realizei manipulação dinâmica do DOM, criando e inserindo novos elementos na lista em tempo real.",
-          "Utilizei event delegation para gerenciar interações em elementos criados dinamicamente.",
-          "Implementei feedback visual ao usuário, como alertas temporários e alterações de estilo ao marcar itens.",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Gerenciar eventos em elementos dinâmicos sem duplicar listeners, utilizando event delegation.",
-          "Garantir consistência na criação de novos itens, incluindo identificação única para checkboxes.",
-          "Controlar estados visuais da interface (marcado, removido, alerta) de forma sincronizada com as ações do usuário.",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Consolidei meu entendimento sobre manipulação de DOM e eventos no JavaScript.",
-          "Passei a estruturar melhor interações em aplicações, separando responsabilidades em funções.",
-          "Evoluí na construção de aplicações mais interativas, com múltiplas ações acontecendo de forma coordenada.",
-        ],
-      },
-    ],
-  },
-
-  // Sorteador De Números
-  {
-    id: "sorteador-de-numeros",
-    title: "Sorteador De Números",
-    description:
-      "Aplicação para sorteio de números com regras personalizáveis. Permite definir intervalos, quantidade e repetição, com validação de dados e feedback visual dinâmico.",
-    imageSrc: Images.SorteadorDeNumerosThumb,
-    imageDetails: Images.SorteadorDeNumerosDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/javascript/desafios/sorteador-de-numeros",
-    deployUrl: "https://sorteanumeros.netlify.app/",
-    techs: ["HTML", "CSS", "javaScript", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Implementei a lógica de sorteio de números utilizando JavaScript, considerando regras como intervalo e repetição.",
-          "Desenvolvi validações para garantir consistência dos dados inseridos pelo usuário antes do processamento.",
-          "Realizei manipulação de DOM para alternar entre estados da aplicação (formulário e resultado).",
-          "Implementei animações dinâmicas na exibição dos números sorteados, melhorando a experiência do usuário.",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Criar uma lógica de sorteio que respeitasse a regra de não repetição sem comprometer o desempenho.",
-          "Garantir validação consistente entre múltiplos campos interdependentes (mínimo, máximo e quantidade).",
-          "Controlar a transição de estados da interface de forma fluida e sincronizada com as animações.",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Evoluí na construção de regras de negócio mais complexas utilizando JavaScript.",
-          "Desenvolvi maior atenção à validação de dados e tratamento de cenários de erro.",
-          "Passei a integrar lógica e experiência visual, criando aplicações mais completas e interativas.",
-        ],
-      },
-    ],
-  },
-
   // Agenda Petshop
   {
     id: "agendamento-petshop",
     title: "Agenda Petshop",
     description:
-      "Sistema de agendamento para petshop com gestão de clientes e serviços. Organização automática por períodos do dia e controle dinâmico de horários disponíveis.",
+      "Aplicação web para agendamento de serviços em petshop, desenvolvida em JavaScript com controle de horários e organização automática dos atendimentos por período do dia.",
     imageSrc: Images.AgendaPetThumb,
     imageDetails: Images.AgendaPetDetails,
     githubUrl:
@@ -360,148 +33,66 @@ export const projects: Project[] = [
     techs: ["HTML", "CSS", "javaScript", "figma"],
     sections: [
       {
-        title: "Minhas funções no projeto",
+        title: "Minha atuação",
         items: [
-          "Desenvolvimento completo da interface e lógica de agendamento",
-          "Implementação de formulário com validação de dados (nome, telefone, serviço e horário)",
-          "Criação do sistema de organização automática dos agendamentos por período (manhã, tarde e noite)",
+          "Desenvolvi a interface e a lógica de agendamento em JavaScript, permitindo cadastrar clientes, serviços, datas e horários.",
+          "Implementei a organização automática dos atendimentos entre manhã, tarde e noite para facilitar a visualização da agenda.",
+          "Construí a atualização dinâmica dos horários e agendamentos por meio da manipulação do DOM e das interações do usuário.",
         ],
       },
       {
         title: "Desafios técnicos",
         items: [
-          "Gerenciamento dinâmico dos horários disponíveis, evitando conflitos e horários no passado",
-          "Manipulação do DOM para atualizar a agenda em tempo real após novos agendamentos",
-          "Implementação de um seletor de horários customizado com controle de estado (selecionado, disponível, indisponível)",
+          "Controlar horários disponíveis e impedir seleções inválidas, conflitos de agenda e agendamentos em horários passados.",
+          "Sincronizar os dados dos agendamentos com a interface para refletir imediatamente inclusões e alterações realizadas pelo usuário.",
+          "Manipular datas e horários com Day.js, mantendo as regras de disponibilidade organizadas dentro da lógica da aplicação.",
         ],
       },
       {
         title: "Aprendizados e evolução",
         items: [
-          "Evolução na organização da lógica JavaScript, separando responsabilidades em módulos e funções reutilizáveis",
-          "Maior domínio na manipulação de datas e horários com bibliotecas externas (dayjs)",
-          "Aprofundamento na construção de interfaces interativas orientadas a estado, aproximando o comportamento de aplicações reais",
+          "Aprofundei meus fundamentos de JavaScript ao desenvolver regras de negócio e interações sem abstrações de frameworks.",
+          "Evoluí na manipulação do DOM, eventos, módulos e organização da lógica em funções com responsabilidades específicas.",
+          "Fortaleci minha compreensão sobre estado e atualização de interfaces, criando uma base importante para minha evolução posterior com React.",
         ],
       },
     ],
   },
 
-  // Jogo De Adivinhação
+  // Hair Day
   {
-    id: "jogo-de-adivinhacao",
-    title: "Jogo De Adivinhação",
+    id: "hair-day",
+    title: "Hair Day",
     description:
-      "Aplicação interativa desenvolvida em React onde o usuário precisa descobrir uma palavra secreta com base em dicas, utilizando gerenciamento de estado, validações e atualização dinâmica da interface.",
-    imageSrc: Images.JogoDeAdvinhacaoThumb,
-    imageDetails: Images.JogoDeAdvinhacaoDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/react/iniciando-no-react/jogo-de-advinhacao",
-    deployUrl: "https://adivinhapalavra.vercel.app/",
-    techs: ["react", "CSS", "typeScript", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Desenvolvimento completo da aplicação utilizando React com TypeScript",
-          "Estruturação e componentização da interface (Header, Input, Letter, etc.)",
-          "Implementação da lógica do jogo, incluindo validações, controle de tentativas e fluxo de vitória/derrota",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Gerenciamento de estado para controlar letras utilizadas, pontuação e progresso do jogo",
-          "Sincronização das regras do jogo com a renderização da interface (acertos, erros e fim de partida)",
-          "Validação de entradas repetidas e controle de fluxo para evitar inconsistências no estado",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Consolidação prática de conceitos do React, como useState e useEffect, aplicados em um projeto com regras e fluxo de jogo",
-          "Evolução na componentização e separação de responsabilidades na interface",
-          "Melhoria na organização do fluxo da aplicação, conectando estado, regras e interface de forma mais consistente",
-        ],
-      },
-    ],
-  },
-
-  // Refund
-  {
-    id: "refund",
-    title: "Refund",
-    description:
-      "Sistema completo de solicitação de reembolsos com autenticação de usuários, integração com API, upload de comprovantes e dashboard para gerenciamento das solicitações com paginação e filtros.",
-    imageSrc: Images.RefundThumb,
-    imageDetails: Images.RefundDetails,
-    githubUrl:
-      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/react/avan%C3%A7ando-no-react/refund-2.0",
-    deployUrl: "https://formrefund.vercel.app/",
-    techs: ["react", "tailwind", "typeScript", "axios", "figma"],
-    sections: [
-      {
-        title: "Minhas funções no projeto",
-        items: [
-          "Desenvolvimento completo da aplicação full-stack (frontend em React e backend em Node.js)",
-          "Implementação de autenticação com JWT e controle de acesso por usuário",
-          "Criação de funcionalidades como cadastro, login, envio de solicitações e dashboard com listagem paginada",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Integração entre frontend e API, lidando com estados assíncronos, erros e feedback ao usuário",
-          "Implementação de upload de arquivos e validação de dados no frontend e backend",
-          "Gerenciamento de rotas protegidas e fluxo de autenticação na aplicação",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Evolução na construção de aplicações full-stack, conectando frontend, backend e banco de dados",
-          "Maior domínio no consumo de APIs e tratamento de estados assíncronos em aplicações React",
-          "Aprofundamento em arquitetura de aplicações, separação de responsabilidades e organização de código em escala maior",
-        ],
-      },
-    ],
-  },
-
-  // DSR Gráfica
-  {
-    id: "dsr-grafica",
-    title: "DSR Gráfica",
-    description:
-      "Landing page profissional de alta conversão para uma gráfica com 40 anos de tradição. O projeto foca em uma experiência visual premium, utilizando animações, componentes polimórficos e otimização mobile.",
-    imageSrc: Images.DSRGraficaThumb,
-    imageDetails: Images.DSRGraficaDetails,
-    githubUrl: "https://github.com/murilloressineti/dsr-grafica-2.0",
-    deployUrl: "https://dsrgrafica.com.br/",
+      "Aplicação web para gerenciamento de agendamentos, desenvolvida com React e TypeScript para organizar clientes e horários disponíveis ao longo do dia.",
+    imageSrc: Images.HairDayThumb,
+    imageDetails: Images.HairDayDetails,
+    githubUrl: "https://github.com/murilloressineti/react-rocketseat/tree/main/hair-day",
+    deployUrl: "https://apphairday.vercel.app/",
     techs: ["react", "tailwind", "typeScript", "figma"],
     sections: [
       {
-        title: "Minhas funções no projeto",
+        title: "Minha atuação",
         items: [
-          "Desenvolvimento da interface Pixel Perfect a partir do design no Figma",
-          "Arquitetura de componentes modulares e escaláveis utilizando CVA (Class Variance Authority)",
-          "Orquestração de sistema de animações para retenção e engajamento do usuário",
-          "Implementação de carrosséis interativos para mobile",
+          "Desenvolvi a interface em React e TypeScript, organizando o fluxo de cadastro e visualização dos agendamentos.",
+          "Estruturei a aplicação em componentes reutilizáveis, separando responsabilidades entre interface, dados e regras da aplicação.",
+          "Implementei o gerenciamento dos horários e atualizações da agenda a partir das interações realizadas pelo usuário.",
         ],
       },
       {
         title: "Desafios técnicos",
         items: [
-          "Criação de componentes polimórficos que suportam múltiplas variantes de estilo e comportamento",
-          "Gerenciamento de performance em animações de scroll e desfoque progressivo (blur)",
-          "Desenvolvimento de lógica responsiva para adaptação dinâmica de textos e layouts entre breakpoints",
-          "Configuração de pipeline de CI/CD para deploy automatizado e verificação de tipos via TypeScript",
+          "Organizar o estado da agenda para manter a interface sincronizada após inclusões e alterações nos agendamentos.",
+          "Distribuir responsabilidades entre componentes e funções, evitando concentração excessiva da lógica em uma única parte da aplicação.",
+          "Trabalhar com datas e horários preservando consistência entre os dados disponíveis e sua representação na interface.",
         ],
       },
       {
         title: "Aprendizados e evolução",
         items: [
-          "Domínio do Framer Motion para criar transições fluidas que não impactam a performance",
-          "Aplicação prática de conceitos de Clean Code na construção de uma biblioteca de componentes internos",
-          "Aprimoramento na entrega de projetos focados em conversão real e autoridade de marca para o cliente",
+          "Reforcei fundamentos do React ao transformar regras de uma aplicação em componentes, estados e interações de interface.",
+          "Evoluí na organização de código TypeScript e na separação de responsabilidades dentro de uma aplicação React.",
+          "Aprofundei minha compreensão sobre atualização de estado e renderização da interface a partir das ações do usuário.",
         ],
       },
     ],
@@ -512,10 +103,11 @@ export const projects: Project[] = [
     id: "help-desk",
     title: "Help Desk",
     description:
-      "Sistema de gerenciamento de chamados. A aplicação possui autenticação via JWT, controle de acesso por perfis, gerenciamento de usuários, abertura e acompanhamento de chamados, além de integração completa entre frontend, backend e banco de dados.",
+      "Sistema Full Stack de gerenciamento de chamados com autenticação, controle de acesso por perfis e integração entre React, API REST e banco de dados PostgreSQL.",
     imageSrc: Images.HelpDeskThumb,
     imageDetails: Images.HelpDeskDetails,
-    githubUrl: "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/help-desk",
+    githubUrl:
+      "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/help-desk",
     deployUrl: "https://webhelpdesk.vercel.app/",
     techs: [
       "react",
@@ -525,36 +117,121 @@ export const projects: Project[] = [
       "express",
       "prisma",
       "postgreSQL",
-      "docker",
       "zod",
       "JWT",
+      "React Hook Form",
+      "figma",
     ],
     sections: [
       {
-        title: "Minhas funções no projeto",
+        title: "Minha atuação",
         items: [
-          "Desenvolvimento completo da aplicação full-stack, desde a modelagem do banco de dados até a construção da interface utilizando React e TypeScript.",
-          "Implementação de autenticação com JWT, autorização baseada em perfis (Administrador, Técnico e Cliente) e proteção de rotas.",
-          "Desenvolvimento de funcionalidades como gerenciamento de usuários, abertura e acompanhamento de chamados, alteração de status, serviços adicionais, upload de avatar e alteração de senha.",
-          "Criação de uma arquitetura baseada em componentes reutilizáveis, formulários tipados com React Hook Form e Zod, além de integração completa com API REST.",
+          "Desenvolvi a aplicação Full Stack integrando interface em React e TypeScript, API com Node.js e Express e banco de dados PostgreSQL.",
+          "Implementei autenticação com JWT e controle de acesso para Administrador, Técnico e Cliente, criando fluxos e permissões específicos para cada perfil.",
+          "Construí funcionalidades para gerenciamento de usuários, técnicos, serviços e chamados, incluindo status, serviços adicionais, avatar e alteração de senha.",
         ],
       },
       {
         title: "Desafios técnicos",
         items: [
-          "Projetar uma arquitetura escalável para suportar diferentes fluxos de navegação e permissões entre três perfis de usuários.",
-          "Modelar relacionamentos complexos utilizando Prisma e PostgreSQL, incluindo chamados, usuários, técnicos e serviços.",
-          "Implementar autenticação, autorização e persistência de sessão utilizando JWT de forma segura entre frontend e backend.",
-          "Organizar a aplicação em componentes reutilizáveis e serviços desacoplados, reduzindo duplicação de código e facilitando futuras manutenções.",
+          "Estruturar diferentes fluxos de navegação e regras de negócio de acordo com as permissões dos três perfis de usuário.",
+          "Modelar os relacionamentos entre usuários, técnicos, serviços e chamados utilizando Prisma ORM e PostgreSQL.",
+          "Integrar frontend, API e banco de dados mantendo autenticação, validações e tratamento consistente dos estados da aplicação.",
         ],
       },
       {
         title: "Aprendizados e evolução",
         items: [
-          "Consolidei conhecimentos em desenvolvimento full-stack, integrando React, Node.js, Express, Prisma e PostgreSQL em uma única aplicação.",
-          "Evoluí significativamente na organização de projetos maiores, aplicando princípios de componentização, separação de responsabilidades e reutilização de código.",
-          "Desenvolvi maior maturidade na implementação de regras de negócio, tratamento de estados assíncronos, tipagem com TypeScript e comunicação entre frontend e backend.",
-          "Ganhei experiência prática com deploy em produção utilizando Vercel e Render, além da configuração de variáveis de ambiente, CORS e integração entre serviços.",
+          "Consolidei conhecimentos Full Stack ao conectar React, Node.js, Express, Prisma e PostgreSQL em uma aplicação completa.",
+          "Evoluí na organização de projetos maiores, aplicando componentização, separação de responsabilidades e reutilização de código.",
+          "Aprofundei minha compreensão de regras de negócio, autenticação, modelagem de dados e comunicação entre frontend e backend.",
+        ],
+      },
+    ],
+  },
+
+  // DSR Gráfica
+  {
+    id: "dsr-grafica",
+    title: "DSR Gráfica",
+    description:
+      "Site institucional desenvolvido para uma gráfica com mais de 40 anos de atuação, transformando um briefing e design profissional em uma experiência web responsiva, animada e publicada em domínio próprio.",
+    imageSrc: Images.DSRGraficaThumb,
+    imageDetails: Images.DSRGraficaDetails,
+    githubUrl: "https://github.com/murilloressineti/dsr-grafica-2.0",
+    deployUrl: "https://dsrgrafica.com.br/",
+    techs: ["react", "tailwind", "typeScript", "Framer Motion", "figma"],
+    sections: [
+      {
+        title: "Minha atuação",
+        items: [
+          "Transformei o layout desenvolvido em Figma em uma aplicação React responsiva, preservando identidade visual, hierarquia e experiência proposta no design.",
+          "Estruturei a interface em componentes reutilizáveis e variantes de estilo, utilizando TypeScript, Tailwind CSS e Class Variance Authority.",
+          "Implementei animações, interações e comportamento responsivo, além de configurar domínio próprio e publicação da aplicação em produção.",
+        ],
+      },
+      {
+        title: "Desafios técnicos",
+        items: [
+          "Reproduzir com fidelidade o design em diferentes resoluções, adaptando elementos e conteúdos sem comprometer a experiência visual.",
+          "Construir componentes flexíveis com diferentes variantes de estilo e comportamento, reduzindo duplicações ao longo da interface.",
+          "Equilibrar animações e interações visuais com responsividade e desempenho, especialmente durante transições e efeitos de scroll.",
+        ],
+      },
+      {
+        title: "Aprendizados e evolução",
+        items: [
+          "Aprimorei a transformação de interfaces do Figma em componentes React reutilizáveis e responsivos.",
+          "Evoluí na criação de animações com Framer Motion e na construção de componentes com múltiplas variantes.",
+          "Ganhei experiência na entrega de uma solução para um negócio real, desde o entendimento das necessidades até a publicação em produção.",
+        ],
+      },
+    ],
+  },
+
+  // Refund
+  {
+    id: "refund",
+    title: "Refund",
+    description:
+      "Aplicação web para solicitação e gerenciamento de reembolsos, desenvolvida em React e TypeScript com autenticação, integração com API, envio de comprovantes, filtros e paginação.",
+    imageSrc: Images.RefundThumb,
+    imageDetails: Images.RefundDetails,
+    githubUrl:
+      "https://github.com/murilloressineti/react-rocketseat/tree/main/refund-system-web",
+    deployUrl: "https://refundsystemweb.vercel.app/",
+    techs: [
+      "react",
+      "tailwind",
+      "typeScript",
+      "axios",
+      "React Hook Form",
+      "zod",
+      "figma",
+    ],
+    sections: [
+      {
+        title: "Minha atuação",
+        items: [
+          "Desenvolvi o front-end da aplicação em React e TypeScript, estruturando páginas e componentes reutilizáveis a partir do design proposto.",
+          "Integrei a interface à API REST com Axios, implementando o envio, consulta e gerenciamento das solicitações de reembolso.",
+          "Construí o formulário com validações, upload de comprovantes, filtros e paginação para os diferentes fluxos da aplicação.",
+        ],
+      },
+      {
+        title: "Desafios técnicos",
+        items: [
+          "Integrar diferentes operações da API à interface, mantendo os dados das solicitações sincronizados ao longo da aplicação.",
+          "Tratar requisições assíncronas, estados de carregamento, erros e feedbacks durante as interações com a API.",
+          "Organizar o formulário, filtros e paginação de forma reutilizável, preservando tipagem e consistência entre os componentes.",
+        ],
+      },
+      {
+        title: "Aprendizados e evolução",
+        items: [
+          "Aprofundei minha experiência com React e TypeScript na construção de uma aplicação conectada a uma API REST.",
+          "Evoluí no consumo de APIs, tratamento de operações assíncronas e gerenciamento dos dados recebidos pelo front-end.",
+          "Consolidei práticas de componentização, tipagem e separação de responsabilidades na construção de aplicações React.",
         ],
       },
     ],

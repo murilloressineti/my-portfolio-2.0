@@ -23,9 +23,7 @@ export default function NotFound() {
 
           <motion.div {...fadeUp} transition={{ delay: 0.4 }}>
             <Text variant="body-lg" className="text-text-secondary">
-              A página que você procura não existe ou foi movida. Não se
-              preocupe, use os botões abaixo para voltar ao início ou entrar em
-              contato.
+              A página que você procura não existe ou foi movida. Use os botões abaixo para continuar navegando pelo portfólio.
             </Text>
           </motion.div>
         </div>
@@ -51,11 +49,11 @@ export default function NotFound() {
 
           <Button
             as={Link}
-            to="/contato"
+            to="/projetos"
             variant="secondary"
             className="justify-center py-4.5 md:w-65 whitespace-nowrap"
           >
-            Entre em contato
+            Ver projetos
             <Icon svg={ArrowUpRight} animate="rotate" />
           </Button>
         </motion.div>
