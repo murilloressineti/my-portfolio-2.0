@@ -37,7 +37,10 @@ export default function Home() {
   return (
     <>
       {/* Loader */}
-      <AnimatePresence mode="wait" onExitComplete={() => setLoaderFinished(true)}>
+      <AnimatePresence
+        mode="wait"
+        onExitComplete={() => setLoaderFinished(true)}
+      >
         {showLoader && <LoadingScreen key="loader" />}
       </AnimatePresence>
 
@@ -70,11 +73,10 @@ export default function Home() {
                 </Text>
               </motion.div>
 
-              <motion.div variants={childItem}>
+              <motion.div variants={childItem} className=" ">
                 <Text variant="body-lg" className="opacity-90 mb-6 md:mb-16">
-                  Transformo ideias em experiências digitais intuitivas,
-                  acessíveis e impactantes. <br />
-                  Meu foco está em performance, propósito e design funcional.
+                  Desenvolvo aplicações web modernas, responsivas e
+                  componentizadas com <br /> React, TypeScript e JavaScript.
                 </Text>
               </motion.div>
 
@@ -142,15 +144,15 @@ export default function Home() {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-50"
               >
                 <Text variant="body-lg" className="text-text-secondary">
-                  Minha jornada começou com Python, mas foi no front-end que
-                  encontrei meu caminho, onde estética e funcionalidade se
-                  encontram.
+                  Minha jornada na tecnologia começou com estudos, prática e
+                  projetos que me levaram ao desenvolvimento Front-end, área em
+                  que venho construindo minha carreira.
                 </Text>
 
                 <Text variant="body-lg" className="text-text-secondary">
-                  Desde então, desenvolvo interfaces com clareza e boas
-                  práticas. Cada projeto fortalece meu repertório técnico e
-                  minha visão sobre boas experiências digitais.
+                  Desde então, cada projeto tem sido uma oportunidade de
+                  aprofundar meus conhecimentos, enfrentar novos desafios e
+                  evoluir como desenvolvedor.
                 </Text>
               </motion.div>
 
@@ -196,7 +198,7 @@ export default function Home() {
                 className="flex flex-wrap items-center justify-center gap-3"
               >
                 {/* Mapeia as tecnologias para exibir as tags correspondentes */}
-                {["react", "tailwind", "typeScript", "figma", "git"].map(
+                {["react", "tailwind", "typeScript", "javaScript", "git"].map(
                   (tech) => (
                     <Tag key={tech} dot={tech as any} size="default">
                       {tech.charAt(0).toUpperCase() + tech.slice(1)}

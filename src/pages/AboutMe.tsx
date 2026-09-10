@@ -37,10 +37,8 @@ export default function AboutMe() {
           <div className="flex flex-col gap-10 lg:pl-30 lg:pr-20 mx-auto w-full">
             <motion.div {...fadeUp}>
               <Text variant="h2" className="uppercase font-normal">
-                Desenvolvendo{" "}
-                <strong className="font-semibold">soluções</strong> que conectam{" "}
-                <strong className="font-semibold">pessoas</strong> e impulsionam{" "}
-                <strong className="font-semibold"> resultados.</strong>
+                Desenvolvendo interfaces, construindo experiências e evoluindo
+                através do código.
               </Text>
             </motion.div>
 
@@ -53,43 +51,33 @@ export default function AboutMe() {
                 variant="body-base"
                 className="text-text-secondary opacity-70"
               >
-                Minha jornada na tecnologia começou com Python, mas foi no{" "}
-                <strong className="font-semibold ">front-end</strong> que
-                encontrei meu caminho, unindo{" "}
-                <strong className="font-semibold ">
-                  estética e funcionalidade
-                </strong>
-                . Meus projetos focam em{" "}
-                <strong className="font-semibold ">
-                  performance e experiência do usuário
-                </strong>
-                . Acredito que{" "}
-                <strong className="font-semibold ">constância</strong> é a maior
-                força que impulsiona e ajuda a superar qualquer desafio.
+                Minha jornada na tecnologia ganhou direção quando encontrei no{" "}
+                <strong className="font-semibold">
+                  Front-end a conexão entre lógica, código e experiência visual.
+                </strong>{" "}
+                Ver uma interface tomar forma no navegador a partir do que
+                construo em código foi o que despertou meu interesse pela área
+                e, desde então, venho aprofundando meus conhecimentos em{" "}
+                <strong className="font-semibold">desenvolvimento web.</strong>
               </Text>
 
               <Text
                 variant="body-base"
                 className="text-text-secondary opacity-70"
               >
-                Para aprimorar minhas habilidades, ingressei no bootcamp{" "}
-                <strong className="font-semibold ">
-                  Full-Stack da Rocketseat
-                </strong>
-                , consolidando conhecimentos em{" "}
-                <strong className="font-semibold ">
-                  React, TypeScript e Node.js
-                </strong>
-                . Paralelamente, busco uma base teórica sólida em{" "}
-                <strong className="font-semibold ">
-                  Análise e Desenvolvimento de Sistemas
+                Acredito na{" "}
+                <strong className="font-semibold">
+                  constância como parte essencial da evolução.
                 </strong>{" "}
-                na{" "}
-                <strong className="font-semibold ">
-                  Universidade Presbiteriana Mackenzie
-                </strong>
-                . Essa combinação de aprendizado prático e acadêmico me permite
-                construir soluções digitais que geram valor.
+                Busco desenvolver soluções bem construídas, organizadas e
+                visualmente cuidadas, mas, acima de tudo, quero contribuir com{" "}
+                <strong className="font-semibold">
+                  produtos nos quais acredito e que possam gerar impacto
+                  positivo na vida das pessoas.
+                </strong>{" "}
+                É essa combinação entre propósito, aprendizado contínuo e
+                atenção aos detalhes que direciona a carreira que venho
+                construindo.
               </Text>
             </motion.div>
           </div>

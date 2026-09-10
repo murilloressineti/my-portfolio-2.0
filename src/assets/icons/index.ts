@@ -12,3 +12,4 @@ export { default as LinkedinLogo } from "./linkedin-logo.svg?react";
 export { default as List } from "./list.svg?react";
 export { default as PencilRuler } from "./pencil-ruler.svg?react";
 export { default as RocketLaunch } from "./rocket-launch.svg?react";
+export { default as Target } from "./target.svg?react";

@@ -37,8 +37,7 @@ export default function CTASection() {
               variant="body-lg"
               className="md:text-2xl leading-snug tracking-tight text-neutral-200 mb-8"
             >
-              Sempre em busca de desafios e oportunidades que conectem
-              propósito, tecnologia e impacto real.
+              Disponível para oportunidades onde possa desenvolver, aprender e contribuir em projetos reais.
             </Text>
           </motion.header>
 
@@ -58,7 +57,7 @@ export default function CTASection() {
               {
                 label: "Baixar currículo",
                 icon: Download,
-                href: "/curriculo-murillo-ressineti.pdf",
+                href: "/curriculo-murillo-ressineti-front-end.pdf",
                 download: "Curriculo_Murillo_Ressineti.pdf",
                 animate: "down" as const,
               },

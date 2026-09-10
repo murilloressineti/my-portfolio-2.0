@@ -16,11 +16,10 @@ export interface GalleryItem {
 }
 
 export const galleryItems: GalleryItem[] = [
-  // Define a lista de itens do carrossel, onde cada item é um objeto que segue a estrutura definida pela interface GalleryItem.
   {
     image: PlayingGuitar,
     title:
-      "Formado na EM&T e integrante de uma banda, encontrei na música minha forma de expressão.",
+      "Guitarrista formado pela EM&T, encontrei na música uma das minhas principais formas de expressão.",
     textPosition: "bottom",
     desktopOrder: 1,
     mobileOrder: 2,
@@ -36,7 +35,7 @@ export const galleryItems: GalleryItem[] = [
   {
     image: Gaming,
     title:
-      "Jogos me divertem e desafiam. É onde relaxo, mergulho em boas histórias e deixo a imaginação correr solta.",
+      "Nos jogos encontro diversão, boas histórias e uma forma de desacelerar fora da rotina.",
     textPosition: "bottom",
     desktopOrder: 3,
     mobileOrder: 3,

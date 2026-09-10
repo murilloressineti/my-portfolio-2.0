@@ -437,7 +437,7 @@ export const projects: Project[] = [
     githubUrl:
       "https://github.com/murilloressineti/full-stack-rocketseat/tree/main/react/avan%C3%A7ando-no-react/refund-2.0",
     deployUrl: "https://formrefund.vercel.app/",
-    techs: ["react", "tailwind", "typeScript", "node.js", "prisma", "figma"],
+    techs: ["react", "tailwind", "typeScript", "axios", "figma"],
     sections: [
       {
         title: "Minhas funções no projeto",

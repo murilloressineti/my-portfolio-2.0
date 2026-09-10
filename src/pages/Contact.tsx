@@ -105,11 +105,11 @@ export default function Contact() {
                 variant="body-lg"
                 className="text-text-secondary max-w-136 mb-6"
               >
-                Se o que viu por aqui faz sentido para você, me chame por um dos
-                canais abaixo.
+                Se você acredita que meu perfil pode contribuir com o seu time,
+                ficarei feliz em conversar.
               </Text>
               <Text variant="body-lg" className="text-text-secondary">
-                Podemos construir algo relevante juntos.
+                Entre em contato comigo por um dos canais abaixo.
               </Text>
             </header>
 
