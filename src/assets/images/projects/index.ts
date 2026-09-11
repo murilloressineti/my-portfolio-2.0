@@ -3,6 +3,8 @@ export { default as AgendaPetThumb } from "./Thumbnail/AgendaPetThumb.webp";
 export { default as AgendaPetDetails } from "./Details/AgendaPetDetails.webp";
 
 // Hair Day
+export { default as HairDayThumb } from "./Thumbnail/HairDayThumb.webp";
+export { default as HairDayDetails } from "./Details/HairDayDetails.webp";
 
 // Refund
 export { default as RefundThumb } from "./Thumbnail/RefundThumb.webp";
