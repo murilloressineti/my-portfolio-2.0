@@ -1,7 +1,13 @@
-import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
+import { fadeDown } from "@/lib/motion";
+
 import { Button, NavLink, Text, Icon } from "../ui";
+
+import { LogoFull, LogoSymbol } from "@/assets/logo";
 import {
   ArrowUpRight,
   Close,
@@ -9,8 +15,6 @@ import {
   LinkedinLogo,
   List,
 } from "@/assets/icons";
-import { LogoFull, LogoSymbol } from "@/assets/logo";
-import { fadeDown } from "@/lib/motion";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para controlar o menu mobile. Funciona como uma lâmpada que acende quando o menu está aberto e apaga quando fechado
