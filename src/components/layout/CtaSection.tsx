@@ -57,7 +57,7 @@ export default function CTASection() {
               {
                 label: "Baixar currículo",
                 icon: Download,
-                href: "/curriculo-murillo-ressineti-front-end.pdf",
+                href: "/curriculo_murillo_ressineti_front_end.pdf",
                 download: "Curriculo_Murillo_Ressineti.pdf",
                 animate: "down" as const,
               },
