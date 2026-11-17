@@ -1,9 +1,13 @@
-import React, { useId } from "react";
+import type React from "react";
+import { useId } from "react";
+
 import { cva, type VariantProps } from "class-variance-authority";
+
 import { cn } from "../../lib/utils";
+
 import Text from "./Text";
 
-export const inputVariants = cva(
+const inputVariants = cva(
   "w-full bg-bg-default border border-border-default rounded-lg p-4 text-base text-text-primary placeholder:text-neutral-400 hover:border-neutral-400 focus:outline-none focus:ring-2 focus:ring-brand-primary/10 focus:border-border-focus resize-none transition-all disabled:opacity-50 disabled:cursor-not-allowed",
   {
     variants: {
@@ -19,37 +23,51 @@ export const inputVariants = cva(
   },
 );
 
-interface InputProps
-  extends
-    Omit<
-      // Exclui o atributo "as" para evitar conflitos, já que estamos definindo nosso próprio "as"
-      React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>, // Certidão de nascimento para atributos de input padrão, mas sem "as"
-      "as"
-    >,
-    VariantProps<typeof inputVariants> {
-  // Permite usar as variantes definidas em inputVariants
-  as?: "input" | "textarea"; // Restringe "as" para apenas "input" ou "textarea"
+interface InputSharedProps extends VariantProps<typeof inputVariants> {
   label?: string;
   error?: string;
-  rows?: number;
 }
 
+// A união discrimina eventos e atributos próprios de input e textarea a partir de `as`.
+type InputProps = InputSharedProps & (
+  | ({ as?: "input"; } & React.ComponentPropsWithoutRef<"input">)
+  | ({ as: "textarea"; } & React.ComponentPropsWithoutRef<"textarea">)
+);
+
 export default function Input({
-  as: Component = "input",
   variant,
   className,
   label,
   error,
   id,
+  "aria-describedby": describedBy,
+  "aria-invalid": invalid,
   ...props
 }: InputProps) {
-  const generatedId = useId(); // Gera um ID único para associar o label ao input
-  const inputId = id || generatedId; // Usa o ID fornecido ou o gerado
+  const generatedId = useId();
+  const inputId = id || generatedId;
+  const errorId = `${inputId}-error`;
+  // Mantém as descrições do consumidor e acrescenta o erro apenas enquanto ele existir.
+  const descriptionIds = [describedBy, error ? errorId : undefined]
+    .filter(Boolean)
+    .join(" ") || undefined;
+  const controlProps = {
+    id: inputId,
+    "aria-invalid": error ? true : invalid,
+    "aria-describedby": descriptionIds,
+    className: cn(inputVariants({ variant: error ? "error" : variant, className })),
+  };
+  let control: React.ReactNode;
+  if (props.as === "textarea") {
+    const { as: Component, ...nativeProps } = props;
+    control = <Component {...nativeProps} {...controlProps} />;
+  } else {
+    const { as: Component = "input", ...nativeProps } = props;
+    control = <Component {...nativeProps} {...controlProps} />;
+  }
   return (
-    // Container para o label, input e mensagem de erro
     <div className="w-full flex flex-col gap-2.5">
-      {label && ( // Renderiza o label apenas se ele for fornecido
-        // Associa o label ao input usando htmlFor e o ID do input
+      {label && (
         <label htmlFor={inputId}>
           <Text
             variant="body-base"
@@ -60,19 +78,10 @@ export default function Input({
         </label>
       )}
 
-      <Component // Renderiza o input ou textarea com base na prop "as"
-        id={inputId} // Atribui o ID ao input para associação com o label
-        className={cn(
-          inputVariants({
-            variant: error ? "error" : variant, // Aplica a variante de erro se houver uma mensagem de erro, caso contrário, usa a variante fornecida
-            className,
-          }),
-        )}
-        {...(props as React.ComponentPropsWithRef<any>)} // Garante que as props sejam passadas corretamente para o input ou textarea, mesmo com a tipagem genérica
-      />
+      {control}
 
-      {error && ( // Renderiza a mensagem de erro apenas se ela for fornecida
-        <Text variant="body-sm" className="text-feedback-error">
+      {error && (
+        <Text id={errorId} variant="body-sm" className="text-feedback-error">
           {error}
         </Text>
       )}

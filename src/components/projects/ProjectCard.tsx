@@ -1,15 +1,19 @@
-import React from "react";
-import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../../lib/utils";
-import { Button, Icon, Tag, Text } from "../ui";
-import { ProjectThumbnail } from "./";
-import { ArrowUpRight, GitHubLogo } from "@/assets/icons";
-import type { AvailableTechs } from "../ui/Tag";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 
-export const projectCardVariants = cva("flex min-w-0 w-full", {
-  // min-w-0 para garantir que o texto dentro do card possa encolher corretamente
+import { cva, type VariantProps } from "class-variance-authority";
+import { Link } from "react-router-dom";
+
+import { cn } from "../../lib/utils";
+
+import { Button, Icon, Tag, Text } from "../ui";
+import type { AvailableTechs } from "../ui/Tag";
+import { ProjectThumbnail } from "./";
+
+import { ArrowUpRight, GitHubLogo } from "@/assets/icons";
+
+// min-w-0 permite encolher texto e listas dentro dos layouts flex sem alargar a página.
+const projectCardVariants = cva("flex min-w-0 w-full", {
   variants: {
     variant: {
       default: "flex-col lg:flex-row items-start gap-6 md:gap-12",
@@ -22,9 +26,9 @@ export const projectCardVariants = cva("flex min-w-0 w-full", {
 });
 
 interface ProjectCardProps
-  extends
-    React.HTMLAttributes<HTMLDivElement>, // Permite passar atributos comuns de div, como className, style, etc.
-    VariantProps<typeof projectCardVariants> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof projectCardVariants> {
+  imageLoading?: "eager" | "lazy";
+  headingAs?: "h2" | "h3";
   id: string;
   title: string;
   description: string;
@@ -32,11 +36,13 @@ interface ProjectCardProps
   imageDetails: string;
   githubUrl?: string;
   deployUrl?: string;
-  techs: AvailableTechs[]; // Array de tecnologias usadas no projeto, por exemplo: ["react", "nodejs", "typescript"]
+  techs: AvailableTechs[];
 }
 
 export default function ProjectCard({
   id,
+  headingAs = "h3",
+  imageLoading = "lazy",
   variant = "default",
   title,
   description,
@@ -48,34 +54,33 @@ export default function ProjectCard({
   imageDetails,
   ...props
 }: ProjectCardProps) {
-  const [isAtEnd, setIsAtEnd] = useState(false); // Estado para controlar se o usuário chegou ao fim da lista de tecnologias
-  const endRef = useRef<HTMLDivElement>(null); // Referência para a "bandeirinha" invisível no final da lista de tecnologias
+  // Compatibilidade com os dados compartilhados: este campo não deve ser encaminhado ao DOM.
+  void imageDetails;
+  const [isAtEnd, setIsAtEnd] = useState(false);
+  const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Criamos o "Guarda" (Observer)
-    const observer = new IntersectionObserver( // O IntersectionObserver é uma API do navegador que permite observar quando um elemento entra ou sai da área visível (viewport). Ele é perfeito para detectar quando o usuário chega ao fim da lista de tecnologias.
+    // O elemento sentinela no fim das tags controla a indicação visual de conteúdo ainda fora da área visível.
+    const observer = new IntersectionObserver(
       ([entry]) => {
-        // Se a "bandeirinha" (endRef) estiver visível, isAtEnd vira true
         setIsAtEnd(entry.isIntersecting);
       },
-      { threshold: 0.1 }, // Avisa quando pelo menos 10% da bandeira aparecer
+      { threshold: 0.1 },
     );
 
     if (endRef.current) {
-      // Se a referência estiver pronta, começamos a observar
       observer.observe(endRef.current);
     }
 
-    return () => observer.disconnect(); // Limpa o guarda quando sairmos da página
+    return () => observer.disconnect();
   }, []);
 
-  const desktopTechs = techs.slice(0, 3); // Pegamos apenas as 3 primeiras tecnologias para mostrar na visualização em grid
-  const remainingCount = techs.length - 3; // Calculamos quantas tecnologias sobraram para mostrar o contador "+X" na visualização em grid
-  const projectLink = `/projetos/${id}`; // Link para a página de detalhes do projeto, usando o ID fornecido
+  const desktopTechs = techs.slice(0, 3);
+  const remainingCount = techs.length - 3;
+  const projectLink = `/projetos/${id}`;
 
   return (
     <div className={cn(projectCardVariants({ variant, className }))} {...props}>
-      {/* THUMBNAIL */}
       <Link
         to={projectLink}
         className={cn(
@@ -85,14 +90,13 @@ export default function ProjectCard({
       >
         <ProjectThumbnail
           src={imageSrc}
+          loading={imageLoading}
           alt={`Preview do projeto ${title}`}
           variant="default"
           animate={true}
           className="w-full"
         />
       </Link>
-
-      {/* HEADER: TÍTULO E BOTÕES */}
       <div className="flex flex-col min-w-0 flex-1 w-full">
         <div
           className={cn(
@@ -105,18 +109,17 @@ export default function ProjectCard({
           <Link to={projectLink} className="flex-1">
             <Text
               variant="h3"
-              as="h3"
+              as={headingAs}
               className={cn(
                 "hover:text-brand-primary transition-all duration-300 cursor-pointer",
-                variant === "grid" ? "line-clamp-1" : "line-clamp-1",
+                "line-clamp-1",
               )}
             >
               {title}
             </Text>
           </Link>
-
           <div className="flex gap-3 shrink-0">
-            {githubUrl && ( // Exibe o botão do GitHub apenas se a URL for fornecida
+            {githubUrl && (
               <Button
                 as="a"
                 href={githubUrl}
@@ -135,7 +138,7 @@ export default function ProjectCard({
               </Button>
             )}
 
-            {deployUrl && ( // Exibe o botão de acesso apenas se a URL for fornecida
+            {deployUrl && (
               <Button
                 as="a"
                 href={deployUrl}
@@ -148,8 +151,6 @@ export default function ProjectCard({
             )}
           </div>
         </div>
-
-        {/* DESCRIÇÃO */}
         <Text
           variant="body-lg"
           className={cn(
@@ -161,10 +162,7 @@ export default function ProjectCard({
         >
           {description}
         </Text>
-
-        {/* TECNOLOGIAS */}
         <div className="relative mt-5 w-full">
-          {/* DEFAULT  */}
           <div
             className={cn(
               "flex gap-3 overflow-x-auto no-scrollbar w-full",
@@ -172,42 +170,34 @@ export default function ProjectCard({
             )}
           >
             {techs.slice(0, 5).map(
-              (
-                tech,
-                index, // tech aqui é o nome da tecnologia, por exemplo: "react", "nodejs", etc. index é o número do índice no array, usado para criar uma key única para cada Tag
-              ) => (
+              (tech, index) => (
                 <Tag
-                  key={`${tech}-${index}`} // Usa o nome da tecnologia e o índice para criar uma key única para cada Tag
+                  key={`${tech}-${index}`}
                   dot={tech}
                   size="default"
                   className="shrink-0"
                 >
                   {tech.charAt(0).toUpperCase() + tech.slice(1)}
                 </Tag>
-                // Exibe o nome da tecnologia com a primeira letra maiúscula
               ),
             )}
-            {/*"Bandeirinha"
-            invisível no final da lista, usada para detectar quando o usuário
-            chegou ao fim da rolagem*/}
+
             <div ref={endRef} className="w-1 shrink-0" />{" "}
             <div
               className={cn(
                 "absolute top-0 right-0 h-full w-12 bg-linear-to-l from-bg-surface to-transparent pointer-events-none md:hidden transition-opacity duration-300",
-                isAtEnd ? "opacity-0" : "opacity-100", // Se chegou no fim, fica invisível
+                isAtEnd ? "opacity-0" : "opacity-100",
               )}
             />
           </div>
-
-          {/* GRID VIEW  */}
-          {variant === "grid" && ( // Na visualização em grid, mostramos apenas as 3 primeiras tecnologias e um contador de quantas mais existem, para evitar poluição visual. Na visualização padrão, mostramos todas as tecnologias.
+          {variant === "grid" && (
             <div className="hidden md:flex items-center gap-2">
               {desktopTechs.map((tech, index) => (
                 <Tag key={`${tech}-${index}`} dot={tech} size="sm">
                   {tech.charAt(0).toUpperCase() + tech.slice(1)}
                 </Tag>
               ))}
-              {remainingCount > 0 && ( // Se houver mais de 3 tecnologias, mostramos o contador "+X"
+              {remainingCount > 0 && (
                 <Text variant="body-sm" className="text-text-secondary">
                   +{remainingCount}
                 </Text>

@@ -1,10 +1,10 @@
 import {
-  PlayingGuitar,
   Family,
+  Football,
   Gaming,
   Gym,
+  PlayingGuitar,
   Reading,
-  Football,
 } from "../assets/images/gallery";
 
 export interface GalleryItem {

@@ -19,7 +19,6 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // Agenda Petshop
   {
     id: "agendamento-petshop",
     title: "Agenda Petshop",
@@ -58,8 +57,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  // Hair Day
   {
     id: "hair-day",
     title: "Hair Day",
@@ -97,8 +94,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  // Help Desk
   {
     id: "help-desk",
     title: "Help Desk",
@@ -149,8 +144,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  // DSR Gráfica
   {
     id: "dsr-grafica",
     title: "DSR Gráfica",
@@ -188,8 +181,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  // Refund
   {
     id: "refund",
     title: "Refund",

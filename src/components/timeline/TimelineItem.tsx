@@ -1,10 +1,13 @@
-import React from "react";
+import type React from "react";
+
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, type HTMLMotionProps } from "framer-motion";
+
 import { cn, fadeUp } from "@/lib";
+
 import { Icon, Text } from "../ui";
 
-export const timelineItemVariants = cva(
+const timelineItemVariants = cva(
   "grid grid-cols-[1fr_auto_1fr] grid-rows-1 items-center gap-4 md:gap-12 w-full",
   {
     variants: {
@@ -38,7 +41,7 @@ export default function TimelineItem({
   className,
   ...props
 }: TimelineItemProps) {
-  const isLeft = side === "left"; // Determina se o conteúdo deve estar à esquerda ou à direita
+  const isLeft = side === "left";
 
   return (
     <motion.div
@@ -49,7 +52,6 @@ export default function TimelineItem({
         "items-center mb-6 md:mb-13 last:mb-0",
       )}
     >
-      {/* COLUNA 1: Esquerda */}
       <div
         className={cn("flex w-full self-stretch md:items-center", isLeft ? "justify-end" : "justify-start")}
       >
@@ -58,7 +60,7 @@ export default function TimelineItem({
             title={title}
             description={description}
             date={date}
-            align="right" // Alinha o conteúdo à direita para itens do lado esquerdo
+            align="right"
           />
         ) : (
           <div className="flex w-full justify-end">
@@ -66,8 +68,6 @@ export default function TimelineItem({
           </div>
         )}
       </div>
-
-      {/* COLUNA 2: Centro (Bolinha) */}
       <div className="relative flex justify-center items-center h-full">
         <span
           className="relative z-10 rounded-full shrink-0 h-2 w-2 bg-neutral-black"
@@ -76,8 +76,6 @@ export default function TimelineItem({
           }}
         />
       </div>
-
-      {/* COLUNA 3: Direita */}
       <div
         className={cn("flex w-full self-stretch md:items-center", isLeft ? "justify-start" : "justify-end")}
       >
@@ -90,7 +88,7 @@ export default function TimelineItem({
             title={title}
             description={description}
             date={date}
-            align="left" // Alinha o conteúdo à esquerda para itens do lado direito
+            align="left"
           />
         )}
       </div>
@@ -109,6 +107,7 @@ function TimelineContent({
   date: string;
   align: "left" | "right";
 }) {
+  // Nos dados da trajetória, asteriscos delimitam os trechos destacados; não é um interpretador Markdown.
   const parts = title.split("*");
   return (
     <div
@@ -117,7 +116,7 @@ function TimelineContent({
         align === "right" ? "items-end text-right" : "items-start text-left",
       )}
     >
-      <Text variant="h4" className="text-sm uppercase mb-2 font-semibold md:font-normal">
+      <Text as="h2" variant="h4" className="text-sm uppercase mb-2 font-semibold md:font-normal">
         {parts.map((part, index) => (
           <span
             key={index}
@@ -137,7 +136,7 @@ function TimelineContent({
   );
 }
 
-function TimelineBadge({ text, icon }: { text: string; icon: any }) {
+function TimelineBadge({ text, icon }: { text: string; icon: React.ElementType; }) {
   return (
     <div
       className={cn(

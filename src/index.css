@@ -79,3 +79,17 @@
     display: inline-block;
   }
 }
+
+/* O escopo explícito evita alcançar a animação de entrada da Home/LoadingScreen. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reduced-motion],
+  [data-reduced-motion] *,
+  .respect-reduced-motion,
+  .respect-reduced-motion * {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

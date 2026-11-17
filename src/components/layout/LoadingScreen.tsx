@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+
 import { LogoMr, LogoText } from "@/assets/logo";
 
 const maskVariants: Variants = {
