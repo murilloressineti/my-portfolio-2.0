@@ -1,8 +1,12 @@
-import React from "react";
+import type React from "react";
+
 import { cva, type VariantProps } from "class-variance-authority";
+
+import { imageMetadata } from "@/constants/image-metadata";
+
 import { cn } from "../../lib/utils";
 
-export const projectThumbnailVariants = cva(
+const projectThumbnailVariants = cva(
   "w-full h-full relative flex items-end justify-center overflow-hidden rounded-md bg-neutral-100",
   {
     variants: {
@@ -23,11 +27,10 @@ export const projectThumbnailVariants = cva(
 );
 
 interface ProjectThumbnailProps
-  extends
-    React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof projectThumbnailVariants> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof projectThumbnailVariants> {
   src: string;
   alt: string;
+  loading?: "eager" | "lazy";
 }
 
 export default function ProjectThumbnail({
@@ -35,6 +38,7 @@ export default function ProjectThumbnail({
   animate,
   src,
   alt,
+  loading = "lazy",
   className,
   ...props
 }: ProjectThumbnailProps) {
@@ -45,6 +49,9 @@ export default function ProjectThumbnail({
     >
       <img
         src={src}
+        {...imageMetadata[src]}
+        loading={loading}
+        decoding="async"
         alt={alt}
         className={cn(
           variant === "default" ? "w-110" : "w-auto",

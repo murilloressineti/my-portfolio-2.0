@@ -1,9 +1,12 @@
-import React from "react";
+import type React from "react";
+
 import { cva, type VariantProps } from "class-variance-authority";
+
 import { cn } from "../../lib/utils";
+
 import Text from "./Text";
 
-export const tagVariants = cva(
+const tagVariants = cva(
   "py-1.5 px-3 inline-flex items-center rounded-md border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-100 cursor-default hover:shadow-sm",
   {
     variants: {
@@ -23,15 +26,13 @@ export const tagVariants = cva(
   },
 );
 
-// Definindo um objeto de cores para as bolinhas, onde cada chave é o nome da tecnologia e o valor é a cor hexadecimal correspondente. O "as const" garante que os tipos sejam inferidos como literais, permitindo que o TypeScript reconheça os nomes das tecnologias como tipos específicos.
-export const dotHexColors = {
-  // Base
+// As chaves literais também definem as tecnologias aceitas pelas tags dos projetos.
+const dotHexColors = {
   HTML: "#E65100",
   CSS: "#214CE5",
   javaScript: "#F0DC4E",
   typeScript: "#3178C6",
 
-  // Front-end
   react: "#61DAFB",
   tailwind: "#38BDF8",
   axios: "#671DDF",
@@ -39,30 +40,25 @@ export const dotHexColors = {
   "Framer Motion": "#BB4B96",
   "styled-components": "#D273AD",
 
-  // Back-end
   "node.js": "#339933",
   express: "#000000",
 
-  // Database & ORM
   prisma: "#0D344B",
   postgreSQL: "#336791",
 
-  // Validação e autenticação
   zod: "#3E67B1",
   JWT: "#F30058",
   bcrypt: "#323330",
 
-  // Infraestrutura
   docker: "#2496ED",
 
-  // Design e versionamento
   figma: "#874FFF",
   git: "#F34F29",
 } as const;
 
 export type AvailableTechs = keyof typeof dotHexColors;
 
-interface TagProps // Define as props para o componente Tag, incluindo as variantes e o tipo de tecnologia para a bolinha colorida
+interface TagProps
   extends React.ComponentProps<"div">, VariantProps<typeof tagVariants> {
   dot?: AvailableTechs;
 }
@@ -75,7 +71,7 @@ export default function Tag({
   children,
   ...props
 }: TagProps) {
-  const selectedHex = dotHexColors[dot]; // Usa o nome da tecnologia (dot) como chave para buscar sua cor hexadecimal no objeto de cores.
+  const selectedHex = dotHexColors[dot];
   const textClasses =
     size === "sm"
       ? "text-lg leading-relaxed tracking-normal font-normal"
@@ -93,7 +89,8 @@ export default function Tag({
         )}
         style={{
           backgroundColor: selectedHex,
-          // O valor 33 em hexadecimal é igual a 51 em decimal, que representa exatamente 20% de 255.
+
+          // O sufixo hexadecimal 33 aplica 20% de opacidade à mesma cor.
           boxShadow: `0 0 0 4px ${selectedHex}33`,
         }}
       />

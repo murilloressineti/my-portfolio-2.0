@@ -1,63 +1,64 @@
+import { motion, MotionConfig } from "framer-motion";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+
+import { fadeUp } from "@/lib/motion";
+
 import { Section } from "../components/layout";
 import { Button, Icon, Text } from "../components/ui";
+
 import { ArrowUpRight } from "@assets/icons";
-import { fadeUp } from "@/lib/motion";
 
 export default function NotFound() {
   return (
-    <main>
-      <Section
-        id="not-found"
-        className="flex min-h-[90vh] flex-col items-center justify-center text-left"
-      >
-        <div className="flex flex-col gap-6 max-w-190 mx-auto">
-          {/* Título Principal */}
-          <motion.div {...fadeUp}>
-            <Text variant="h2" className="text-3xl md:text-3xl lg:text-4xl uppercase font-normal">
-              <strong className="font-semibold">Ops!</strong> Parece que você se
-              perdeu no caminho.
-            </Text>
-          </motion.div>
-
-          <motion.div {...fadeUp} transition={{ delay: 0.4 }}>
-            <Text variant="body-lg" className="text-text-secondary">
-              A página que você procura não existe ou foi movida. Use os botões abaixo para continuar navegando pelo portfólio.
-            </Text>
-          </motion.div>
-        </div>
-
-        <motion.div
-          {...fadeUp}
-          transition={{ delay: 0.6 }}
-          className="flex flex-col md:flex-row gap-4 justify-center mt-12 md:mt-18 w-full"
+    <MotionConfig reducedMotion="user">
+      <div data-reduced-motion>
+        <Section
+          id="not-found"
+          className="flex min-h-[90vh] flex-col items-center justify-center text-left"
         >
-          <Button
-            as={Link}
-            to="/"
-            variant="primary"
-            className="justify-center py-4.5 md:w-65 whitespace-nowrap"
+          <div className="flex flex-col gap-6 max-w-190 mx-auto">
+            <motion.div {...fadeUp}>
+              <Text as="h1" variant="h2" className="text-3xl md:text-3xl lg:text-4xl uppercase font-normal">
+                <strong className="font-semibold">Ops!</strong> Parece que você se
+                perdeu no caminho.
+              </Text>
+            </motion.div>
+            <motion.div {...fadeUp} transition={{ delay: 0.4 }}>
+              <Text variant="body-lg" className="text-text-secondary">
+                A página que você procura não existe ou foi movida. Use os botões abaixo para continuar navegando pelo portfólio.
+              </Text>
+            </motion.div>
+          </div>
+          <motion.div
+            {...fadeUp}
+            transition={{ delay: 0.6 }}
+            className="flex flex-col md:flex-row gap-4 justify-center mt-12 md:mt-18 w-full"
           >
-            Voltar ao Início
-            <Icon
-              svg={ArrowUpRight}
-              className="fill-neutral-white"
-              animate="rotate"
-            />
-          </Button>
-
-          <Button
-            as={Link}
-            to="/projetos"
-            variant="secondary"
-            className="justify-center py-4.5 md:w-65 whitespace-nowrap"
-          >
-            Ver projetos
-            <Icon svg={ArrowUpRight} animate="rotate" />
-          </Button>
-        </motion.div>
-      </Section>
-    </main>
+            <Button
+              as={Link}
+              to="/"
+              variant="primary"
+              className="justify-center py-4.5 md:w-65 whitespace-nowrap"
+            >
+              Voltar ao Início
+              <Icon
+                svg={ArrowUpRight}
+                className="fill-neutral-white"
+                animate="rotate"
+              />
+            </Button>
+            <Button
+              as={Link}
+              to="/projetos"
+              variant="secondary"
+              className="justify-center py-4.5 md:w-65 whitespace-nowrap"
+            >
+              Ver projetos
+              <Icon svg={ArrowUpRight} animate="rotate" />
+            </Button>
+          </motion.div>
+        </Section>
+      </div>
+    </MotionConfig>
   );
 }

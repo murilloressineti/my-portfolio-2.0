@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+
 import { cn } from "../../lib/utils";
 
 interface SectionProps {
@@ -8,6 +9,7 @@ interface SectionProps {
   isFullWidth?: boolean;
 }
 
+// A largura total retira apenas o limite e os recuos do conteúdo; a seção continua disponível para fundos.
 export default function Section({
   id,
   children,
@@ -15,15 +17,14 @@ export default function Section({
   isFullWidth = false,
 }: SectionProps) {
   return (
-    <section // Seção principal do conteúdo
+    <section
       id={id}
       className={cn(
         "py-20 md:py-30",
         !isFullWidth && "px-6 md:px-12 lg:px-30",
         className,
       )}
-    > 
-      {/* Container centralizado para o conteúdo da seção */}
+    >
       <div className={cn("w-full mx-auto ", !isFullWidth && "max-w-420")}>
         {children}
       </div>

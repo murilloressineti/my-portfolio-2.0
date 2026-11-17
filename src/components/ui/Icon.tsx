@@ -1,8 +1,10 @@
-import React from "react";
+import type React from "react";
+
 import { cva, type VariantProps } from "class-variance-authority";
+
 import { cn } from "@/lib/utils";
 
-export const iconVariants = cva(
+const iconVariants = cva(
   "transition-all duration-300 ease-in-out shrink-0",
   {
     variants: {
@@ -25,12 +27,12 @@ export const iconVariants = cva(
 );
 
 interface IconProps
-  extends React.SVGProps<SVGSVGElement>, VariantProps<typeof iconVariants> { // Herda os poderes de um componente SVG e as variantes do cva
-  svg: React.ElementType; // O componente SVG a ser renderizado, passado como prop
+  extends React.SVGProps<SVGSVGElement>, VariantProps<typeof iconVariants> {
+  svg: React.ElementType;
 }
 
 export default function Icon({
-  svg: SvgComponent, // Componente especial criado para renderizar o SVG
+  svg: SvgComponent,
   animate,
   size,
   className,
@@ -38,6 +40,7 @@ export default function Icon({
 }: IconProps) {
   return (
     <SvgComponent
+      // O elemento que usa o ícone fornece o nome acessível; o desenho é decorativo.
       aria-hidden="true"
       className={cn(iconVariants({ animate, size, className }))}
       {...props}

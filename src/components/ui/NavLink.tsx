@@ -1,9 +1,13 @@
-import React from "react";
+import type { ReactNode } from "react";
+
 import { cva, type VariantProps } from "class-variance-authority";
+import { NavLink as RouterNavLink, type NavLinkProps } from "react-router-dom";
+
 import { cn } from "../../lib/utils";
+
 import Text from "./Text";
 
-export const linkVariants = cva(
+const linkVariants = cva(
   "transition-colors duration-300 cursor-pointer",
   {
     variants: {
@@ -18,31 +22,30 @@ export const linkVariants = cva(
   },
 );
 
-interface LinkProps
-  extends
-    React.AnchorHTMLAttributes<HTMLAnchorElement>, // Certidão de nascimento para atributos de link padrão
-    VariantProps<typeof linkVariants> { // Permite usar as variantes definidas em linkVariants
-  as?: React.ElementType;
-  isSelected?: boolean;
+interface NavigationLinkProps
+  extends Omit<NavLinkProps, "className" | "children">, VariantProps<typeof linkVariants> {
+  className?: string;
+  children?: ReactNode;
 }
 
-export default function Link({
-  as: Component = "a",
+// A seleção exata mantém o link da listagem desmarcado nas páginas de detalhes.
+export default function NavLink({
+  end = true,
   variant,
-  isSelected,
   className,
   children,
   ...props
-}: LinkProps) {
+}: NavigationLinkProps) {
   return (
-    <Component
-      className={cn(
+    <RouterNavLink
+      end={end}
+      className={({ isActive }) => cn(
         "flex flex-col items-center justify-center",
-        linkVariants({ variant: isSelected ? "active" : variant, className }),
+        linkVariants({ variant: isActive ? "active" : variant, className }),
       )}
       {...props}
     >
       <Text variant="ui-link">{children}</Text>
-    </Component>
+    </RouterNavLink>
   );
 }

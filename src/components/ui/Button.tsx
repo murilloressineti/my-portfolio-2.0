@@ -1,9 +1,12 @@
 import React from "react";
+
 import { cva, type VariantProps } from "class-variance-authority";
+
 import { cn } from "../../lib/utils";
+
 import Text from "./Text";
 
-export const buttonVariants = cva(
+const buttonVariants = cva(
   "inline-flex items-center justify-between gap-2 transition-all duration-300 cursor-pointer uppercase group antialiased",
   {
     variants: {
@@ -12,7 +15,7 @@ export const buttonVariants = cva(
 
         secondary:
           "bg-neutral-white text-text-secondary fill-text-secondary border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-200 hover:text-text-primary hover:fill-text-primary",
-          
+
         tertiary:
           "bg-neutral-200 text-text-secondary fill-text-secondary hover:bg-neutral-300 hover:text-text-primary",
 
@@ -54,44 +57,43 @@ export const buttonVariants = cva(
   },
 );
 
-interface ButtonProps
-  extends
-    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "shape" | "size">, // Herdamos os atributos de um botão HTML, mas omitimos "shape" e "size" para evitar conflitos com as variantes do cva
-    VariantProps<typeof buttonVariants> {
-  as?: React.ElementType;
-  to?: string;
-  href?: string;
-  target?: string;
-  rel?: string;
-  download?: string;
-}
+type ButtonOwnProps<T extends React.ElementType> = VariantProps<
+  typeof buttonVariants
+> & {
+  as?: T;
+  children?: React.ReactNode;
+  className?: string;
+};
 
-export default function Button({
-  as: Component = "button",
+// `as` escolhe as props nativas; NoInfer impede que um atributo incompatível mude essa escolha.
+type ButtonProps<T extends React.ElementType> = ButtonOwnProps<T> &
+  Omit<React.ComponentPropsWithoutRef<NoInfer<T>>, keyof ButtonOwnProps<T>>;
+
+export default function Button<T extends React.ElementType = "button">({
+  as,
   variant,
   shape,
   size,
   className,
   children,
   ...props
-}: ButtonProps) {
+}: ButtonProps<T>) {
+  const Component = as || "button";
   return (
     <Component
       className={cn(buttonVariants({ variant, shape, size, className }))}
       {...props}
     >
-      {/* Usamos React.Children.map para percorrer os filhos (children) com segurança. 
-      Diferente do .map comum que funciona apenas com um filho (objeto), o React.Children.map funciona mesmo se houver apenas um filho (objeto) ou vários (array).*/}
-      {React.Children.map(children, (child) => { // O 'child' é cada item que está dentro do botão
-        // Se o filho for uma string (texto puro), envolvemos no componente Text
+      {/* Texto simples recebe tipografia de ação e uma tag compatível com o conteúdo de botões. */}
+      {React.Children.map(children, (child) => {
         if (typeof child === "string") {
-          return ( // Dentro de um botão, não é permitido por lei (regras do HTML) ter um parágrafo (<p>) ou um título (<h1>). O <span> é a etiqueta neutra perfeita para ficar dentro de botões.
-            <Text variant="ui-action" as="span"> 
+          return (
+            <Text variant="ui-action" as="span">
               {child}
             </Text>
           );
         }
-        // Se for um ícone ou qualquer outro componente, renderiza ele como está (sem envolver no Text)
+
         return child;
       })}
     </Component>

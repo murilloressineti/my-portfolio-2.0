@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+
+import { projects } from "../constants";
+
+import { staggerContainer, childItem, fadeUp } from "@/lib/motion";
+
 import { Section, CTASection, LoadingScreen } from "../components/layout";
 import { Button, Icon, Tag, Text } from "../components/ui";
 import { ProjectCard } from "../components/projects";
-import { projects } from "../constants";
+
 import { ArrowUpRight } from "@/assets/icons";
-import { staggerContainer, childItem, fadeUp } from "@/lib/motion";
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(() => {
@@ -51,7 +56,7 @@ export default function Home() {
         animate={{ opacity: loaderFinished ? 1 : 0 }}
         transition={{ duration: 0.4 }}
       >
-        <main>
+        <div>
           {/* Hero Section */}
           <Section
             id="hero"
@@ -65,6 +70,7 @@ export default function Home() {
             >
               <motion.div variants={childItem}>
                 <Text
+                  as="h1"
                   variant="h1"
                   className="uppercase font-normal mb-4 md:mb-2"
                 >
@@ -111,7 +117,7 @@ export default function Home() {
               {...fadeUp}
               className="border-l-5 border-brand-primary pl-8 mb-16 md:mb-22"
             >
-              <Text variant="h2" className="md:text-3xl italic">
+              <Text as="h2" variant="h2" className="md:text-3xl italic">
                 Evoluir como pessoa é o meu maior projeto.
               </Text>
             </motion.div>
@@ -126,7 +132,7 @@ export default function Home() {
                   Sobre
                 </Text>
 
-                <Text variant="h3" className="uppercase font-normal">
+                <Text as="h3" variant="h3" className="uppercase font-normal">
                   Mais que <strong className="font-semibold">código</strong> e
                   interfaces
                 </Text>
@@ -186,7 +192,11 @@ export default function Home() {
                   Minhas Habilidades
                 </Text>
 
-                <Text variant="h2" className="uppercase font-normal mb-12">
+                <Text
+                  as="h2"
+                  variant="h2"
+                  className="uppercase font-normal mb-12"
+                >
                   <strong className="font-semibold">Tecnologias</strong> que
                   utilizo
                 </Text>
@@ -198,13 +208,19 @@ export default function Home() {
                 className="flex flex-wrap items-center justify-center gap-3"
               >
                 {/* Mapeia as tecnologias para exibir as tags correspondentes */}
-                {["react", "tailwind", "typeScript", "javaScript", "git"].map(
-                  (tech) => (
-                    <Tag key={tech} dot={tech as any} size="default">
-                      {tech.charAt(0).toUpperCase() + tech.slice(1)}
-                    </Tag>
-                  ),
-                )}
+                {(
+                  [
+                    "react",
+                    "tailwind",
+                    "typeScript",
+                    "javaScript",
+                    "git",
+                  ] as const
+                ).map((tech) => (
+                  <Tag key={tech} dot={tech} size="default">
+                    {tech.charAt(0).toUpperCase() + tech.slice(1)}
+                  </Tag>
+                ))}
               </motion.div>
             </div>
           </Section>
@@ -225,6 +241,7 @@ export default function Home() {
                 </Text>
 
                 <Text
+                  as="h2"
                   variant="h2"
                   className="text-text-primary uppercase font-normal"
                 >
@@ -247,10 +264,7 @@ export default function Home() {
                       array, // Mapeia os projetos para exibir os cards
                     ) => (
                       <React.Fragment key={project.id}>
-                        <ProjectCard
-                          {...project}
-                          techs={project.techs as any}
-                        />
+                        <ProjectCard {...project} techs={project.techs} />
 
                         {index < array.length - 1 && (
                           <hr className="border-border-default" />
@@ -280,7 +294,7 @@ export default function Home() {
           </Section>
 
           <CTASection />
-        </main>
+        </div>
       </motion.div>
     </>
   );

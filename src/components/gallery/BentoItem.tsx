@@ -1,6 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import { motion, type HTMLMotionProps } from "framer-motion";
-import { cn, fadeUp, fadeRight } from "@/lib";
+
+import { imageMetadata } from "@/constants/image-metadata";
+import { cn, fadeRight, fadeUp } from "@/lib";
+
 import Text from "../ui/Text";
 
 interface BentoItemProps extends HTMLMotionProps<"div"> {
@@ -20,14 +24,10 @@ export default function BentoItem({
   mobileOrder,
   ...props
 }: BentoItemProps) {
-  const [animation, setAnimation] = useState<any>(fadeUp); // Estado inicial para a animação
-
-  // O useEffect só roda dentro do navegador do usuário. É a forma segura de dizer: "Ei React, só tente medir a tela quando você tiver certeza de que já chegou no navegador do cliente".
-  useEffect(() => {
-    // Detecta como se fosse um scanner se é mobile ou desktop para escolher a animação
-    const isMobile = window.innerWidth < 768; // breakpoint para mobile
-    setAnimation(isMobile ? fadeRight : fadeUp); // Define a animação com base no tipo de dispositivo
-  }, []); // Executa apenas uma vez na montagem do componente
+  // A escolha é capturada na montagem, como no comportamento existente; não acompanha resize.
+  const [animation] = useState(() =>
+    typeof window !== "undefined" && window.innerWidth < 768 ? fadeRight : fadeUp,
+  );
 
   return (
     <motion.div
@@ -35,13 +35,12 @@ export default function BentoItem({
       {...props}
       className={cn(
         "flex flex-col gap-6 w-full h-full md:max-h-126 group",
-        String(desktopOrder || ""), // Converte para string para evitar problemas de tipo
-        String(mobileOrder || ""), // Converte para string para evitar problemas de tipo
+        String(desktopOrder || ""),
+        String(mobileOrder || ""),
         className,
       )}
     >
-      {/* Texto no Top */}
-      {textPosition === "top" && ( // Renderiza o texto apenas se a posição for "top"
+      {textPosition === "top" && (
         <div className="flex items-start md:items-center w-full h-1/4 p-6 rounded-lg bg-neutral-100">
           <Text variant="body-base" className="text-text-secondary">
             {title}
@@ -49,18 +48,18 @@ export default function BentoItem({
         </div>
       )}
 
-      {/* Container da Imagem */}
       <div className="h-3/4 w-full overflow-hidden rounded-lg">
         <img
           src={image}
+          {...imageMetadata[image]}
+          sizes="(min-width: 1024px) 320px, (min-width: 768px) calc(100vw - 160px), max(calc(100vw - 96px), 440px)"
+          decoding="async"
           alt={title}
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 transform-gpu backface-hidden will-change-transform"
         />
       </div>
-
-      {/* Texto no Bottom */}
-      {textPosition === "bottom" && ( // Renderiza o texto apenas se a posição for "bottom"
+      {textPosition === "bottom" && (
         <div className="flex items-start md:items-center w-full h-1/4 p-6 rounded-lg bg-neutral-100">
           <Text variant="body-base" className="text-text-secondary">
             {title}
