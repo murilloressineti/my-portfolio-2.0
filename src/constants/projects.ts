@@ -1,6 +1,7 @@
 import * as Images from "../assets/images/projects";
 import type { AvailableTechs } from "../components/ui/Tag";
 
+// Estrutura dos dados de projetos
 export interface ProjectContent {
   title: string;
   items: string[];
@@ -18,7 +19,9 @@ export interface Project {
   sections: ProjectContent[];
 }
 
+// Catálogo do portfólio
 export const projects: Project[] = [
+  // Agendamento Petshop
   {
     id: "agendamento-petshop",
     title: "Agenda Petshop",
@@ -57,6 +60,7 @@ export const projects: Project[] = [
       },
     ],
   },
+  // Hair Day
   {
     id: "hair-day",
     title: "Hair Day",
@@ -64,7 +68,8 @@ export const projects: Project[] = [
       "Aplicação web para gerenciamento de agendamentos, desenvolvida com React e TypeScript para organizar clientes e horários disponíveis ao longo do dia.",
     imageSrc: Images.HairDayThumb,
     imageDetails: Images.HairDayDetails,
-    githubUrl: "https://github.com/murilloressineti/react-rocketseat/tree/main/hair-day",
+    githubUrl:
+      "https://github.com/murilloressineti/react-rocketseat/tree/main/hair-day",
     deployUrl: "https://apphairday.vercel.app/",
     techs: ["react", "tailwind", "typeScript", "figma"],
     sections: [
@@ -94,6 +99,83 @@ export const projects: Project[] = [
       },
     ],
   },
+  // DSR Gráfica
+  {
+    id: "dsr-grafica",
+    title: "DSR Gráfica",
+    description:
+      "Site institucional desenvolvido para uma gráfica com mais de 40 anos de atuação, transformando um briefing e design profissional em uma experiência web responsiva, animada e publicada em domínio próprio.",
+    imageSrc: Images.DSRGraficaThumb,
+    imageDetails: Images.DSRGraficaDetails,
+    githubUrl: "https://github.com/murilloressineti/dsr-grafica-2.0",
+    deployUrl: "https://dsrgrafica.com.br/",
+    techs: ["react", "tailwind", "typeScript", "Framer Motion", "figma"],
+    sections: [
+      {
+        title: "Minha atuação",
+        items: [
+          "Transformei o layout desenvolvido em Figma em uma aplicação React responsiva, preservando identidade visual, hierarquia e experiência proposta no design.",
+          "Estruturei a interface em componentes reutilizáveis e variantes de estilo, utilizando TypeScript, Tailwind CSS e Class Variance Authority.",
+          "Implementei animações, interações e comportamento responsivo, além de configurar domínio próprio e publicação da aplicação em produção.",
+        ],
+      },
+      {
+        title: "Desafios técnicos",
+        items: [
+          "Reproduzir com fidelidade o design em diferentes resoluções, adaptando elementos e conteúdos sem comprometer a experiência visual.",
+          "Construir componentes flexíveis com diferentes variantes de estilo e comportamento, reduzindo duplicações ao longo da interface.",
+          "Equilibrar animações e interações visuais com responsividade e desempenho, especialmente durante transições e efeitos de scroll.",
+        ],
+      },
+      {
+        title: "Aprendizados e evolução",
+        items: [
+          "Aprimorei a transformação de interfaces do Figma em componentes React reutilizáveis e responsivos.",
+          "Evoluí na criação de animações com Framer Motion e na construção de componentes com múltiplas variantes.",
+          "Ganhei experiência na entrega de uma solução para um negócio real, desde o entendimento das necessidades até a publicação em produção.",
+        ],
+      },
+    ],
+  },
+  // Verduras Guimarães
+  {
+    id: "verduras-guimaraes",
+    title: "Verduras Guimarães",
+    description:
+      "Site institucional desenvolvido para uma empresa de produção e comercialização de verduras, com interface responsiva, animações, integração com WhatsApp e publicação em domínio próprio.",
+    imageSrc: Images.VerdurasGuimaraesThumb,
+    imageDetails: Images.VerdurasGuimaraesDetails,
+    githubUrl: "https://github.com/murilloressineti/verduras-guimaraes",
+    deployUrl: "https://verdurasguimaraes.com.br/",
+    techs: ["react", "tailwind", "typeScript", "Framer Motion", "figma"],
+    sections: [
+      {
+        title: "Minha atuação",
+        items: [
+          "Desenvolvi a interface institucional em React e TypeScript, transformando o design em uma experiência responsiva e alinhada à identidade visual da empresa.",
+          "Estruturei o projeto em componentes reutilizáveis, utilizando Tailwind CSS e Tailwind Variants para manter consistência visual e facilitar a manutenção.",
+          "Implementei animações, navegação entre seções e integração com WhatsApp, além de configurar SEO, domínio próprio e publicação no Cloudflare.",
+        ],
+      },
+      {
+        title: "Desafios técnicos",
+        items: [
+          "Adaptar o layout para diferentes resoluções, preservando a hierarquia visual, a legibilidade e a experiência de navegação em dispositivos móveis.",
+          "Equilibrar animações e elementos visuais com desempenho e acessibilidade, respeitando as preferências de movimento reduzido dos usuários.",
+          "Configurar a publicação em produção, integrando o domínio registrado no Registro.br ao Cloudflare e garantindo o funcionamento do site com HTTPS.",
+        ],
+      },
+      {
+        title: "Aprendizados e evolução",
+        items: [
+          "Aprimorei minha experiência na construção de interfaces institucionais com React, TypeScript e Tailwind CSS, aplicando componentização e reutilização de estilos.",
+          "Evoluí na implementação de animações, responsividade, acessibilidade e otimizações voltadas à experiência do usuário.",
+          "Ganhei experiência na entrega de um projeto comercial, desde a implementação do design e ajustes solicitados pelo cliente até a configuração da infraestrutura e publicação em produção.",
+        ],
+      },
+    ],
+  },
+  // Help Desk
   {
     id: "help-desk",
     title: "Help Desk",
@@ -144,43 +226,7 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    id: "dsr-grafica",
-    title: "DSR Gráfica",
-    description:
-      "Site institucional desenvolvido para uma gráfica com mais de 40 anos de atuação, transformando um briefing e design profissional em uma experiência web responsiva, animada e publicada em domínio próprio.",
-    imageSrc: Images.DSRGraficaThumb,
-    imageDetails: Images.DSRGraficaDetails,
-    githubUrl: "https://github.com/murilloressineti/dsr-grafica-2.0",
-    deployUrl: "https://dsrgrafica.com.br/",
-    techs: ["react", "tailwind", "typeScript", "Framer Motion", "figma"],
-    sections: [
-      {
-        title: "Minha atuação",
-        items: [
-          "Transformei o layout desenvolvido em Figma em uma aplicação React responsiva, preservando identidade visual, hierarquia e experiência proposta no design.",
-          "Estruturei a interface em componentes reutilizáveis e variantes de estilo, utilizando TypeScript, Tailwind CSS e Class Variance Authority.",
-          "Implementei animações, interações e comportamento responsivo, além de configurar domínio próprio e publicação da aplicação em produção.",
-        ],
-      },
-      {
-        title: "Desafios técnicos",
-        items: [
-          "Reproduzir com fidelidade o design em diferentes resoluções, adaptando elementos e conteúdos sem comprometer a experiência visual.",
-          "Construir componentes flexíveis com diferentes variantes de estilo e comportamento, reduzindo duplicações ao longo da interface.",
-          "Equilibrar animações e interações visuais com responsividade e desempenho, especialmente durante transições e efeitos de scroll.",
-        ],
-      },
-      {
-        title: "Aprendizados e evolução",
-        items: [
-          "Aprimorei a transformação de interfaces do Figma em componentes React reutilizáveis e responsivos.",
-          "Evoluí na criação de animações com Framer Motion e na construção de componentes com múltiplas variantes.",
-          "Ganhei experiência na entrega de uma solução para um negócio real, desde o entendimento das necessidades até a publicação em produção.",
-        ],
-      },
-    ],
-  },
+  // Refund
   {
     id: "refund",
     title: "Refund",

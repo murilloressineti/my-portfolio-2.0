@@ -6,12 +6,13 @@ import { projects } from "../constants";
 import { fadeUp } from "@/lib/motion";
 
 import { CTASection, Section } from "../components/layout";
-import { ProjectCard, ProjectThumbnail } from "../components/projects";
+import { ProjectCard, ProjectPreview } from "../components/projects";
 import { Button, Icon, Tag, Text } from "../components/ui";
 
 import { ArrowLeft, ArrowUpRight, GitHubLogo } from "@/assets/icons";
 
 export default function ProjectDetails() {
+  // Seleção do projeto
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
 
@@ -30,6 +31,7 @@ export default function ProjectDetails() {
     <MotionConfig reducedMotion="user">
       <div data-reduced-motion>
         <Section id="content" className="md:pb-20">
+          {/* Navegação e ações do projeto */}
           <div className="flex flex-col mb-20">
             <motion.div {...fadeUp}>
               <Button
@@ -92,6 +94,8 @@ export default function ProjectDetails() {
               </div>
             </motion.div>
           </div>
+
+          {/* Tecnologias e descrição */}
           <div className="flex flex-col gap-12 max-w-220">
             <motion.div
               {...fadeUp}
@@ -126,6 +130,19 @@ export default function ProjectDetails() {
                 {project.description}
               </Text>
             </motion.div>
+
+            {/* Preview compacto do projeto */}
+            {project.imageDetails && (
+              <motion.div {...fadeUp} transition={{ delay: 0.4 }}>
+                <ProjectPreview
+                  src={project.imageDetails}
+                  title={project.title}
+                  deployUrl={project.deployUrl}
+                />
+              </motion.div>
+            )}
+
+            {/* Detalhes da implementação */}
             {project.sections.map((section, idx) => (
               <motion.div
                 key={idx}
@@ -151,17 +168,9 @@ export default function ProjectDetails() {
               </motion.div>
             ))}
           </div>
-          <motion.div {...fadeUp} transition={{ delay: 0.1 }} className="pt-20">
-            {project.imageDetails && (
-              <ProjectThumbnail
-                src={project.imageDetails}
-                alt={`Preview do projeto ${project.title}`}
-                variant="full"
-                animate={false}
-              />
-            )}
-          </motion.div>
         </Section>
+
+        {/* Projetos relacionados */}
         <Section id="related-projects" className="bg-bg-surface">
           <div className="flex flex-col gap-2 mb-20">
             <motion.div {...fadeUp}>
@@ -193,6 +202,7 @@ export default function ProjectDetails() {
             ))}
           </div>
         </Section>
+
         <CTASection />
       </div>
     </MotionConfig>

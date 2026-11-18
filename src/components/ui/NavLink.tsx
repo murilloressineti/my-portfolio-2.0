@@ -7,6 +7,7 @@ import { cn } from "../../lib/utils";
 
 import Text from "./Text";
 
+// Estados de navegação
 const linkVariants = cva(
   "transition-colors duration-300 cursor-pointer",
   {

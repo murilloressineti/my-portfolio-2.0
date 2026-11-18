@@ -7,6 +7,7 @@ import { cn } from "../../lib/utils";
 
 import Text from "./Text";
 
+// Estilos e estados do campo
 const inputVariants = cva(
   "w-full bg-bg-default border border-border-default rounded-lg p-4 text-base text-text-primary placeholder:text-neutral-400 hover:border-neutral-400 focus:outline-none focus:ring-2 focus:ring-brand-primary/10 focus:border-border-focus resize-none transition-all disabled:opacity-50 disabled:cursor-not-allowed",
   {
@@ -44,6 +45,7 @@ export default function Input({
   "aria-invalid": invalid,
   ...props
 }: InputProps) {
+  // Identificação e acessibilidade
   const generatedId = useId();
   const inputId = id || generatedId;
   const errorId = `${inputId}-error`;
@@ -57,6 +59,7 @@ export default function Input({
     "aria-describedby": descriptionIds,
     className: cn(inputVariants({ variant: error ? "error" : variant, className })),
   };
+  // Seleção do controle nativo
   let control: React.ReactNode;
   if (props.as === "textarea") {
     const { as: Component, ...nativeProps } = props;
@@ -80,6 +83,7 @@ export default function Input({
 
       {control}
 
+      {/* Mensagem de validação */}
       {error && (
         <Text id={errorId} variant="body-sm" className="text-feedback-error">
           {error}

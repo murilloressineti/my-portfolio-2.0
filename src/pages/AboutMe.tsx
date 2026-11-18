@@ -31,6 +31,7 @@ export default function AboutMe() {
   return (
     <MotionConfig reducedMotion="user">
       <div data-reduced-motion>
+        {/* Apresentação */}
         <Section id="intro" className="py-10 md:py-20 lg:p-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-0">
             <div className="flex flex-col gap-10 lg:pl-30 lg:pr-20 mx-auto w-full">
@@ -105,6 +106,8 @@ export default function AboutMe() {
             </div>
           </div>
         </Section>
+
+        {/* Trajetória */}
         <Section id="timeline" className="bg-bg-surface">
           <Timeline>
             {timelineSteps.map((item, index) => (
@@ -112,6 +115,8 @@ export default function AboutMe() {
             ))}
           </Timeline>
         </Section>
+
+        {/* Interesses pessoais */}
         <Section id="gallery">
           <motion.div
             {...fadeUp}
@@ -123,6 +128,7 @@ export default function AboutMe() {
             </Text>
           </motion.div>
           <div>
+            {/* Galeria desktop */}
             <div className="hidden lg:block">
               <BentoGrid>
                 {desktopGallery.map((item) => (
@@ -130,6 +136,8 @@ export default function AboutMe() {
                 ))}
               </BentoGrid>
             </div>
+            
+            {/* Galeria mobile */}
             <div className="block lg:hidden">
               <BentoCarousel>
                 {mobileGallery.map((item) => (

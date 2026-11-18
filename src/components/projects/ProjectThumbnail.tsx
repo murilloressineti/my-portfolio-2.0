@@ -6,6 +6,7 @@ import { imageMetadata } from "@/constants/image-metadata";
 
 import { cn } from "../../lib/utils";
 
+// Enquadramento e interação
 const projectThumbnailVariants = cva(
   "w-full h-full relative flex items-end justify-center overflow-hidden rounded-md bg-neutral-100",
   {

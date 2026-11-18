@@ -17,9 +17,12 @@ import {
 export default function App() {
   return (
     <BrowserRouter>
+      {/* Efeitos de navegação */}
       <ScrollToTop />
       <RouteMetadata />
+      {/* Notificações */}
       <Toaster position="bottom-center" richColors />
+      {/* Layout e rotas */}
       <Header />
       <main className="min-h-screen">
         <Routes>

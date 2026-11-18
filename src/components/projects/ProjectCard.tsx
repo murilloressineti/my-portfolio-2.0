@@ -81,6 +81,7 @@ export default function ProjectCard({
 
   return (
     <div className={cn(projectCardVariants({ variant, className }))} {...props}>
+      {/* Capa do projeto */}
       <Link
         to={projectLink}
         className={cn(
@@ -97,6 +98,8 @@ export default function ProjectCard({
           className="w-full"
         />
       </Link>
+
+      {/* Informações e ações */}
       <div className="flex flex-col min-w-0 flex-1 w-full">
         <div
           className={cn(
@@ -118,6 +121,7 @@ export default function ProjectCard({
               {title}
             </Text>
           </Link>
+
           <div className="flex gap-3 shrink-0">
             {githubUrl && (
               <Button
@@ -151,6 +155,8 @@ export default function ProjectCard({
             )}
           </div>
         </div>
+        
+        {/* Descrição do projeto */}
         <Text
           variant="body-lg"
           className={cn(
@@ -162,6 +168,8 @@ export default function ProjectCard({
         >
           {description}
         </Text>
+
+        {/* Tecnologias do projeto */}
         <div className="relative mt-5 w-full">
           <div
             className={cn(
@@ -190,6 +198,8 @@ export default function ProjectCard({
               )}
             />
           </div>
+          
+          {/* Resumo de tecnologias no desktop */}
           {variant === "grid" && (
             <div className="hidden md:flex items-center gap-2">
               {desktopTechs.map((tech, index) => (

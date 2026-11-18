@@ -15,6 +15,7 @@ export interface GalleryItem {
   mobileOrder?: number;
 }
 
+// Interesses e ordem de exibição
 export const galleryItems: GalleryItem[] = [
   {
     image: PlayingGuitar,

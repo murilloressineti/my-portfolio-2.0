@@ -18,6 +18,7 @@ const fixedRadiusMaskEase = (time: number) => {
   return progress * progress;
 };
 
+// Transição de saída
 const maskVariants = {
   initial: {
     opacity: 1,
@@ -38,6 +39,7 @@ const maskVariants = {
   },
 } satisfies Record<"initial" | "exit", MaskVariant>;
 
+// Entrada da marca
 const containerVariants: Variants = {
   hidden: {},
   visible: {

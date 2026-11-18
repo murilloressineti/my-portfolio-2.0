@@ -9,6 +9,7 @@ interface PageMetadata {
   description: string;
 }
 
+// Metadados das páginas
 const pages: Record<string, PageMetadata> = {
   "/": {
     title: "Murillo Ressineti | Desenvolvedor Front-end",
@@ -28,6 +29,7 @@ const pages: Record<string, PageMetadata> = {
   },
 };
 
+// Atualização das tags de metadados
 function updateMeta(attribute: "name" | "property", key: string, content: string) {
   // Reutiliza as tags do HTML inicial e das rotas anteriores para não acumulá-las na navegação.
   let meta = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
@@ -44,6 +46,7 @@ export default function RouteMetadata() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // Seleção dos metadados da rota
     const route = Object.keys(pages).find((path) => matchPath({ path, end: true }, pathname));
     const details = matchPath("/projetos/:id", pathname);
     const project = details && projects.find(({ id }) => id === details.params.id);
@@ -62,6 +65,7 @@ export default function RouteMetadata() {
       };
     }
 
+    // Aplicação ao documento
     document.title = metadata.title;
     updateMeta("name", "description", metadata.description);
     updateMeta("property", "og:title", metadata.title);

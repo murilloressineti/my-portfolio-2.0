@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "../../lib/utils";
 
+// Escala tipográfica
 const textVariants = cva("font-sans antialiased", {
   variants: {
     variant: {

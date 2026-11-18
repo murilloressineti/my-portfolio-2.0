@@ -21,6 +21,7 @@ export default function CTASection() {
         id="cta"
         className="respect-reduced-motion bg-neutral-black relative overflow-hidden text-center md:py-20"
       >
+        {/* Fundo decorativo */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 0.5 }}
@@ -31,6 +32,7 @@ export default function CTASection() {
 
         <div className="relative z-10 flex flex-col items-center justify-center">
           <div className="max-w-165">
+            {/* Convite para contato */}
             <motion.header {...fadeUp} className="flex flex-col">
               <Text
                 as="h2"
@@ -47,6 +49,8 @@ export default function CTASection() {
                 contribuir em projetos reais.
               </Text>
             </motion.header>
+
+            {/* Contato e currículo */}
             <motion.div
               {...fadeUp}
               transition={{ delay: 0.2 }}
@@ -106,6 +110,8 @@ export default function CTASection() {
                 );
               })}
             </motion.div>
+            
+            {/* Redes sociais */}
             <motion.div
               {...fadeUp}
               transition={{ delay: 0.4 }}

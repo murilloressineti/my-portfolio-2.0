@@ -17,6 +17,7 @@ import {
 import { LogoFull, LogoSymbol } from "@/assets/logo";
 
 export default function Header() {
+  // Estado e referências do menu
   const location = useLocation();
   const [openLocation, setOpenLocation] = useState<typeof location | null>(
     null,
@@ -30,6 +31,7 @@ export default function Header() {
   const isMenuOpen = openLocation === location;
   const closeMenu = () => setOpenLocation(null);
 
+  // Interação do menu mobile
   useEffect(() => {
     if (!isMenuOpen) return;
 
@@ -88,6 +90,7 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  // Links de navegação e redes sociais
   const navLinks = [
     { label: "Página Inicial", href: "/" },
     { label: "Sobre", href: "/sobre" },
@@ -115,6 +118,7 @@ export default function Header() {
       >
         <div className="w-full py-5 lg:pb-0 px-6 md:px-12 lg:px-30 max-w-420 mx-auto">
           <div className="flex items-center justify-between lg:py-5">
+            {/* Identidade visual */}
             <motion.div {...fadeDown}>
               <Link
                 to="/"
@@ -125,6 +129,8 @@ export default function Header() {
                 <LogoSymbol className="block lg:hidden w-auto fill-brand-primary" />
               </Link>
             </motion.div>
+
+            {/* Navegação desktop */}
             <motion.nav
               ref={desktopNavRef}
               {...fadeDown}
@@ -140,6 +146,8 @@ export default function Header() {
                 ))}
               </ul>
             </motion.nav>
+
+            {/* Contato e redes sociais */}
             <motion.div
               {...fadeDown}
               transition={{ delay: 0.5 }}
@@ -174,6 +182,8 @@ export default function Header() {
                 </div>
               </Link>
             </motion.div>
+
+            {/* Controle do menu mobile */}
             <button
               ref={menuButtonRef}
               type="button"
@@ -193,6 +203,7 @@ export default function Header() {
             </button>
           </div>
         </div>
+
         {/* Mantém a transição montada; inert impede interação enquanto o menu está fechado. */}
         <nav
           ref={mobileMenuRef}
@@ -218,6 +229,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
+
           <Link to="/contato">
             <div className="group">
               <Button as="span" shape="rounded" variant="navAction">
@@ -227,6 +239,7 @@ export default function Header() {
               </Button>
             </div>
           </Link>
+          
           <div className="flex items-center gap-3">
             {socialLinks.map((social) => (
               <Button

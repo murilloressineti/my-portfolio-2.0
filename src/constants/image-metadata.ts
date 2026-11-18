@@ -24,11 +24,13 @@ interface ImageMetadata {
 
 // Originais continuam disponíveis para telas que precisam de maior resolução.
 export const imageMetadata: Record<string, ImageMetadata> = {
+  // Retrato
   [Profile]: {
     width: 2675,
     height: 4013,
     srcSet: `${Profile960} 960w, ${Profile1600} 1600w, ${Profile} 2675w`,
   },
+  // Galeria pessoal
   [Gallery.Family]: {
     width: 3024,
     height: 4032,
@@ -59,6 +61,7 @@ export const imageMetadata: Record<string, ImageMetadata> = {
     height: 4032,
     srcSet: `${Reading640} 640w, ${Reading1280} 1280w, ${Gallery.Reading} 3024w`,
   },
+  // Imagens dos projetos
   [Projects.AgendaPetThumb]: { width: 952, height: 624 },
   [Projects.AgendaPetDetails]: { width: 1537, height: 961 },
   [Projects.DSRGraficaThumb]: { width: 952, height: 624 },
@@ -69,4 +72,6 @@ export const imageMetadata: Record<string, ImageMetadata> = {
   [Projects.HelpDeskDetails]: { width: 1537, height: 961 },
   [Projects.RefundThumb]: { width: 952, height: 622 },
   [Projects.RefundDetails]: { width: 1537, height: 961 },
+  [Projects.VerdurasGuimaraesThumb]: {width: 952, height: 624,},
+  [Projects.VerdurasGuimaraesDetails]: {width: 1537,height: 961,},
 };

@@ -7,6 +7,7 @@ import { cn, fadeUp } from "@/lib";
 
 import { Icon, Text } from "../ui";
 
+// Distribuição das etapas
 const timelineItemVariants = cva(
   "grid grid-cols-[1fr_auto_1fr] grid-rows-1 items-center gap-4 md:gap-12 w-full",
   {
@@ -68,6 +69,8 @@ export default function TimelineItem({
           </div>
         )}
       </div>
+
+      {/* Marco no eixo */}
       <div className="relative flex justify-center items-center h-full">
         <span
           className="relative z-10 rounded-full shrink-0 h-2 w-2 bg-neutral-black"
@@ -96,6 +99,7 @@ export default function TimelineItem({
   );
 }
 
+// Conteúdo da etapa
 function TimelineContent({
   title,
   description,
@@ -136,6 +140,7 @@ function TimelineContent({
   );
 }
 
+// Identificação da etapa
 function TimelineBadge({ text, icon }: { text: string; icon: React.ElementType; }) {
   return (
     <div
@@ -147,6 +152,7 @@ function TimelineBadge({ text, icon }: { text: string; icon: React.ElementType; 
         svg={icon}
         className="shrink-0 transition-transform duration-300 group-hover:scale-110"
       ></Icon>
+      
       <Text
         variant="body-base"
         className="text-sm md:text-base text-neutral-black font-bold text-center"

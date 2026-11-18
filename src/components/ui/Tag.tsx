@@ -6,6 +6,7 @@ import { cn } from "../../lib/utils";
 
 import Text from "./Text";
 
+// Variantes de aparência
 const tagVariants = cva(
   "py-1.5 px-3 inline-flex items-center rounded-md border border-border-default bg-bg-default transition-colors duration-300 hover:bg-neutral-100 cursor-default hover:shadow-sm",
   {

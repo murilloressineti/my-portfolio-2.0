@@ -18,6 +18,7 @@ import {
 } from "@/assets/icons";
 
 export default function Contact() {
+  // Estado do formulário
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,6 +27,7 @@ export default function Contact() {
   const [errors, setErrors] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Atualização dos campos
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -37,6 +39,7 @@ export default function Contact() {
     }
   };
 
+  // Cópia do contato
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText("murillo@ressineti.com.br");
@@ -46,6 +49,7 @@ export default function Contact() {
     }
   };
 
+  // Validação dos campos
   const validate = (data: typeof formData) => {
     const newErrors = { name: "", email: "", message: "" };
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -60,6 +64,7 @@ export default function Contact() {
     return !Object.values(newErrors).some((error) => error !== "");
   };
 
+  // Envio da mensagem
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Valida e envia o mesmo snapshot, sem alterar o texto que o usuário ainda está digitando.
@@ -101,6 +106,7 @@ export default function Contact() {
         <Section id="contact" className="py-20 md:py-30">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-30 items-start md:max-w-276 mx-auto">
             <motion.div {...fadeUp} className="flex flex-col gap-12">
+              {/* Apresentação e canais de contato */}
               <header className="flex flex-col">
                 <Text
                   as="h1"
@@ -120,6 +126,7 @@ export default function Contact() {
                   Entre em contato comigo por um dos canais abaixo.
                 </Text>
               </header>
+
               <div className="flex flex-col gap-12">
                 <Button
                   variant="wrapper"
@@ -145,6 +152,7 @@ export default function Contact() {
                     className="fill-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity"
                   />
                 </Button>
+                {/* Redes sociais */}
                 <nav className="flex flex-col gap-6" aria-label="Redes sociais">
                   <Text as="h2" variant="h4">
                     Conecte-se comigo
@@ -192,6 +200,8 @@ export default function Contact() {
                 </nav>
               </div>
             </motion.div>
+            
+            {/* Formulário de contato */}
             <motion.form
               {...fadeUp}
               transition={{ delay: 0.2 }}

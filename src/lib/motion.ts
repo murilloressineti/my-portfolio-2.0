@@ -1,3 +1,4 @@
+// Entrada em sequência
 export const staggerContainer = {
   initial: { opacity: 0 },
   animate: {
@@ -15,6 +16,7 @@ export const childItem = {
   },
 };
 
+// Revelação durante a rolagem
 export const fadeUp = {
   initial: { opacity: 0, y: 16 },
   whileInView: { opacity: 1, y: 0 },
@@ -22,12 +24,14 @@ export const fadeUp = {
   transition: { duration: 0.6, ease: "easeOut" as const },
 };
 
+// Entrada pelo topo
 export const fadeDown = {
   initial: { opacity: 0, y: -16 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6, ease: "easeOut" as const },
 };
 
+// Revelação lateral
 export const fadeRight = {
   initial: { opacity: 0, x: 20 },
   whileInView: { opacity: 1, x: 0 },

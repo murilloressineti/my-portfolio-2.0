@@ -24,6 +24,8 @@ export default function Footer() {
           <Text variant="body-base" className="text-neutral-400">
             © {currentYear} Murillo Ressineti. Todos os direitos reservados.
           </Text>
+          
+          {/* Retorno ao topo */}
           <div className="shrink-0">
             <Link
               to="/"

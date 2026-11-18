@@ -16,6 +16,7 @@ export default function NotFound() {
           id="not-found"
           className="flex min-h-[90vh] flex-col items-center justify-center text-left"
         >
+          {/* Mensagem de página não encontrada */}
           <div className="flex flex-col gap-6 max-w-190 mx-auto">
             <motion.div {...fadeUp}>
               <Text as="h1" variant="h2" className="text-3xl md:text-3xl lg:text-4xl uppercase font-normal">
@@ -29,6 +30,8 @@ export default function NotFound() {
               </Text>
             </motion.div>
           </div>
+          
+          {/* Opções de navegação */}
           <motion.div
             {...fadeUp}
             transition={{ delay: 0.6 }}

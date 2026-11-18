@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
+// Tamanhos e animações
 const iconVariants = cva(
   "transition-all duration-300 ease-in-out shrink-0",
   {

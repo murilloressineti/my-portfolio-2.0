@@ -9,6 +9,7 @@ interface BentoCarouselProps {
 }
 
 export default function BentoCarousel({ children }: BentoCarouselProps) {
+  // Configuração e seleção do carrossel
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "center",
@@ -19,6 +20,7 @@ export default function BentoCarousel({ children }: BentoCarouselProps) {
 
   const totalItems = React.Children.count(children);
 
+  // Sincronização da posição
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
@@ -41,6 +43,7 @@ export default function BentoCarousel({ children }: BentoCarouselProps) {
 
   return (
     <div className="w-full flex flex-col gap-4">
+      {/* Área dos slides */}
       <div
         className="overflow-hidden w-full cursor-grab active:cursor-grabbing"
         ref={emblaRef}
@@ -53,6 +56,8 @@ export default function BentoCarousel({ children }: BentoCarouselProps) {
           ))}
         </div>
       </div>
+      
+      {/* Navegação por indicadores */}
       <div className="flex justify-center items-center gap-2">
         {Array.from({ length: totalItems }).map(
           (_, index) => (

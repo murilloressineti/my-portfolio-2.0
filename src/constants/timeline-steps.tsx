@@ -17,6 +17,7 @@ export interface TimelineStep {
   badgeIcon: React.ElementType;
 }
 
+// Marcos da trajetória
 export const timelineSteps: TimelineStep[] = [
   {
     side: "left",

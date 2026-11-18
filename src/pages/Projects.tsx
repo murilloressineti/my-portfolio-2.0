@@ -13,6 +13,7 @@ import { Button, Icon, Text } from "../components/ui";
 import { ArrowDown } from "@/assets/icons";
 
 export default function Projects() {
+  // Exibição progressiva
   const [visibleCount, setVisibleCount] = useState(3);
 
   // Invertemos uma cópia para preservar a ordem dos dados compartilhados.
@@ -27,6 +28,7 @@ export default function Projects() {
     <MotionConfig reducedMotion="user">
       <div data-reduced-motion>
         <Section id="portfolio">
+          {/* Apresentação do portfólio */}
           <div className="flex flex-col gap-2 mb-20">
             <motion.div {...fadeUp}>
               <Text variant="ui-headline" className="text-gradient-gray">
@@ -39,6 +41,8 @@ export default function Projects() {
               </Text>
             </motion.div>
           </div>
+
+          {/* Lista de projetos */}
           <div className="flex flex-col w-full overflow-hidden gap-12">
             {visibleProjects.map((project, index, array) => (
               <motion.div
@@ -59,6 +63,8 @@ export default function Projects() {
               </motion.div>
             ))}
           </div>
+          
+          {/* Carregamento de mais projetos */}
           {hasMoreProjects && (
             <motion.div
               {...fadeUp}

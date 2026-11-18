@@ -8,3 +8,5 @@ export { default as DSRGraficaThumb } from "./Thumbnail/DSRGraficaThumb.webp";
 export { default as DSRGraficaDetails } from "./Details/DSRGraficaDetails.webp";
 export { default as HelpDeskThumb } from "./Thumbnail/HelpDeskThumb.webp";
 export { default as HelpDeskDetails } from "./Details/HelpDeskDetails.webp";
+export { default as VerdurasGuimaraesThumb } from "./Thumbnail/VerdurasGuimaraesThumb.webp";
+export { default as VerdurasGuimaraesDetails } from "./Details/VerdurasGuimaraesDetails.webp";
