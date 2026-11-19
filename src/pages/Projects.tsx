@@ -37,7 +37,7 @@ export default function Projects() {
             </motion.div>
             <motion.div {...fadeUp} transition={{ delay: 0.2 }}>
               <Text as="h1" variant="h2" className="uppercase font-normal">
-                <strong className="font-semibold">Trabalhos</strong> recentes
+                Projetos em <strong className="font-semibold">destaque</strong>
               </Text>
             </motion.div>
           </div>
