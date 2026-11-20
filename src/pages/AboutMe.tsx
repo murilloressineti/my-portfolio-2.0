@@ -37,7 +37,7 @@ export default function AboutMe() {
             <div className="flex flex-col gap-10 lg:pl-30 lg:pr-20 mx-auto w-full">
               <motion.div {...fadeUp}>
                 <Text as="h1" variant="h2" className="uppercase font-normal">
-                  Desenvolvendo interfaces, construindo experiências e evoluindo
+                  Desenvolvendo soluções, construindo experiências e evoluindo
                   através do código.
                 </Text>
               </motion.div>
@@ -52,7 +52,7 @@ export default function AboutMe() {
                 >
                   Minha jornada na tecnologia ganhou direção quando encontrei no{" "}
                   <strong className="font-semibold">
-                    Front-end a conexão entre lógica, código e experiência visual.
+                    desenvolvimento de software a conexão entre lógica, código e experiência visual.
                   </strong>{" "}
                   Ver uma interface tomar forma no navegador a partir do que
                   construo em código foi o que despertou meu interesse pela área

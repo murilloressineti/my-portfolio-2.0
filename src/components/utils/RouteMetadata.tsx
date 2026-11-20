@@ -12,27 +12,37 @@ interface PageMetadata {
 // Metadados das páginas
 const pages: Record<string, PageMetadata> = {
   "/": {
-    title: "Murillo Ressineti | Desenvolvedor Front-end",
-    description: "Portfólio de Murillo Ressineti, desenvolvedor front-end com React e TypeScript. Conheça meus projetos, minha trajetória e entre em contato.",
+    title: "Murillo Ressineti | Desenvolvedor de Software",
+    description:
+      "Portfólio de Murillo Ressineti, desenvolvedor de software com foco em React, TypeScript e aplicações Full Stack. Conheça meus projetos e minha trajetória.",
   },
   "/sobre": {
     title: "Sobre mim | Murillo Ressineti",
-    description: "Conheça a trajetória, a formação e os interesses de Murillo Ressineti no desenvolvimento de interfaces web.",
+    description:
+      "Conheça a trajetória, a formação e os interesses de Murillo Ressineti no desenvolvimento de software.",
   },
   "/projetos": {
     title: "Projetos | Murillo Ressineti",
-    description: "Explore os projetos de Murillo Ressineti: interfaces responsivas, aplicações React e TypeScript e soluções para negócios reais.",
+    description:
+      "Explore os projetos de Murillo Ressineti, incluindo aplicações web, projetos Full Stack e soluções desenvolvidas para clientes reais.",
   },
   "/contato": {
     title: "Contato | Murillo Ressineti",
-    description: "Entre em contato com Murillo Ressineti para conversar sobre oportunidades e projetos de desenvolvimento front-end.",
+    description:
+      "Entre em contato com Murillo Ressineti para conversar sobre oportunidades e projetos de desenvolvimento de software.",
   },
 };
 
 // Atualização das tags de metadados
-function updateMeta(attribute: "name" | "property", key: string, content: string) {
+function updateMeta(
+  attribute: "name" | "property",
+  key: string,
+  content: string,
+) {
   // Reutiliza as tags do HTML inicial e das rotas anteriores para não acumulá-las na navegação.
-  let meta = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
+  let meta = document.head.querySelector<HTMLMetaElement>(
+    `meta[${attribute}="${key}"]`,
+  );
   if (!meta) {
     meta = document.createElement("meta");
     meta.setAttribute(attribute, key);
@@ -47,9 +57,12 @@ export default function RouteMetadata() {
 
   useEffect(() => {
     // Seleção dos metadados da rota
-    const route = Object.keys(pages).find((path) => matchPath({ path, end: true }, pathname));
+    const route = Object.keys(pages).find((path) =>
+      matchPath({ path, end: true }, pathname),
+    );
     const details = matchPath("/projetos/:id", pathname);
-    const project = details && projects.find(({ id }) => id === details.params.id);
+    const project =
+      details && projects.find(({ id }) => id === details.params.id);
     let metadata: PageMetadata;
     if (project) {
       metadata = {
@@ -61,7 +74,8 @@ export default function RouteMetadata() {
     } else {
       metadata = {
         title: "Página não encontrada | Murillo Ressineti",
-        description: "A página procurada não foi encontrada. Explore os projetos ou entre em contato com Murillo Ressineti.",
+        description:
+          "A página procurada não foi encontrada. Explore os projetos ou entre em contato com Murillo Ressineti.",
       };
     }
 

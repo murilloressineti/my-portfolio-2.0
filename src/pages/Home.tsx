@@ -74,15 +74,15 @@ export default function Home() {
                   variant="h1"
                   className="uppercase font-normal mb-4 md:mb-2"
                 >
-                  Desenvolvedor <br className="block lg:hidden" />
-                  <strong className="font-semibold">front-end</strong>
+                  Desenvolvedor de <br className="block lg:hidden" />
+                  <strong className="font-semibold">software</strong>
                 </Text>
               </motion.div>
 
               <motion.div variants={childItem} className=" ">
                 <Text variant="body-lg" className="opacity-90 mb-6 md:mb-16">
                   Desenvolvo aplicações web modernas, responsivas e
-                  componentizadas com <br /> React, TypeScript e JavaScript.
+                  componentizadas com <br /> React, TypeScript, JavaScript, Node.js e PostgreSQL.
                 </Text>
               </motion.div>
 
@@ -151,7 +151,7 @@ export default function Home() {
               >
                 <Text variant="body-lg" className="text-text-secondary">
                   Minha jornada na tecnologia começou com estudos, prática e
-                  projetos que me levaram ao desenvolvimento Front-end, área em
+                  projetos que me levaram ao desenvolvimento de software, área em
                   que venho construindo minha carreira.
                 </Text>
 
@@ -214,6 +214,8 @@ export default function Home() {
                     "tailwind",
                     "typeScript",
                     "javaScript",
+                    "node.js",
+                    "postgreSQL",
                     "git",
                   ] as const
                 ).map((tech) => (

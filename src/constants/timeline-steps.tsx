@@ -58,7 +58,7 @@ export const timelineSteps: TimelineStep[] = [
     side: "left",
     title: "Especialização em *Interfaces*",
     description:
-      "React e TypeScript aplicados em projetos completos e entregas reais  em produção.",
+      "Aprofundamento em React e TypeScript, com aplicações completas e entregas reais em produção.",
     date: "2026 — Atual",
     badgeText: "Direção Profissional",
     badgeIcon: Target,
